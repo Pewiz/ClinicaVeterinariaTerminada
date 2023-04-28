@@ -42,10 +42,11 @@ class GestionArchivo:
             escritor = csv.writer(archivo,delimiter=",") 
             escritor.writerow(lista)
             
-#Se completó la clase modificar ya que estaba incompleta
+#Se completó la clase modificar ya que estaba incompleta, utf8 no funcionaba correctamente, ya que cerraba el codigo al momento de modificar, se cambio a
+#latin1 y funciona
     @classmethod
     def modificar(cls, nombre_archivo, pos, objeto):
-        with open(nombre_archivo, "r", encoding="utf8") as archivo:
+        with open(nombre_archivo, "r", encoding="latin1") as archivo:
             lector = csv.reader(archivo, delimiter=",")
             lista_delistas = []
             for i, lista in enumerate(lector):
