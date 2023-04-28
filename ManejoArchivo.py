@@ -41,12 +41,28 @@ class GestionArchivo:
             lista = objeto.string().split(",")
             escritor = csv.writer(archivo,delimiter=",") 
             escritor.writerow(lista)
-
+            
+#Se completó la clase modificar ya que estaba incompleta
     @classmethod
-    def modificar(cls,nombre_archivo,objeto):
-        with open(nombre_archivo,"r",encoding="utf8") as archivo:
-            pass
+    def modificar(cls, nombre_archivo, pos, objeto):
+        with open(nombre_archivo, "r", encoding="utf8") as archivo:
+            lector = csv.reader(archivo, delimiter=",")
+            lista_delistas = []
+            for i, lista in enumerate(lector):
+                try:
+                    if i == pos:
+                        lista = objeto.string().split(",")
+                    lista_delistas.append(lista)
+                except Exception as e:
+                    print(e)
+                    return False
+        with open(nombre_archivo, "w", newline="") as archivo:
+            escritor = csv.writer(archivo, delimiter=",")
+            for lista in lista_delistas:
+                escritor.writerow(lista)
+        return True
 
+    
     @classmethod
     def eliminar(cls,nombre_archivo,i):       
         with open(nombre_archivo,'r+') as file:
