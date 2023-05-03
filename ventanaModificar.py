@@ -38,7 +38,7 @@ class ventanaModificar(QMainWindow):
         if self.ventanaUi.lineEdit.text() == "" or self.ventanaUi.lineEdit_2.text() == "" or self.ventanaUi.lineEdit_3.text() == "" or self.ventanaUi.lineEdit_4.text() == "" or self.ventanaUi.lineEdit_5.text() == "" or self.ventanaUi.lineEdit_6.text() == "" or self.ventanaUi.lineEdit_7.text() == "" or self.ventanaUi.lineEdit_8.text() == "" or self.ventanaUi.comboBox.currentIndex() < 1:
             qtw.QMessageBox.warning(self, "Hay campos sin rellenar", "Por favor, rellene sus datos correctamente.")
         else:
-            with open('TPAP-Clinica/clientes.csv', 'r', encoding="utf-8") as r:
+            with open('clientes.csv', 'r', encoding="utf-8") as r:
                 l = csv.reader(r, delimiter=",")
                 next(l)
                 i = 0
@@ -59,6 +59,6 @@ class ventanaModificar(QMainWindow):
             telefono = self.ventanaUi.lineEdit_7.text()
             domicilio = self.ventanaUi.lineEdit_8.text()
             self.cliente = Cliente(str(rut), str(nombres), str(apellidoPaterno), str(apellidoMaterno), str(genero), str(fechaNacimiento), str(email), str(telefono), str(domicilio))
-            GestionArchivo.modificar("TPAP-Clinica/clientes.csv",self.cont + 1, self.cliente)
+            GestionArchivo.modificar("clientes.csv",self.cont + 1, self.cliente)
             ventanaLista.ventanaLista().show()
             self.close()

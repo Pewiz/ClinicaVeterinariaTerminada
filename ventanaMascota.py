@@ -39,7 +39,7 @@ class ventanaMascota(QMainWindow):
             tamaño = self.ventanaUi.inputComboBoxTamano.currentText()
             volumen = self.ventanaUi.inputVolumen.value()
             self.mascota = Mascota(str(self.rut), str(nombre), str(especie), str(raza), str(fechaNacimiento), str(sexo), peso, str(tamaño), volumen)
-            GestionArchivo.insertar("TPAP-Clinica/mascotas.csv",self.mascota)
+            GestionArchivo.insertar("mascotas.csv",self.mascota)
             self.atras(flagg)      
         
     def atras(self, fla):

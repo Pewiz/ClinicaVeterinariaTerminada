@@ -8,6 +8,7 @@ import ventanaLista
 import ventanaModMascota
 import ventVerDatosM
 
+
 class ventListaMascota(QMainWindow):
     def __init__(self, rut, flag):
         super().__init__()
@@ -21,12 +22,14 @@ class ventListaMascota(QMainWindow):
         self.vent.btnAtras.clicked.connect(lambda: self.atras(self.flag))
         self.tablaMasc = self.vent.tableWidget
         self.vent.eliminar.clicked.connect(lambda: self.eliminar())
-        self.ventModificar = ventanaModMascota.ventanaModifMascota(self.poss, self.flag, self.rut)
-        self.vent.editar.clicked.connect(lambda: self.editar(self.ventModificar))
-        self.ventVer = ventVerDatosM.ventanaVerDatos(self.poss, self.flag, self.rut)
+        self.ventModificar = ventanaModMascota.ventanaModifMascota(
+            self.poss, self.flag, self.rut)
+        self.vent.editar.clicked.connect(
+            lambda: self.editar(self.ventModificar))
+        self.ventVer = ventVerDatosM.ventanaVerDatos(
+            self.poss, self.flag, self.rut)
         self.vent.verDatos.clicked.connect(lambda: self.verD(self.ventVer))
         self.tablaMasc.itemSelectionChanged.connect(self.seleccFila)
-                        
 
     def atras(self, fla):
         if fla == 0:
@@ -36,15 +39,15 @@ class ventListaMascota(QMainWindow):
         elif fla == 1:
             ventanaLista.ventanaLista().show()
             self.hide()
-    
+
     def actualizar(self):
         masc = []
-        with open('TPAP-Clinica/mascotas.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('mascotas.csv', 'r', encoding="ISO 8859-1") as r:
             lector = csv.reader(r, delimiter=",")
             for l in lector:
                 if l[0] == self.rut:
                     masc.append(l)
-        
+
         contFilas = len(masc)
         self.tablaMasc.setRowCount(contFilas)
         for i, mascota in enumerate(masc):
@@ -54,7 +57,7 @@ class ventListaMascota(QMainWindow):
             especie = qtw.QTableWidgetItem(mascota[2])
             self.tablaMasc.setItem(i, 1, especie)
         nombre = ""
-        with open('TPAP-Clinica/clientes.csv', 'r', encoding="latin1") as r:
+        with open('clientes.csv', 'r', encoding="latin1") as r:
             l = csv.reader(r, delimiter=",")
             next(l)
             for lis in l:
@@ -75,16 +78,16 @@ class ventListaMascota(QMainWindow):
             self.vent.editar.setEnabled(False)
             self.vent.eliminar.setEnabled(False)
             self.vent.btnAvanzar.setEnabled(False)
-            
+
     def eliminar(self):
         print(self.mascotaSelecc + 1)
         k = 0
         j = self.buscar(k)
-        GestionArchivo.eliminar("TPAP-Clinica/mascotas.csv", j)
+        GestionArchivo.eliminar("mascotas.csv", j)
         self.actualizar()
-    
+
     def buscar(self, pos):
-        with open('TPAP-Clinica/mascotas.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('mascotas.csv', 'r', encoding="ISO 8859-1") as r:
             lector = csv.reader(r, delimiter=",")
             next(lector)
             i = 0
@@ -94,7 +97,7 @@ class ventListaMascota(QMainWindow):
                     i = (i + 1)
                     if (i == self.mascotaSelecc+1):
                         return pos
-    
+
     def editar(self, vent):
         k = 0
         self.poss = self.buscar(k)
@@ -103,7 +106,7 @@ class ventListaMascota(QMainWindow):
         self.ventModificar.rut = self.rut
         vent.show()
         self.hide()
-    
+
     def verD(self, vent):
         k = 0
         self.poss = self.buscar(k)
