@@ -15,14 +15,17 @@ class uiVerD(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(700, 509)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(mainWindow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            mainWindow.sizePolicy().hasHeightForWidth())
         mainWindow.setSizePolicy(sizePolicy)
         mainWindow.setMinimumSize(QtCore.QSize(700, 509))
         mainWindow.setMaximumSize(QtCore.QSize(700, 509))
-        mainWindow.setStyleSheet("alternate-background-color: rgb(255, 255, 255);")
+        mainWindow.setStyleSheet(
+            "alternate-background-color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(mainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -44,7 +47,7 @@ class uiVerD(object):
         font.setWeight(50)
         self.label.setFont(font)
         self.label.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 10px;")
+                                 "border-radius: 10px;")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.frame_2 = QtWidgets.QFrame(self.frame)
@@ -75,7 +78,8 @@ class uiVerD(object):
         self.label_3 = QtWidgets.QLabel(self.frame_2)
         self.label_3.setGeometry(QtCore.QRect(30, 40, 61, 51))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("../../../../Downloads/Copia_de_Centro_Veterinario_Integral-removebg-preview.png"))
+        self.label_3.setPixmap(QtGui.QPixmap(
+            "imagenes\Atras.png"))
         self.label_3.setObjectName("label_3")
         self.label_logo = QtWidgets.QLabel(self.frame)
         self.label_logo.setGeometry(QtCore.QRect(210, 110, 291, 301))
@@ -84,7 +88,8 @@ class uiVerD(object):
         font.setPointSize(16)
         self.label_logo.setFont(font)
         self.label_logo.setText("")
-        self.label_logo.setPixmap(QtGui.QPixmap("TPAP-Clinica/imagenes/Logo-removebg-preview.png"))
+        self.label_logo.setPixmap(QtGui.QPixmap(
+            "imagenes\Logo-removebg-preview.png"))
         self.label_logo.setObjectName("label_logo")
         self.btnAtras = QtWidgets.QPushButton(self.frame)
         self.btnAtras.setEnabled(True)
@@ -95,7 +100,7 @@ class uiVerD(object):
         self.btnAtras.setFont(font)
         self.btnAtras.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnAtras.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                    "border-radius: 5px;")
         self.btnAtras.setCheckable(False)
         self.btnAtras.setObjectName("btnAtras")
         self.btnMenuPrincipal = QtWidgets.QPushButton(self.frame)
@@ -105,9 +110,10 @@ class uiVerD(object):
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         self.btnMenuPrincipal.setFont(font)
-        self.btnMenuPrincipal.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btnMenuPrincipal.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnMenuPrincipal.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                            "border-radius: 5px;")
         self.btnMenuPrincipal.setCheckable(False)
         self.btnMenuPrincipal.setObjectName("btnMenuPrincipal")
         self.labelNombreC = QtWidgets.QLabel(self.frame)
@@ -211,7 +217,7 @@ class uiVerD(object):
         font.setWeight(50)
         self.label_12.setFont(font)
         self.label_12.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 10px;")
+                                    "border-radius: 10px;")
         self.label_12.setAlignment(QtCore.Qt.AlignCenter)
         self.label_12.setObjectName("label_12")
         self.label_13 = QtWidgets.QLabel(self.frame)
@@ -313,8 +319,10 @@ class uiVerD(object):
         mainWindow.setWindowTitle(_translate("mainWindow", "Clinica CVI"))
         self.label.setText(_translate("mainWindow", "Datos Personales"))
         self.label_9.setText(_translate("mainWindow", "Cliente"))
-        self.btnAtras.setText(_translate("mainWindow", "Volver a Lista Cliente"))
-        self.btnMenuPrincipal.setText(_translate("mainWindow", "Volver a Administración"))
+        self.btnAtras.setText(_translate(
+            "mainWindow", "Volver a Lista Cliente"))
+        self.btnMenuPrincipal.setText(_translate(
+            "mainWindow", "Volver a Administración"))
         self.labelNombreC.setText(_translate("mainWindow", "Nombre Completo"))
         self.labelRut.setText(_translate("mainWindow", "12345678-9"))
         self.label_5.setText(_translate("mainWindow", "Nombre Completo:"))
@@ -327,7 +335,8 @@ class uiVerD(object):
         self.label_13.setText(_translate("mainWindow", "Dirección:"))
         self.labelDireccion.setText(_translate("mainWindow", "Dirección"))
         self.label_15.setText(_translate("mainWindow", "Correo Electronico:"))
-        self.labelCorreo.setText(_translate("mainWindow", "Correo Electronico"))
+        self.labelCorreo.setText(_translate(
+            "mainWindow", "Correo Electronico"))
         self.label_17.setText(_translate("mainWindow", "Telefono:"))
         self.labelTelefono.setText(_translate("mainWindow", "123456789"))
 

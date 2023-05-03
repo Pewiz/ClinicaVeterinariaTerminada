@@ -39,9 +39,10 @@ class uiMod(object):
         font.setWeight(50)
         self.subMenu.setFont(font)
         self.subMenu.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 15px;\n"
-"")
-        self.subMenu.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+                                   "border-radius: 15px;\n"
+                                   "")
+        self.subMenu.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.subMenu.setObjectName("subMenu")
         self.Titulo = QtWidgets.QLabel(self.frame)
         self.Titulo.setGeometry(QtCore.QRect(0, 0, 711, 80))
@@ -57,7 +58,8 @@ class uiMod(object):
         self.FondoPerrito = QtWidgets.QLabel(self.frame)
         self.FondoPerrito.setGeometry(QtCore.QRect(390, 120, 321, 311))
         self.FondoPerrito.setText("")
-        self.FondoPerrito.setPixmap(QtGui.QPixmap("TPAP-Clinica/imagenes/Logo-removebg-preview.png"))
+        self.FondoPerrito.setPixmap(QtGui.QPixmap(
+            "imagenes\Logo-removebg-preview.png"))
         self.FondoPerrito.setScaledContents(True)
         self.FondoPerrito.setObjectName("FondoPerrito")
         self.labelNombre = QtWidgets.QLabel(self.frame)
@@ -153,7 +155,7 @@ class uiMod(object):
         self.btnCancelar.setFont(font)
         self.btnCancelar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnCancelar.setStyleSheet("border-radius: 13px;\n"
-"background-color: rgb(79, 163, 166);")
+                                       "background-color: rgb(79, 163, 166);")
         self.btnCancelar.setObjectName("btnCancelar")
         self.btnModificar = QtWidgets.QPushButton(self.frame)
         self.btnModificar.setGeometry(QtCore.QRect(520, 450, 181, 41))
@@ -163,9 +165,10 @@ class uiMod(object):
         font.setBold(True)
         font.setWeight(75)
         self.btnModificar.setFont(font)
-        self.btnModificar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btnModificar.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnModificar.setStyleSheet("border-radius: 13px;\n"
-"background-color: rgb(79, 163, 166);")
+                                        "background-color: rgb(79, 163, 166);")
         self.btnModificar.setObjectName("btnModificar")
         self.inputNombre = QtWidgets.QLineEdit(self.frame)
         self.inputNombre.setGeometry(QtCore.QRect(20, 177, 171, 31))
@@ -243,20 +246,31 @@ class uiMod(object):
         self.labelEspecie.setText(_translate("MainWindow", "Especie"))
         self.labelRaza.setText(_translate("MainWindow", "Raza"))
         self.labelSexo.setText(_translate("MainWindow", "Sexo"))
-        self.inputComboBoxSexo.setItemText(0, _translate("MainWindow", "Elegir"))
-        self.inputComboBoxSexo.setItemText(1, _translate("MainWindow", "Macho"))
-        self.inputComboBoxSexo.setItemText(2, _translate("MainWindow", "Hembra"))
-        self.labelFechaNacimiento.setText(_translate("MainWindow", "Fecha de nacimiento"))
+        self.inputComboBoxSexo.setItemText(
+            0, _translate("MainWindow", "Elegir"))
+        self.inputComboBoxSexo.setItemText(
+            1, _translate("MainWindow", "Macho"))
+        self.inputComboBoxSexo.setItemText(
+            2, _translate("MainWindow", "Hembra"))
+        self.labelFechaNacimiento.setText(
+            _translate("MainWindow", "Fecha de nacimiento"))
         self.labelPeso.setText(_translate("MainWindow", "Peso"))
         self.labelSize.setText(_translate("MainWindow", "Tamaño"))
         self.btnCancelar.setText(_translate("MainWindow", "Cancelar y volver"))
-        self.btnModificar.setText(_translate("MainWindow", "Modificar mascota"))
-        self.inputComboBoxTamano.setItemText(0, _translate("MainWindow", "Elegir"))
-        self.inputComboBoxTamano.setItemText(1, _translate("MainWindow", "Muy Pequeño"))
-        self.inputComboBoxTamano.setItemText(2, _translate("MainWindow", "Pequeño"))
-        self.inputComboBoxTamano.setItemText(3, _translate("MainWindow", "Mediano"))
-        self.inputComboBoxTamano.setItemText(4, _translate("MainWindow", "Grande"))
-        self.inputComboBoxTamano.setItemText(5, _translate("MainWindow", "Muy Grande"))
+        self.btnModificar.setText(_translate(
+            "MainWindow", "Modificar mascota"))
+        self.inputComboBoxTamano.setItemText(
+            0, _translate("MainWindow", "Elegir"))
+        self.inputComboBoxTamano.setItemText(
+            1, _translate("MainWindow", "Muy Pequeño"))
+        self.inputComboBoxTamano.setItemText(
+            2, _translate("MainWindow", "Pequeño"))
+        self.inputComboBoxTamano.setItemText(
+            3, _translate("MainWindow", "Mediano"))
+        self.inputComboBoxTamano.setItemText(
+            4, _translate("MainWindow", "Grande"))
+        self.inputComboBoxTamano.setItemText(
+            5, _translate("MainWindow", "Muy Grande"))
         self.labelPeso_2.setText(_translate("MainWindow", "Volumen"))
 
 

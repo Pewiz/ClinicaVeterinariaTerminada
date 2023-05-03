@@ -15,14 +15,17 @@ class uiVentCliente(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(700, 509)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(mainWindow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            mainWindow.sizePolicy().hasHeightForWidth())
         mainWindow.setSizePolicy(sizePolicy)
         mainWindow.setMinimumSize(QtCore.QSize(700, 509))
         mainWindow.setMaximumSize(QtCore.QSize(700, 509))
-        mainWindow.setStyleSheet("alternate-background-color: rgb(255, 255, 255);")
+        mainWindow.setStyleSheet(
+            "alternate-background-color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(mainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -132,7 +135,7 @@ class uiVentCliente(object):
         self.BtnAtras.setFont(font)
         self.BtnAtras.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.BtnAtras.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                    "border-radius: 5px;")
         self.BtnAtras.setCheckable(False)
         self.BtnAtras.setObjectName("BtnAtras")
         self.comboBox = QtWidgets.QComboBox(self.frame)
@@ -161,7 +164,8 @@ class uiVentCliente(object):
         font.setPointSize(16)
         self.label_logo.setFont(font)
         self.label_logo.setText("")
-        self.label_logo.setPixmap(QtGui.QPixmap("TPAP-Clinica\imagenes\Logo-removebg-preview.png"))
+        self.label_logo.setPixmap(QtGui.QPixmap(
+            "imagenes\Logo-removebg-preview.png"))
         self.label_logo.setObjectName("label_logo")
         self.btnAgMas = QtWidgets.QPushButton(self.frame)
         self.btnAgMas.setEnabled(True)
@@ -172,7 +176,7 @@ class uiVentCliente(object):
         self.btnAgMas.setFont(font)
         self.btnAgMas.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnAgMas.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                    "border-radius: 5px;")
         self.btnAgMas.setCheckable(False)
         self.btnAgMas.setObjectName("btnAgMas")
         self.lineEdit_6 = QtWidgets.QLineEdit(self.frame)

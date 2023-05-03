@@ -44,7 +44,8 @@ class uiAdmin(object):
         self.label_3 = QtWidgets.QLabel(self.frame)
         self.label_3.setGeometry(QtCore.QRect(150, -30, 291, 371))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("TPAP-Clinica/imagenes/Logo-removebg-preview.png"))
+        self.label_3.setPixmap(QtGui.QPixmap(
+            "imagenes\Logo-removebg-preview.png"))
         self.label_3.setObjectName("label_3")
         self.AGREGARPACIENTE = QtWidgets.QPushButton(self.frame)
         self.AGREGARPACIENTE.setGeometry(QtCore.QRect(30, 110, 171, 71))
@@ -54,9 +55,10 @@ class uiAdmin(object):
         font.setBold(False)
         font.setWeight(50)
         self.AGREGARPACIENTE.setFont(font)
-        self.AGREGARPACIENTE.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.AGREGARPACIENTE.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.AGREGARPACIENTE.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                           "border-radius: 5px;")
         self.AGREGARPACIENTE.setObjectName("AGREGARPACIENTE")
         self.BUSCARPACIENTE = QtWidgets.QPushButton(self.frame)
         self.BUSCARPACIENTE.setGeometry(QtCore.QRect(390, 110, 171, 71))
@@ -66,9 +68,10 @@ class uiAdmin(object):
         font.setBold(False)
         font.setWeight(50)
         self.BUSCARPACIENTE.setFont(font)
-        self.BUSCARPACIENTE.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.BUSCARPACIENTE.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.BUSCARPACIENTE.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                          "border-radius: 5px;")
         self.BUSCARPACIENTE.setObjectName("BUSCARPACIENTE")
         self.frame.raise_()
         self.label.raise_()
@@ -82,8 +85,10 @@ class uiAdmin(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Clinica CVI"))
         self.label_2.setText(_translate("MainWindow", "Administracion"))
-        self.AGREGARPACIENTE.setText(_translate("MainWindow", "Agregar paciente"))
-        self.BUSCARPACIENTE.setText(_translate("MainWindow", "Buscar paciente"))
+        self.AGREGARPACIENTE.setText(
+            _translate("MainWindow", "Agregar paciente"))
+        self.BUSCARPACIENTE.setText(
+            _translate("MainWindow", "Buscar paciente"))
 
 
 if __name__ == "__main__":

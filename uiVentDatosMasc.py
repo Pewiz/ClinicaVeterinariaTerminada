@@ -39,9 +39,10 @@ class uiDatos(object):
         font.setWeight(50)
         self.subMenu.setFont(font)
         self.subMenu.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 15px;\n"
-"")
-        self.subMenu.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+                                   "border-radius: 15px;\n"
+                                   "")
+        self.subMenu.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.subMenu.setObjectName("subMenu")
         self.Titulo = QtWidgets.QLabel(self.frame)
         self.Titulo.setGeometry(QtCore.QRect(0, 0, 711, 80))
@@ -57,7 +58,8 @@ class uiDatos(object):
         self.FondoPerrito = QtWidgets.QLabel(self.frame)
         self.FondoPerrito.setGeometry(QtCore.QRect(390, 120, 321, 311))
         self.FondoPerrito.setText("")
-        self.FondoPerrito.setPixmap(QtGui.QPixmap("TPAP-Clinica/imagenes/Logo-removebg-preview.png"))
+        self.FondoPerrito.setPixmap(QtGui.QPixmap(
+            "imagenes\Logo-removebg-preview.png"))
         self.FondoPerrito.setScaledContents(True)
         self.FondoPerrito.setObjectName("FondoPerrito")
         self.labelNombre = QtWidgets.QLabel(self.frame)
@@ -153,7 +155,7 @@ class uiDatos(object):
         self.btnAtras.setFont(font)
         self.btnAtras.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnAtras.setStyleSheet("border-radius: 13px;\n"
-"background-color: rgb(79, 163, 166);")
+                                    "background-color: rgb(79, 163, 166);")
         self.btnAtras.setObjectName("btnAtras")
         self.btnAgregarMascota = QtWidgets.QPushButton(self.frame)
         self.btnAgregarMascota.setGeometry(QtCore.QRect(520, 450, 181, 41))
@@ -163,9 +165,10 @@ class uiDatos(object):
         font.setBold(True)
         font.setWeight(75)
         self.btnAgregarMascota.setFont(font)
-        self.btnAgregarMascota.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btnAgregarMascota.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnAgregarMascota.setStyleSheet("border-radius: 13px;\n"
-"background-color: rgb(79, 163, 166);")
+                                             "background-color: rgb(79, 163, 166);")
         self.btnAgregarMascota.setObjectName("btnAgregarMascota")
         self.inputNombre = QtWidgets.QLineEdit(self.frame)
         self.inputNombre.setGeometry(QtCore.QRect(20, 177, 171, 31))
@@ -254,20 +257,31 @@ class uiDatos(object):
         self.labelEspecie.setText(_translate("MainWindow", "Especie"))
         self.labelRaza.setText(_translate("MainWindow", "Raza"))
         self.labelSexo.setText(_translate("MainWindow", "Sexo"))
-        self.inputComboBoxSexo.setItemText(0, _translate("MainWindow", "Elegir"))
-        self.inputComboBoxSexo.setItemText(1, _translate("MainWindow", "Macho"))
-        self.inputComboBoxSexo.setItemText(2, _translate("MainWindow", "Hembra"))
-        self.labelFechaNacimiento.setText(_translate("MainWindow", "Fecha de nacimiento"))
+        self.inputComboBoxSexo.setItemText(
+            0, _translate("MainWindow", "Elegir"))
+        self.inputComboBoxSexo.setItemText(
+            1, _translate("MainWindow", "Macho"))
+        self.inputComboBoxSexo.setItemText(
+            2, _translate("MainWindow", "Hembra"))
+        self.labelFechaNacimiento.setText(
+            _translate("MainWindow", "Fecha de nacimiento"))
         self.labelPeso.setText(_translate("MainWindow", "Peso"))
         self.labelSize.setText(_translate("MainWindow", "Tamaño"))
         self.btnAtras.setText(_translate("MainWindow", "Atras"))
-        self.btnAgregarMascota.setText(_translate("MainWindow", "Agregar mascota"))
-        self.inputComboBoxTamano.setItemText(0, _translate("MainWindow", "Elegir"))
-        self.inputComboBoxTamano.setItemText(1, _translate("MainWindow", "Muy Pequeño"))
-        self.inputComboBoxTamano.setItemText(2, _translate("MainWindow", "Pequeño"))
-        self.inputComboBoxTamano.setItemText(3, _translate("MainWindow", "Mediano"))
-        self.inputComboBoxTamano.setItemText(4, _translate("MainWindow", "Grande"))
-        self.inputComboBoxTamano.setItemText(5, _translate("MainWindow", "Muy Grande"))
+        self.btnAgregarMascota.setText(
+            _translate("MainWindow", "Agregar mascota"))
+        self.inputComboBoxTamano.setItemText(
+            0, _translate("MainWindow", "Elegir"))
+        self.inputComboBoxTamano.setItemText(
+            1, _translate("MainWindow", "Muy Pequeño"))
+        self.inputComboBoxTamano.setItemText(
+            2, _translate("MainWindow", "Pequeño"))
+        self.inputComboBoxTamano.setItemText(
+            3, _translate("MainWindow", "Mediano"))
+        self.inputComboBoxTamano.setItemText(
+            4, _translate("MainWindow", "Grande"))
+        self.inputComboBoxTamano.setItemText(
+            5, _translate("MainWindow", "Muy Grande"))
         self.labelVolumen.setText(_translate("MainWindow", "Volumen"))
         self.labelKg.setText(_translate("MainWindow", "Kg"))
 

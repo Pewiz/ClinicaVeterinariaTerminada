@@ -15,14 +15,17 @@ class uiVerDatos(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(700, 509)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(mainWindow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            mainWindow.sizePolicy().hasHeightForWidth())
         mainWindow.setSizePolicy(sizePolicy)
         mainWindow.setMinimumSize(QtCore.QSize(700, 509))
         mainWindow.setMaximumSize(QtCore.QSize(700, 509))
-        mainWindow.setStyleSheet("alternate-background-color: rgb(255, 255, 255);")
+        mainWindow.setStyleSheet(
+            "alternate-background-color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(mainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -63,7 +66,7 @@ class uiVerDatos(object):
         self.label_3 = QtWidgets.QLabel(self.frame_2)
         self.label_3.setGeometry(QtCore.QRect(30, 40, 61, 51))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("../../../../Downloads/Copia_de_Centro_Veterinario_Integral-removebg-preview.png"))
+        self.label_3.setPixmap(QtGui.QPixmap("imagenes\Atras.png"))
         self.label_3.setObjectName("label_3")
         self.label_logo = QtWidgets.QLabel(self.frame)
         self.label_logo.setGeometry(QtCore.QRect(210, 110, 291, 301))
@@ -72,7 +75,8 @@ class uiVerDatos(object):
         font.setPointSize(16)
         self.label_logo.setFont(font)
         self.label_logo.setText("")
-        self.label_logo.setPixmap(QtGui.QPixmap("TPAP-Clinica/imagenes/Logo-removebg-preview.png"))
+        self.label_logo.setPixmap(QtGui.QPixmap(
+            "imagenes\Logo-removebg-preview.png"))
         self.label_logo.setObjectName("label_logo")
         self.btnLista = QtWidgets.QPushButton(self.frame)
         self.btnLista.setEnabled(True)
@@ -83,7 +87,7 @@ class uiVerDatos(object):
         self.btnLista.setFont(font)
         self.btnLista.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnLista.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                    "border-radius: 5px;")
         self.btnLista.setCheckable(False)
         self.btnLista.setObjectName("btnLista")
         self.btnAdmin = QtWidgets.QPushButton(self.frame)
@@ -95,7 +99,7 @@ class uiVerDatos(object):
         self.btnAdmin.setFont(font)
         self.btnAdmin.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnAdmin.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                    "border-radius: 5px;")
         self.btnAdmin.setCheckable(False)
         self.btnAdmin.setObjectName("btnAdmin")
         self.labelNombre = QtWidgets.QLabel(self.frame)
@@ -336,8 +340,10 @@ class uiVerDatos(object):
         _translate = QtCore.QCoreApplication.translate
         mainWindow.setWindowTitle(_translate("mainWindow", "Clinica CVI"))
         self.label_9.setText(_translate("mainWindow", "Mascota"))
-        self.btnLista.setText(_translate("mainWindow", "Volver a Lista Mascotas"))
-        self.btnAdmin.setText(_translate("mainWindow", "Volver a Administración"))
+        self.btnLista.setText(_translate(
+            "mainWindow", "Volver a Lista Mascotas"))
+        self.btnAdmin.setText(_translate(
+            "mainWindow", "Volver a Administración"))
         self.labelNombre.setText(_translate("mainWindow", "Nombre"))
         self.labelEspecie.setText(_translate("mainWindow", "Especie"))
         self.label_5.setText(_translate("mainWindow", "Nombre:"))

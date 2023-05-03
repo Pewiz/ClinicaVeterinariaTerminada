@@ -15,12 +15,15 @@ class uiVentLista(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(700, 509)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(mainWindow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            mainWindow.sizePolicy().hasHeightForWidth())
         mainWindow.setSizePolicy(sizePolicy)
-        mainWindow.setStyleSheet("alternate-background-color: rgb(255, 255, 255);")
+        mainWindow.setStyleSheet(
+            "alternate-background-color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(mainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -42,7 +45,7 @@ class uiVentLista(object):
         font.setWeight(50)
         self.label.setFont(font)
         self.label.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                 "border-radius: 5px;")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.frame_2 = QtWidgets.QFrame(self.frame)
@@ -72,7 +75,7 @@ class uiVentLista(object):
         self.label_3 = QtWidgets.QLabel(self.frame_2)
         self.label_3.setGeometry(QtCore.QRect(30, 40, 61, 51))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("TPAP-Clinica/imagenes/Atras.png"))
+        self.label_3.setPixmap(QtGui.QPixmap("imagenes\Atras.png"))
         self.label_3.setObjectName("label_3")
         self.btnAtras = QtWidgets.QPushButton(self.frame_2)
         self.btnAtras.setGeometry(QtCore.QRect(50, 50, 31, 31))
@@ -92,7 +95,7 @@ class uiVentLista(object):
         self.BtnVerDatos.setFont(font)
         self.BtnVerDatos.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.BtnVerDatos.setStyleSheet("background-color: rgb(0, 191, 99);\n"
-"border-radius: 5px;")
+                                       "border-radius: 5px;")
         self.BtnVerDatos.setCheckable(False)
         self.BtnVerDatos.setObjectName("BtnVerDatos")
         self.label_logo = QtWidgets.QLabel(self.frame)
@@ -102,7 +105,8 @@ class uiVentLista(object):
         font.setPointSize(16)
         self.label_logo.setFont(font)
         self.label_logo.setText("")
-        self.label_logo.setPixmap(QtGui.QPixmap("TPAP-Clinica/imagenes/Logo-removebg-preview.png"))
+        self.label_logo.setPixmap(QtGui.QPixmap(
+            "imagenes\Logo-removebg-preview.png"))
         self.label_logo.setObjectName("label_logo")
         self.btnAvanzar = QtWidgets.QPushButton(self.frame)
         self.btnAvanzar.setEnabled(True)
@@ -113,7 +117,7 @@ class uiVentLista(object):
         self.btnAvanzar.setFont(font)
         self.btnAvanzar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnAvanzar.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                      "border-radius: 5px;")
         self.btnAvanzar.setCheckable(False)
         self.btnAvanzar.setObjectName("btnAvanzar")
         self.BtnEditar = QtWidgets.QPushButton(self.frame)
@@ -127,7 +131,7 @@ class uiVentLista(object):
         self.BtnEditar.setFont(font)
         self.BtnEditar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.BtnEditar.setStyleSheet("background-color: rgb(255, 222, 89);\n"
-"border-radius: 5px;")
+                                     "border-radius: 5px;")
         self.BtnEditar.setCheckable(False)
         self.BtnEditar.setObjectName("BtnEditar")
         self.BtnEliminar = QtWidgets.QPushButton(self.frame)
@@ -139,7 +143,7 @@ class uiVentLista(object):
         self.BtnEliminar.setFont(font)
         self.BtnEliminar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.BtnEliminar.setStyleSheet("background-color: rgb(255, 49, 49);\n"
-"border-radius: 5px;")
+                                       "border-radius: 5px;")
         self.BtnEliminar.setCheckable(False)
         self.BtnEliminar.setObjectName("BtnEliminar")
         self.tableWidget = QtWidgets.QTableWidget(self.frame)
@@ -164,7 +168,8 @@ class uiVentLista(object):
         font.setWeight(50)
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("")
-        self.label_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_2.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_2.setObjectName("label_2")
         self.lineEdit = QtWidgets.QLineEdit(self.frame)
         self.lineEdit.setGeometry(QtCore.QRect(270, 400, 151, 31))
@@ -179,7 +184,7 @@ class uiVentLista(object):
         self.btnAgregarM.setFont(font)
         self.btnAgregarM.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnAgregarM.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                       "border-radius: 5px;")
         self.btnAgregarM.setCheckable(False)
         self.btnAgregarM.setObjectName("btnAgregarM")
         self.frame_2.raise_()
@@ -215,7 +220,8 @@ class uiVentLista(object):
         item.setText(_translate("mainWindow", "Apellido Paterno"))
         item = self.tableWidget.horizontalHeaderItem(3)
         item.setText(_translate("mainWindow", "Apellido Materno"))
-        self.label_2.setText(_translate("mainWindow", "Buscar Rut (Sin digito Verificador):"))
+        self.label_2.setText(_translate(
+            "mainWindow", "Buscar Rut (Sin digito Verificador):"))
         self.btnAgregarM.setText(_translate("mainWindow", "Agregar mascota"))
 
 

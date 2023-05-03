@@ -15,14 +15,17 @@ class uiVentana(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(578, 418)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(mainWindow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            mainWindow.sizePolicy().hasHeightForWidth())
         mainWindow.setSizePolicy(sizePolicy)
         mainWindow.setMinimumSize(QtCore.QSize(578, 418))
         mainWindow.setMaximumSize(QtCore.QSize(578, 418))
-        mainWindow.setStyleSheet("alternate-background-color: rgb(255, 255, 255);")
+        mainWindow.setStyleSheet(
+            "alternate-background-color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(mainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -45,7 +48,7 @@ class uiVentana(object):
         self.label.setFont(font)
         self.label.setCursor(QtGui.QCursor(QtCore.Qt.ForbiddenCursor))
         self.label.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                 "border-radius: 5px;")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.frame_2 = QtWidgets.QFrame(self.frame)
@@ -76,7 +79,8 @@ class uiVentana(object):
         self.label_3 = QtWidgets.QLabel(self.frame_2)
         self.label_3.setGeometry(QtCore.QRect(30, 40, 61, 51))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("../../../../Downloads/Copia_de_Centro_Veterinario_Integral-removebg-preview.png"))
+        self.label_3.setPixmap(QtGui.QPixmap(
+            "imagenes\Atras.png"))
         self.label_3.setObjectName("label_3")
         self.label_logo = QtWidgets.QLabel(self.frame)
         self.label_logo.setGeometry(QtCore.QRect(130, 150, 281, 271))
@@ -85,7 +89,8 @@ class uiVentana(object):
         font.setPointSize(16)
         self.label_logo.setFont(font)
         self.label_logo.setText("")
-        self.label_logo.setPixmap(QtGui.QPixmap("TPAP-Clinica/imagenes/Logo-removebg-preview.png"))
+        self.label_logo.setPixmap(QtGui.QPixmap(
+            "imagenes\Logo-removebg-preview.png"))
         self.label_logo.setObjectName("label_logo")
         self.btnLista = QtWidgets.QPushButton(self.frame)
         self.btnLista.setEnabled(True)
@@ -96,7 +101,7 @@ class uiVentana(object):
         self.btnLista.setFont(font)
         self.btnLista.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnLista.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                    "border-radius: 5px;")
         self.btnLista.setCheckable(False)
         self.btnLista.setObjectName("btnLista")
         self.btnAgMasc = QtWidgets.QPushButton(self.frame)
@@ -108,7 +113,7 @@ class uiVentana(object):
         self.btnAgMasc.setFont(font)
         self.btnAgMasc.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnAgMasc.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                     "border-radius: 5px;")
         self.btnAgMasc.setCheckable(False)
         self.btnAgMasc.setObjectName("btnAgMasc")
         self.label_logo.raise_()
@@ -138,4 +143,3 @@ if __name__ == "__main__":
     ui.setupUi(mainWindow)
     mainWindow.show()
     sys.exit(app.exec_())
-

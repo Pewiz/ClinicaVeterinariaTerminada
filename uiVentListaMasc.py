@@ -15,12 +15,15 @@ class uiVent(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(700, 509)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(mainWindow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            mainWindow.sizePolicy().hasHeightForWidth())
         mainWindow.setSizePolicy(sizePolicy)
-        mainWindow.setStyleSheet("alternate-background-color: rgb(255, 255, 255);")
+        mainWindow.setStyleSheet(
+            "alternate-background-color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(mainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -42,7 +45,7 @@ class uiVent(object):
         font.setWeight(50)
         self.label.setFont(font)
         self.label.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                 "border-radius: 5px;")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.frame_2 = QtWidgets.QFrame(self.frame)
@@ -72,7 +75,7 @@ class uiVent(object):
         self.label_3 = QtWidgets.QLabel(self.frame_2)
         self.label_3.setGeometry(QtCore.QRect(30, 40, 61, 51))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("TPAP-Clinica/imagenes/Atras.png"))
+        self.label_3.setPixmap(QtGui.QPixmap("imagenes\Atras.png"))
         self.label_3.setObjectName("label_3")
         self.btnAtras = QtWidgets.QPushButton(self.frame_2)
         self.btnAtras.setGeometry(QtCore.QRect(50, 50, 31, 31))
@@ -92,7 +95,7 @@ class uiVent(object):
         self.verDatos.setFont(font)
         self.verDatos.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.verDatos.setStyleSheet("background-color: rgb(0, 191, 99);\n"
-"border-radius: 5px;")
+                                    "border-radius: 5px;")
         self.verDatos.setCheckable(False)
         self.verDatos.setObjectName("verDatos")
         self.label_logo = QtWidgets.QLabel(self.frame)
@@ -102,7 +105,8 @@ class uiVent(object):
         font.setPointSize(16)
         self.label_logo.setFont(font)
         self.label_logo.setText("")
-        self.label_logo.setPixmap(QtGui.QPixmap("TPAP-Clinica/imagenes/Logo-removebg-preview.png"))
+        self.label_logo.setPixmap(QtGui.QPixmap(
+            "imagenes\Logo-removebg-preview.png"))
         self.label_logo.setObjectName("label_logo")
         self.btnAvanzar = QtWidgets.QPushButton(self.frame)
         self.btnAvanzar.setEnabled(True)
@@ -113,7 +117,7 @@ class uiVent(object):
         self.btnAvanzar.setFont(font)
         self.btnAvanzar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnAvanzar.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                      "border-radius: 5px;")
         self.btnAvanzar.setCheckable(False)
         self.btnAvanzar.setObjectName("btnAvanzar")
         self.editar = QtWidgets.QPushButton(self.frame)
@@ -127,7 +131,7 @@ class uiVent(object):
         self.editar.setFont(font)
         self.editar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.editar.setStyleSheet("background-color: rgb(255, 222, 89);\n"
-"border-radius: 5px;")
+                                  "border-radius: 5px;")
         self.editar.setCheckable(False)
         self.editar.setObjectName("editar")
         self.eliminar = QtWidgets.QPushButton(self.frame)
@@ -139,7 +143,7 @@ class uiVent(object):
         self.eliminar.setFont(font)
         self.eliminar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.eliminar.setStyleSheet("background-color: rgb(255, 49, 49);\n"
-"border-radius: 5px;")
+                                    "border-radius: 5px;")
         self.eliminar.setCheckable(False)
         self.eliminar.setObjectName("eliminar")
         self.tableWidget = QtWidgets.QTableWidget(self.frame)
@@ -160,7 +164,7 @@ class uiVent(object):
         font.setWeight(50)
         self.nCliente.setFont(font)
         self.nCliente.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-"border-radius: 5px;")
+                                    "border-radius: 5px;")
         self.nCliente.setAlignment(QtCore.Qt.AlignCenter)
         self.nCliente.setObjectName("nCliente")
         self.frame_2.raise_()
