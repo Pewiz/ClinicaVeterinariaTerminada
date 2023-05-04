@@ -17,7 +17,7 @@ class ventanaVerDatos(QMainWindow):
         self.ventanaUi.btnAdmin.clicked.connect(lambda: self.menuP())
         
     def actualizar(self):
-        with open('TPAP-Clinica/mascotas.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('mascotas.csv', 'r', encoding="ISO 8859-1") as r:
             lector = csv.reader(r, delimiter=",")
             next(lector)
             i = 0
