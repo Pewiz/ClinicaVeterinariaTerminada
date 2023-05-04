@@ -1,3 +1,4 @@
+#ESTE ARCHIVO ES EL MAIN DEL CODIGO, EJECUTAR DESDE AQUI
 from PyQt5.QtWidgets import QMainWindow, QApplication
 import sys
 from uiAdministracion import uiAdmin
