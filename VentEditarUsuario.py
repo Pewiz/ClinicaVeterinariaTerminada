@@ -165,7 +165,7 @@ class Ui_VentVerDatosUser(object):
 "border-color: rgb(0, 51, 102);\n"
 "border-radius: 5px;")
         self.btnAsignarHorario.setObjectName("btnAsignarHorario")
-        self.btnAsignarHorario.clicked.connect(lambda: self.cambiarVent(Ui_VentAsignarHorario,self._usuario))
+        self.btnAsignarHorario.clicked.connect(lambda: self.cambiarVent(Ui_VentAsignarHorario,self._usuario,))
 
         self.retranslateUi(VentVerDatosUser)
         QtCore.QMetaObject.connectSlotsByName(VentVerDatosUser)
@@ -207,6 +207,12 @@ class Ui_VentVerDatosUser(object):
         self.ui.setupUi(self.nombre_Vent)
         self.nombre_Vent.show()
 
+    def cambiarVentNormal(self,nombre_Vent):
+        self.nombre_Vent = QtWidgets.QMainWindow()
+        self.ui = nombre_Vent()
+        self.ui.setupUi(self.nombre_Vent)
+        self.nombre_Vent.show()
+
     def onActionGuardarCambios(self):
         self._usuario.nombres = self.nombresLnEdit.text()
         self._usuario.apellidoPa = self.apellidoPaLnE.text()
@@ -244,7 +250,7 @@ class Ui_VentVerDatosUser(object):
             self.experienciaLnE.setEnabled(False)
             self.emailLnE.setEnabled(False)
             self.alertBox("Cambios guardados correctamente","Guardado de Cambios")
-            self.cambiarVent(self.nombreVent)
+            self.cambiarVentNormal(self.nombreVent)
         
 
 
