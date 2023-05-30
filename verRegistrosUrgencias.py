@@ -23,6 +23,7 @@ class Ui_horasUrgencias(object):
         self.botonAtras = QtWidgets.QPushButton(self.centralwidget)
         self.botonAtras.setGeometry(QtCore.QRect(30, 370, 75, 23))
         self.botonAtras.setObjectName("botonAtras")
+        self.botonAtras.clicked.connect(horasUrgencias.close)
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(30, 20, 101, 71))
         self.label.setObjectName("label")

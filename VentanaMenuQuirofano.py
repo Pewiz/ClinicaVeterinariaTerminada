@@ -31,6 +31,7 @@ class Ui_VentanaMenuQuirofano(object):
         self.botonAtras = QtWidgets.QPushButton(self.centralwidget)
         self.botonAtras.setGeometry(QtCore.QRect(20, 300, 75, 23))
         self.botonAtras.setObjectName("botonAtras")
+        self.botonAtras.clicked.connect(VentanaMenuQuirofano.close)
         VentanaMenuQuirofano.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(VentanaMenuQuirofano)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))

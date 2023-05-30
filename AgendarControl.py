@@ -23,7 +23,7 @@ class Ui_agendarControl(object):
         self.botonAtras.setGeometry(QtCore.QRect(20, 320, 75, 23))
         self.botonAtras.setStyleSheet("background-color: rgb(0, 170, 127);")
         self.botonAtras.setObjectName("botonAtras")
-        #self.botonAtras.clicked.connect(self.cerrarVentana)
+        self.botonAtras.clicked.connect(agendarControl.close)
         self.titulo = QtWidgets.QLabel(self.centralwidget)
         self.titulo.setGeometry(QtCore.QRect(100, 0, 391, 61))
         font = QtGui.QFont()

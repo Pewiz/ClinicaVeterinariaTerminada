@@ -31,6 +31,7 @@ class VentanaEspecialistaMenu(object):
         self.botonAtras = QtWidgets.QPushButton(self.centralwidget)
         self.botonAtras.setGeometry(QtCore.QRect(20, 300, 75, 23))
         self.botonAtras.setObjectName("botonAtras")
+        self.botonAtras.clicked.connect(MainWindow.close)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))

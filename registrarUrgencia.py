@@ -52,6 +52,7 @@ class Ui_agendarUrgencias(object):
         self.botonAtras.setGeometry(QtCore.QRect(30, 330, 75, 23))
         self.botonAtras.setStyleSheet("background-color: rgb(0, 170, 127);")
         self.botonAtras.setObjectName("botonAtras")
+        self.botonAtras.clicked.connect(agendarUrgencias.close)
         self.botonGuardar = QtWidgets.QPushButton(self.centralwidget)
         self.botonGuardar.setGeometry(QtCore.QRect(190, 280, 111, 23))
         self.botonGuardar.setStyleSheet("background-color: rgb(0, 170, 127);")
