@@ -25,7 +25,7 @@ class Ui_VentVerHorario(object):
         self.bannerSup.setGeometry(QtCore.QRect(0, 0, 950, 130))
         self.bannerSup.setStyleSheet("background-color: transparent;")
         self.bannerSup.setText("")
-        self.bannerSup.setPixmap(QtGui.QPixmap("../../../Documents/GitHub/ClinicaVeterinariaTerminada/imagenes/bannerClinica.png"))
+        self.bannerSup.setPixmap(QtGui.QPixmap("imagenes/bannerClinica.png"))
         self.bannerSup.setObjectName("bannerSup")
         self.rutLnE = QtWidgets.QLineEdit(VentVerHorario)
         self.rutLnE.setEnabled(False)
