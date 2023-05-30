@@ -20,6 +20,10 @@ class SalasHorario:
         self._rut = rut
     
     @property
+    def numSala(self):
+        return self._sala
+    
+    @property
     def horario(self):
         return self._horario
 
@@ -72,6 +76,7 @@ class SalasHorario:
         opcionSala = int(input("Ingresa el codigo de la sala que deseas: "))
         salasEncontradas[opcionSala-1].fecha = fecha
         return salasEncontradas[opcionSala-1]
+    
     
     @classmethod
     def horarioTerreno(cls,rut,salas):

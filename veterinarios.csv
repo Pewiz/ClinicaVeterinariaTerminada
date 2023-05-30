@@ -1,6 +1,6 @@
-rut,nombres,apellido_paterno,apellido_materno,genero,fecha_nacimiento,cargo,experiencia
-15939571-5,Cristiano Ronaldo,Dos Santos,Aveiro,Masculino,05/02/1985,Cardiologia,5 a�os
-24678800-6,Lionel Andres,Messi,Cuccittini,Masculino,24/06/1987,Neurologia,4 anhos
-27536591-k,Erling Braut,Halaand,Soto,Masculino,21/07/2000,Oncologia,1 anho
-24448886-2,Alexis Alejandro,Sanchez,Sanchez,Masculino,19/12/1988,Urgencias,6 anhos
-21483922-9,Benjamin Ignacio,Olea,Rojas,Masculino,11/01/2004,Neurologia,1 mes
+Rut,Nombres,Apellido Paterno,Apellido Materno,Genero,Fecha Nacimiento,Cargo,Experiencia,Email
+15939571-5,Cristiano Ronaldo,Dos Santos,Aveiro,Masculino,05/02/1985,Cardiologia,5 anios,dfadsf@gmail.com,None
+24678800-6,Lionel Andres,Messi,Cuccittini,Masculino,24/06/1987,Neurologia,4 anhos,dfadsf@gmail.com
+27536591-k,Erling Braut,Halaand,Soto,Masculino,21/07/2000,Oncologia,1 anho,dfadsf@gmail.com
+24448886-2,Alexis Alejandro,Sanchez,Sanchez,Masculino,19/12/1988,Urgencias,6 anhos,dfadsf@gmail.com
+21483922-9,Benjamin Ignacio,Olea,Rojas,Masculino,11/01/2004,Neurologia,10 meses,dfadsf@gmail.com,None
