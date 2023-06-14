@@ -1,11 +1,12 @@
 from ManejoArchivo import GestionArchivo
 class SalasHorario:
-    def __init__(self,id=None,rut=None,sala=None,horario=None,fecha=None):
+    def __init__(self,id=None,rut=None,sala=None,horario=None,fecha=None,disp=None):
         self._id = id
         self._rut = rut
         self._sala = sala
         self._horario = horario
         self._fecha = fecha
+        self.disp = disp
 
     @property
     def id(self):
@@ -36,7 +37,7 @@ class SalasHorario:
         self._fecha = fecha
     
     def string(self):
-        return f"{self._id},{self._rut},{self._sala},{self._horario},{self._fecha}"
+        return f"{self._id},{self._rut},{self._sala},{self._horario},{self._fecha},{self.disp}"
     
     @classmethod
     def verificarFecha(cls,objeto,fechaEnc):

@@ -150,7 +150,7 @@ class Ui_VentAsignarHorario(object):
             numSala = self.tablaHorarioVet.item(fila, 0).text()
             horario = self.tablaHorarioVet.item(fila, 1).text()        
             fecha = self.tablaHorarioVet.item(fila, 2).text()
-            horaVet = SalasHorario(id=rut,rut=None,sala=numSala,horario=horario,fecha=fecha)
+            horaVet = SalasHorario(id=rut,rut=None,sala=numSala,horario=horario,fecha=fecha,disp="False")
             
         GestionArchivo.insertar("salas.csv",horaVet)
         self.alertBox("Horario Guardado correctamente","Horario Veterinario")

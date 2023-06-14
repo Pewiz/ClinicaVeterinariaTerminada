@@ -159,7 +159,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../imagenes/Atras.png</pixmap>
+       <pixmap>../../../../../OneDrive/Documentos/GitHub/ClinicaVeterinariaTerminada/imagenes/Atras.png</pixmap>
       </property>
      </widget>
      <widget class="QPushButton" name="btnAtras">
@@ -204,7 +204,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../imagenes/Logo-removebg-preview.png</pixmap>
+      <pixmap>../../../../../OneDrive/Documentos/GitHub/ClinicaVeterinariaTerminada/imagenes/Logo-removebg-preview.png</pixmap>
      </property>
     </widget>
     <widget class="QPushButton" name="BtnAtras_3">
@@ -294,14 +294,14 @@ border-radius: 5px;</string>
       <rect>
        <x>570</x>
        <y>110</y>
-       <width>51</width>
+       <width>61</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Comic Sans MS</family>
-       <pointsize>12</pointsize>
+       <pointsize>13</pointsize>
       </font>
      </property>
      <property name="cursor">
@@ -324,9 +324,6 @@ border-radius: 5px;</string>
       <height>22</height>
      </rect>
     </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
     <property name="maximumDate">
      <date>
       <year>2024</year>
@@ -343,9 +340,6 @@ border-radius: 5px;</string>
     </property>
     <property name="calendarPopup">
      <bool>true</bool>
-    </property>
-    <property name="currentSectionIndex">
-     <number>0</number>
     </property>
    </widget>
   </widget>
