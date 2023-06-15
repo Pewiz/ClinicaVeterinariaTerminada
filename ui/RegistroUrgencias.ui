@@ -124,7 +124,7 @@
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="titulo">
       <property name="geometry">
        <rect>
         <x>240</x>
@@ -159,7 +159,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../../../../OneDrive/Documentos/GitHub/ClinicaVeterinariaTerminada/imagenes/Atras.png</pixmap>
+       <pixmap>../imagenes/Atras.png</pixmap>
       </property>
      </widget>
      <widget class="QPushButton" name="btnAtras">
@@ -204,16 +204,16 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../../../OneDrive/Documentos/GitHub/ClinicaVeterinariaTerminada/imagenes/Logo-removebg-preview.png</pixmap>
+      <pixmap>../imagenes/Logo-removebg-preview.png</pixmap>
      </property>
     </widget>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="listaUrgencias">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>100</y>
        <width>402</width>
-       <height>271</height>
+       <height>318</height>
       </rect>
      </property>
      <property name="editTriggers">
@@ -252,7 +252,7 @@
       </property>
      </column>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="labelN">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -279,7 +279,7 @@
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="buscarNombre">
      <property name="geometry">
       <rect>
        <x>199</x>
@@ -297,8 +297,35 @@
       <number>876453242</number>
      </property>
     </widget>
+    <widget class="QLabel" name="labelF">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>430</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Comic Sans MS</family>
+       <pointsize>11</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Fecha:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnBuscar">
     <property name="geometry">
      <rect>
       <x>348</x>
@@ -309,6 +336,33 @@
     </property>
     <property name="text">
      <string>Buscar</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="fechaFiltro">
+    <property name="geometry">
+     <rect>
+      <x>64</x>
+      <y>435</y>
+      <width>110</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximumDate">
+     <date>
+      <year>2024</year>
+      <month>12</month>
+      <day>31</day>
+     </date>
+    </property>
+    <property name="minimumDate">
+     <date>
+      <year>2023</year>
+      <month>6</month>
+      <day>13</day>
+     </date>
+    </property>
+    <property name="calendarPopup">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

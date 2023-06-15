@@ -124,26 +124,26 @@
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="labelTitulo">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>150</x>
         <y>40</y>
-        <width>251</width>
+        <width>331</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>28</pointsize>
+        <pointsize>20</pointsize>
        </font>
       </property>
       <property name="cursor">
        <cursorShape>ForbiddenCursor</cursorShape>
       </property>
       <property name="text">
-       <string>Lista Reservas</string>
+       <string>Lista Reservas del cliente:</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
@@ -159,7 +159,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../../../../OneDrive/Documentos/GitHub/ClinicaVeterinariaTerminada/imagenes/Atras.png</pixmap>
+       <pixmap>../imagenes/Atras.png</pixmap>
       </property>
      </widget>
      <widget class="QPushButton" name="btnAtras">
@@ -184,8 +184,30 @@
        <string/>
       </property>
      </widget>
+     <widget class="QLabel" name="labelNombre">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>40</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>ForbiddenCursor</cursorShape>
+      </property>
+      <property name="text">
+       <string>Nombre</string>
+      </property>
+     </widget>
     </widget>
-    <widget class="QPushButton" name="BtnAtras">
+    <widget class="QPushButton" name="btnVer">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -238,10 +260,10 @@ border-radius: 5px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../../../OneDrive/Documentos/GitHub/ClinicaVeterinariaTerminada/imagenes/Logo-removebg-preview.png</pixmap>
+      <pixmap>../imagenes/Logo-removebg-preview.png</pixmap>
      </property>
     </widget>
-    <widget class="QPushButton" name="BtnAtras_2">
+    <widget class="QPushButton" name="btnModificar">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -275,7 +297,7 @@ border-radius: 5px;</string>
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="BtnAtras_3">
+    <widget class="QPushButton" name="btnEliminar">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -307,7 +329,7 @@ border-radius: 5px;</string>
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="listaReservas">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -338,12 +360,12 @@ border-radius: 5px;</string>
      </column>
      <column>
       <property name="text">
-       <string>Dueño</string>
+       <string>Tipo de Reserva</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Tipo</string>
+       <string>Fecha</string>
       </property>
      </column>
      <column>
@@ -384,7 +406,7 @@ border-radius: 5px;</string>
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="buscarNombre">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -401,7 +423,7 @@ border-radius: 5px;</string>
   </widget>
  </widget>
  <tabstops>
-  <tabstop>BtnAtras</tabstop>
+  <tabstop>btnVer</tabstop>
  </tabstops>
  <resources>
   <include location="logo.qrc"/>

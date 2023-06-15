@@ -14,9 +14,7 @@ class ventanaHorarios(QMainWindow):
         self.ventanaUi = uiVent()
         self.ventanaUi.setupUi(self)
         
-        acTimer = QtCore.QTimer()
-        acTimer.timeout.connect(self.actualizarFecha)
-        acTimer.start(5000)
+        self.actualizarFecha()
         self.actualizarHorario()
         self.ventanaUi.FechaHoy.dateChanged.connect(self.actualizarHorario)
     
@@ -35,7 +33,10 @@ class ventanaHorarios(QMainWindow):
             for l in read:
                 if l[4] == fechaH:
                     self.horarios.append(l)
-                
+        
+        self.horarios = sorted(self.horarios, key=lambda x: (int(x[3].split(':')[0]),int(x[2])))
+        
+        
         contFilas = len(self.horarios)
         self.ventanaUi.listaHorario.setRowCount(contFilas)
         
@@ -72,6 +73,6 @@ class ventanaHorarios(QMainWindow):
         
 if __name__=="__main__":
     app = QApplication(sys.argv)
-    ventanaP = ventanaHorarios()
+    ventanaP = ventanaHorarios(1)
     ventanaP.show()
     app.exec_()
