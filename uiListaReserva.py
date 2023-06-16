@@ -89,8 +89,13 @@ class Ui_mainWindow(object):
         font.setWeight(50)
         self.btnVer.setFont(font)
         self.btnVer.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnVer.setStyleSheet("background-color: rgb(0, 191, 99);\n"
-"border-radius: 5px;")
+        self.btnVer.setStyleSheet("QPushButton{\n"
+"    border-radius: 13px;\n"
+"    background-color: rgb(0, 191, 99);\n"
+"}\n"
+"QPushButton::hover {\n"
+"    background: #4fa3a6 ;\n"
+"}")
         self.btnVer.setCheckable(False)
         self.btnVer.setObjectName("btnVer")
         self.label_logo = QtWidgets.QLabel(self.frame)
@@ -112,8 +117,13 @@ class Ui_mainWindow(object):
         font.setWeight(50)
         self.btnModificar.setFont(font)
         self.btnModificar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnModificar.setStyleSheet("background-color: rgb(255, 222, 89);\n"
-"border-radius: 5px;")
+        self.btnModificar.setStyleSheet("QPushButton{\n"
+"    border-radius: 13px;\n"
+"    background-color: rgb(255, 222, 89);\n"
+"}\n"
+"QPushButton::hover {\n"
+"    background: #ffde8c ;\n"
+"}")
         self.btnModificar.setCheckable(False)
         self.btnModificar.setObjectName("btnModificar")
         self.btnEliminar = QtWidgets.QPushButton(self.frame)
@@ -124,8 +134,13 @@ class Ui_mainWindow(object):
         font.setPointSize(16)
         self.btnEliminar.setFont(font)
         self.btnEliminar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnEliminar.setStyleSheet("background-color: rgb(255, 49, 49);\n"
-"border-radius: 5px;")
+        self.btnEliminar.setStyleSheet("QPushButton{\n"
+"    border-radius: 13px;\n"
+"    background-color: rgb(255, 49, 49);\n"
+"}\n"
+"QPushButton::hover {\n"
+"    background: #ff9090 ;\n"
+"}")
         self.btnEliminar.setCheckable(False)
         self.btnEliminar.setObjectName("btnEliminar")
         self.listaReservas = QtWidgets.QTableWidget(self.frame)
