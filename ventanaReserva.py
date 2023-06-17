@@ -6,50 +6,50 @@ import PyQt5.QtWidgets as qtw
 import PyQt5.QtGui as qtg
 import PyQt5.QtCore as qc
 from uiReserva import Ui_MainWindow
-#import ventanaEjemplo
+import ventanaCRutinario
+import ventanaQuirofano
 
 class ventanaReserva(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ventanaUi = Ui_MainWindow()
         self.ventanaUi.setupUi(self)
-        self.actualizarComboBox()
+        self.clientes = self.cargarClientes()
+        self.ventanaCRutinario = ventanaCRutinario.ventanaCRutinario(0)
+        self.ventanaQuirofano = ventanaQuirofano.ventanaQuirofano()
         self.ventanaUi.ButtonIngresar.clicked.connect(self.elegirPersona)
-        
+
+    def cargarClientes(self):
+        with open('clientes.csv') as file:
+            reader = csv.reader(file)
+            next(reader)
+
+            clientes = list(reader)
+
+        return clientes
+
     def actualizarComboBox(self):
-        with open('clientes.csv') as r:
-            read = csv.reader(r)
-            next(read)
-            nombres = [row for row in read]
-        #SOLO CUANDO SE RESERVE, BORRAR DESPUES DE OCUPAR    
-            #cliente = []
-            #i = 1
-            #for l in read:
-                #if i == cont:
-                    #cliente.append(l)
-                    #break
-        #masc = []
-        #with open('mascotas.csv') as r:
-            #lector = csv.reader(r)
-            #next(lector)
-            #for l in lector:
-                #if l[0] == cliente[0]:
-                    #masc.append(l)
-        
-        for nombre in nombres:
-            self.ventanaUi.ComboBoxCliente.addItem(str(nombre[1] + " " + str(nombre[2] + " " + str(nombre[3]))))
-    
+        self.ventanaUi.ComboBoxCliente.clear()
+        self.ventanaUi.ComboBoxCliente.addItem("Elegir Cliente")
+
+        for cliente in self.clientes:
+            nombre_completo = f"{cliente[1]} {cliente[2]} {cliente[3]}"
+            self.ventanaUi.ComboBoxCliente.addItem(nombre_completo)
+
     def elegirPersona(self):
         if self.ventanaUi.ComboBoxCliente.currentIndex() == 0:
             qtw.QMessageBox.warning(self, "ERROR", "Por favor elija un cliente antes de avanzar.\n>:c")
         else:
-            persona = self.ventanaUi.ComboBoxCliente.currentIndex()
-            #ventana = ventanaEjemplo.ventanaUi(persona) #TAREA CHIQUILLOS, a poco si tilin
-            #En la siguiente ventana llaman a la persona y guardan el numero (IMPORTANTE PARA LAS DEMAS VENTANAS)
-        
-        
-if __name__=="__main__":
+            persona = self.ventanaUi.ComboBoxCliente.currentIndex() - 1
+            rut_cliente = self.clientes[persona][0]
+            self.ventanaCRutinario.actualizarComboBoxMascota(rut_cliente)
+            self.ventanaCRutinario.show()
+            #self.ventanaQuirofano.show()
+            self.close()
+
+if __name__ == "__main__":
     app = QApplication(sys.argv)
     ventanaP = ventanaReserva()
+    ventanaP.actualizarComboBox()
     ventanaP.show()
     app.exec_()
