@@ -34,7 +34,7 @@ class ventanaHorarios(QMainWindow):
         self.ventanaUi.FechaHoy.dateChanged.connect(self.actualizarHorario)
         self.ventanaUi.btnElegir.setEnabled(False)
         self.ventanaUi.listaHorario.itemSelectionChanged.connect(self.seleccFila)
-        self.ventanaUi.btnElegir.clicked.connect(self.cambio)
+        self.ventanaUi.btnElegir.clicked.connect(self.elegirHora)
         self.bloque = []
         
     
@@ -137,14 +137,6 @@ class ventanaHorarios(QMainWindow):
             etiqueta.setFlags(qc.Qt.ItemIsEnabled)
             self.ventanaUi.listaHorario.setItem(i, 4, etiqueta)
         print(str(self.horaEnLista))
-        
-    def cambio(self):
-        if self.cont == 0:
-            ventana = ventanaCRutinario.ventanaCRutinario(self.cliente)
-            ventana.hora = self.bloque
-            ventana.actualizarLabel()
-            ventana.show()
-            self.hide()
     
     def elegirHora(self):
         k = 0
@@ -154,7 +146,10 @@ class ventanaHorarios(QMainWindow):
                 break
             k += 1
         self.bloque = [eleccion[4], eleccion[3], eleccion[2]]
-        
+        if self.cont == 0:
+            ventana = ventanaCRutinario.ventanaCRutinario(self.cliente, self.bloque)
+            ventana.show()
+            self.hide()
             
         
         

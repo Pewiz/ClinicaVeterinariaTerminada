@@ -6,17 +6,16 @@ import ventanaReserva
 import ventanaHorarios
 
 class ventanaCRutinario(QMainWindow):
-    def __init__(self, cont):
+    def __init__(self, cont, hora):
         super().__init__()
         self.cont = cont
-        self.hora = []
+        self.hora = hora
         self.ventanaUi = Ui_MainWindow()
         self.ventanaUi.setupUi(self)
         self.horario = ventanaHorarios.ventanaHorarios(0, self.cont)
         self.ventanaUi.ButtonHorarios.clicked.connect(lambda : self.cambio(self.horario))
         self.actualizarComboBoxMascota()
-        self.ventanaUi.labelHorario.setText("El horario escogido se mostrará aqui...")
-        self.hora = []
+        self.actualizarLabel()
 
     def actualizarComboBoxMascota(self):
         with open("clientes.csv") as r:
@@ -45,7 +44,10 @@ class ventanaCRutinario(QMainWindow):
     #     self.close()
     
     def actualizarLabel(self):
-        self.ventanaUi.labelHorario.setText("Horario Escogido:\nFecha: " + self.hora[0] +"\nHorario: " + self.hora[1] + "\nSala N° " + self.hora[2])
+        if self.hora == []:
+            self.ventanaUi.subMenu_2.setText("El horario escogido se mostrará aqui...")
+        else:
+            self.ventanaUi.subMenu_2.setText("Horario Escogido:\nFecha: " + self.hora[0] +"\nHorario: " + self.hora[1] + "\nSala N° " + self.hora[2])
     
     def cambio(self, ventana):
         ventana.actualizarHorario()

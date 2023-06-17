@@ -16,7 +16,7 @@ class ventanaReserva(QMainWindow):
         self.ventanaUi.setupUi(self)
         self.ventanaUi.ButtonIngresar.clicked.connect(self.elegirPersona)
         self.cargarClientes()
-        
+        self.hora = []
 
     def cargarClientes(self):
         with open('clientes.csv') as file:
@@ -36,7 +36,7 @@ class ventanaReserva(QMainWindow):
             contador = self.ventanaUi.ComboBoxCliente.currentIndex()
             print(contador) 
             #Llamar a la ventana menú en vez de llamar a las otras directamente
-            self.ventanaCRutinario = ventanaCRutinario.ventanaCRutinario(contador)
+            self.ventanaCRutinario = ventanaCRutinario.ventanaCRutinario(contador, self.hora)
             #self.ventanaQuirofano = ventanaQuirofano.ventanaQuirofano(contador)
             self.ventanaCRutinario.show()
             #self.ventanaQuirofano.show()
