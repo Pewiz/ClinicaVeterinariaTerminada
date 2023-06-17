@@ -15,7 +15,7 @@ class ventanaReserva(QMainWindow):
         self.ventanaUi = Ui_MainWindow()
         self.ventanaUi.setupUi(self)
         self.clientes = self.cargarClientes()
-        self.ventanaCRutinario = ventanaCRutinario.ventanaCRutinario(0)
+        self.ventanaCRutinario = ventanaCRutinario.ventanaCRutinario()
         self.ventanaQuirofano = ventanaQuirofano.ventanaQuirofano()
         self.ventanaUi.ButtonIngresar.clicked.connect(self.elegirPersona)
 
@@ -43,9 +43,10 @@ class ventanaReserva(QMainWindow):
             persona = self.ventanaUi.ComboBoxCliente.currentIndex() - 1
             rut_cliente = self.clientes[persona][0]
             self.ventanaCRutinario.actualizarComboBoxMascota(rut_cliente)
+            #Llamar a la ventana menú en vez de llamar a las otras directamente
             self.ventanaCRutinario.show()
-            #self.ventanaQuirofano.show()
-            self.close()
+            self.ventanaQuirofano.show()
+            self.hide()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -1,17 +1,15 @@
 from PyQt5.QtWidgets import QMainWindow
 import csv
-from uiReservaCtRutinario import Ui_MainWindow
-import ventanaReserva
+from uiReservaQuirofano import Ui_MainWindow
 import ventanaHorarios
 
-class ventanaCRutinario(QMainWindow):
+class ventanaQuirofano(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ventanaUi = Ui_MainWindow()
         self.ventanaUi.setupUi(self)
-        self.horario = ventanaHorarios.ventanaHorarios(0)
+        self.horario = ventanaHorarios.ventanaHorarios(1)
         self.ventanaUi.ButtonHorarios.clicked.connect(lambda : self.cambio(self.horario))
-        #self.ventanaReserva = ventanaReserva.ventanaReserva()
         #self.ventanaUi.ButtonAtras.clicked.connect(self.retroceder)
 
     def actualizarComboBoxMascota(self, rut_cliente):
@@ -39,5 +37,5 @@ class ventanaCRutinario(QMainWindow):
 
 
 if __name__ == "__main__":
-    ventanaC = ventanaCRutinario()
+    ventanaC = ventanaQuirofano()
     ventanaC.show()

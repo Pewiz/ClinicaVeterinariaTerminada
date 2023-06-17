@@ -125,16 +125,16 @@ class Ui_MainWindow(object):
         self.Titulo.setStyleSheet("background: #4fa3a6;")
         self.Titulo.setAlignment(QtCore.Qt.AlignCenter)
         self.Titulo.setObjectName("Titulo")
-        self.ButtonAtras_2 = QtWidgets.QPushButton(self.frame)
-        self.ButtonAtras_2.setGeometry(QtCore.QRect(190, 200, 101, 31))
+        self.ButtonHorarios = QtWidgets.QPushButton(self.frame)
+        self.ButtonHorarios.setGeometry(QtCore.QRect(190, 200, 101, 31))
         font = QtGui.QFont()
         font.setFamily("Corbel")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.ButtonAtras_2.setFont(font)
-        self.ButtonAtras_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.ButtonAtras_2.setStyleSheet("QPushButton{\n"
+        self.ButtonHorarios.setFont(font)
+        self.ButtonHorarios.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.ButtonHorarios.setStyleSheet("QPushButton{\n"
 "    border-radius: 13px;\n"
 "    background-color: #dfdfdf;\n"
 "}\n"
@@ -142,7 +142,7 @@ class Ui_MainWindow(object):
 "    background: rgb(189, 255, 253) ;\n"
 "}\n"
 "")
-        self.ButtonAtras_2.setObjectName("ButtonAtras_2")
+        self.ButtonHorarios.setObjectName("ButtonHorarios")
         self.subMenu_2 = QtWidgets.QLabel(self.frame)
         self.subMenu_2.setGeometry(QtCore.QRect(30, 270, 331, 141))
         font = QtGui.QFont()
@@ -165,7 +165,7 @@ class Ui_MainWindow(object):
         self.ButtonAgendarHora.raise_()
         self.MascotaComboBox.raise_()
         self.Titulo.raise_()
-        self.ButtonAtras_2.raise_()
+        self.ButtonHorarios.raise_()
         self.subMenu_2.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -189,7 +189,7 @@ class Ui_MainWindow(object):
         self.ButtonAgendarHora.setText(_translate("MainWindow", "Agendar Hora"))
         self.MascotaComboBox.setItemText(0, _translate("MainWindow", "Elegir"))
         self.Titulo.setText(_translate("MainWindow", "Agendar Hora C.Rutinario"))
-        self.ButtonAtras_2.setText(_translate("MainWindow", "Bloque Horarios"))
+        self.ButtonHorarios.setText(_translate("MainWindow", "Bloque Horarios"))
         self.subMenu_2.setText(_translate("MainWindow", "Fecha: tanto\n"
 "Sala: Tanto.\n"
 "Hora: tanto"))
