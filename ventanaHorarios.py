@@ -6,11 +6,13 @@ import PyQt5.QtWidgets as qtw
 import PyQt5.QtGui as qtg
 import PyQt5.QtCore as qc
 from uiHorarios import uiVent
+import ventanaCRutinario
 
 class ventanaHorarios(QMainWindow):
-    def __init__(self, cont):
+    def __init__(self, cont, cliente):
         super().__init__()
         self.cont = cont #Contador para reconocer que tipo de reserva es (quirofano, especialista, rutinario)
+        self.cliente = cliente
         self.ventanaUi = uiVent()
         self.ventanaUi.setupUi(self)
         if self.cont == 0:
@@ -30,13 +32,29 @@ class ventanaHorarios(QMainWindow):
         self.actualizarFecha()
         self.actualizarHorario()
         self.ventanaUi.FechaHoy.dateChanged.connect(self.actualizarHorario)
+        self.ventanaUi.btnElegir.setEnabled(False)
+        self.ventanaUi.listaHorario.itemSelectionChanged.connect(self.seleccFila)
+        self.ventanaUi.btnElegir.clicked.connect(self.cambio)
+        self.bloque = []
+        
     
+    def seleccFila(self):
+        self.fila = self.ventanaUi.listaHorario.selectedIndexes()
+        if self.fila:
+            self.ventanaUi.btnElegir.setEnabled(True)
+            self.horaSelecc = self.ventanaUi.listaHorario.currentRow()
+            print(self.horaSelecc)
+        else:
+            self.ventanaUi.btnElegir.setEnabled(False)
+        
+        
     def actualizarFecha(self):
         fechaHoy = QtCore.QDate.currentDate()
         self.ventanaUi.FechaHoy.setMinimumDate(fechaHoy)
         self.ventanaUi.FechaHoy.setDate(fechaHoy)
 
     def actualizarHorario(self):
+        self.horaEnLista = []
         if self.cont != 0:
             with open("veterinarios.csv") as r:
                 read = csv.reader(r)
@@ -89,6 +107,7 @@ class ventanaHorarios(QMainWindow):
         self.ventanaUi.listaHorario.setRowCount(contFilas)
         
         for i, horario in enumerate(self.horarios):
+            self.horaEnLista.append(horario)
             hora = qtw.QTableWidgetItem(horario[3])
             self.ventanaUi.listaHorario.setItem(i, 0, hora)
             
@@ -117,10 +136,30 @@ class ventanaHorarios(QMainWindow):
             etiqueta.setTextAlignment(qc.Qt.AlignCenter)
             etiqueta.setFlags(qc.Qt.ItemIsEnabled)
             self.ventanaUi.listaHorario.setItem(i, 4, etiqueta)
+        print(str(self.horaEnLista))
+        
+    def cambio(self):
+        if self.cont == 0:
+            ventana = ventanaCRutinario.ventanaCRutinario(self.cliente)
+            ventana.hora = self.bloque
+            ventana.actualizarLabel()
+            ventana.show()
+            self.hide()
+    
+    def elegirHora(self):
+        k = 0
+        for l in self.horaEnLista:
+            if k == self.horaSelecc:
+                eleccion = l
+                break
+            k += 1
+        self.bloque = [eleccion[4], eleccion[3], eleccion[2]]
+        
+            
         
         
-if __name__=="__main__":
-    app = QApplication(sys.argv)
-    ventanaP = ventanaHorarios(1)
-    ventanaP.show()
-    app.exec_()
+#if __name__=="__main__":
+#    app = QApplication(sys.argv)
+#    ventanaP = ventanaHorarios(1)
+#    ventanaP.show()
+#    app.exec_()
