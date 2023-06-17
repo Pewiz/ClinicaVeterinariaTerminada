@@ -113,7 +113,7 @@ class ventanaHorarios(QMainWindow):
             if str(horario[5]) == "False":
                 etiqueta.setBackground(qtg.QColor('green'))
             else:
-                etiqueta.setBackground(qtg.QColor('green'))
+                etiqueta.setBackground(qtg.QColor('red'))
             etiqueta.setTextAlignment(qc.Qt.AlignCenter)
             etiqueta.setFlags(qc.Qt.ItemIsEnabled)
             self.ventanaUi.listaHorario.setItem(i, 4, etiqueta)
@@ -121,6 +121,6 @@ class ventanaHorarios(QMainWindow):
         
 if __name__=="__main__":
     app = QApplication(sys.argv)
-    ventanaP = ventanaHorarios(0)
+    ventanaP = ventanaHorarios(1)
     ventanaP.show()
     app.exec_()

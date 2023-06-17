@@ -1,4 +1,3 @@
-fecha,nombre,tipo,hora,sala
-2023-05-28,Benjamin,Oculares,09:00:00,Sala 1
-2023-05-28,Daisy,Oncologica,11:00:00,Sala 1
-2023-05-28,Snow,Oncologica,12:00:00,Sala 3
+fecha,nombre,hora,sala
+13/06/2023,Doby,14:00 - 15:30,1
+20/06/2023,Doby,14:00 - 15:30,1
