@@ -43,6 +43,8 @@ class ventanaListaReserva(QMainWindow):
         self.ui.listaReservas.setRowCount(contFilas)
         
         for i, reserva in enumerate(self.reservas):
+            tipo = ""
+            nombre = ""
             with open("Control.csv") as r:
                 read = csv.reader(r)
                 next(read)
@@ -108,6 +110,6 @@ class ventanaListaReserva(QMainWindow):
 
 if __name__=="__main__":
     app = QApplication(sys.argv)
-    ventanaP = ventanaListaReserva(1)
+    ventanaP = ventanaListaReserva(3)
     ventanaP.show()
     app.exec_()

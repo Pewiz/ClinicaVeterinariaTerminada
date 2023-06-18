@@ -43,7 +43,6 @@ class ventanaHorarios(QMainWindow):
         if self.fila:
             self.ventanaUi.btnElegir.setEnabled(True)
             self.horaSelecc = self.ventanaUi.listaHorario.currentRow()
-            print(self.horaSelecc)
         else:
             self.ventanaUi.btnElegir.setEnabled(False)
         
@@ -136,20 +135,24 @@ class ventanaHorarios(QMainWindow):
             etiqueta.setTextAlignment(qc.Qt.AlignCenter)
             etiqueta.setFlags(qc.Qt.ItemIsEnabled)
             self.ventanaUi.listaHorario.setItem(i, 4, etiqueta)
-        print(str(self.horaEnLista))
     
     def elegirHora(self):
         k = 0
         for l in self.horaEnLista:
-            if k == self.horaSelecc:
+            if k == self.horaSelecc and l[5] == "False":
                 eleccion = l
+                flag = False
                 break
             k += 1
-        self.bloque = [eleccion[4], eleccion[3], eleccion[2]]
-        if self.cont == 0:
-            ventana = ventanaCRutinario.ventanaCRutinario(self.cliente, self.bloque)
-            ventana.show()
-            self.hide()
+            flag = True
+        if(flag == False):
+            self.bloque = [eleccion[4], eleccion[3], eleccion[2]]
+            if self.cont == 0:
+                ventana = ventanaCRutinario.ventanaCRutinario(self.cliente, self.bloque)
+                ventana.show()
+                self.hide()
+        else:
+            qtw.QMessageBox.warning(self, "ERROR, Horario ya en uso", "Por favor elija un horario que no este en uso.\nTip: Para saber si estan en uso o no, revise el color del horario en la lista.")
             
         
         
