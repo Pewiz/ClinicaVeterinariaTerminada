@@ -7,6 +7,7 @@ import PyQt5.QtGui as qtg
 import PyQt5.QtCore as qc
 from uiHorarios import uiVent
 import ventanaCRutinario
+import ventanaQuirofano
 
 class ventanaHorarios(QMainWindow):
     def __init__(self, cont, cliente):
@@ -150,11 +151,15 @@ class ventanaHorarios(QMainWindow):
             ventana = ventanaCRutinario.ventanaCRutinario(self.cliente, self.bloque)
             ventana.show()
             self.hide()
+        if self.cont == 1:
+            ventanaQ = ventanaQuirofano.ventanaQuirofano(self.cliente, self.bloque)
+            ventanaQ.show()
+            self.hide()
             
         
         
-#if __name__=="__main__":
-#    app = QApplication(sys.argv)
-#    ventanaP = ventanaHorarios(1)
-#    ventanaP.show()
-#    app.exec_()
+if __name__=="__main__":
+   app = QApplication(sys.argv)
+   ventanaP = ventanaHorarios(1)
+   ventanaP.show()
+   app.exec_()

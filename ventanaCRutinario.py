@@ -14,6 +14,7 @@ class ventanaCRutinario(QMainWindow):
         self.ventanaUi.setupUi(self)
         self.horario = ventanaHorarios.ventanaHorarios(0, self.cont)
         self.ventanaUi.ButtonHorarios.clicked.connect(lambda : self.cambio(self.horario))
+        self.ventanaUi.ButtonAtras.clicked.connect(self.atras)
         self.actualizarComboBoxMascota()
         self.actualizarLabel()
 
@@ -39,10 +40,6 @@ class ventanaCRutinario(QMainWindow):
         for mascota in self.mascota:
             self.ventanaUi.MascotaComboBox.addItem(mascota[1])
     
-    # def retroceder(self):
-    #     self.ventanaReserva.show()
-    #     self.close()
-    
     def actualizarLabel(self):
         if self.hora == []:
             self.ventanaUi.subMenu_2.setText("El horario escogido se mostrará aqui...")
@@ -52,4 +49,9 @@ class ventanaCRutinario(QMainWindow):
     def cambio(self, ventana):
         ventana.actualizarHorario()
         ventana.show()
+        self.hide()
+        
+    def atras(self):
+        self.ventanaReserva = ventanaReserva.ventanaReserva()
+        self.ventanaReserva.show()
         self.hide()
