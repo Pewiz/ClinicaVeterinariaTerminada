@@ -8,6 +8,7 @@ import PyQt5.QtCore as qc
 from uiHorarios import uiVent
 import ventanaCRutinario
 import ventanaListaReserva
+import ventanaQuirofano
 
 class ventanaHorarios(QMainWindow):
     def __init__(self, cont, cliente):
@@ -22,6 +23,7 @@ class ventanaHorarios(QMainWindow):
             self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaCRutinario.ventanaCRutinario(self.cliente, self.bloque)))
         elif self.cont == 1:
             self.ventanaUi.label_9.setText("Horarios: Quirofano.")
+            self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaQuirofano.ventanaQuirofano(self.cliente, self.bloque)))
         elif self.cont == 2:
             self.ventanaUi.label_9.setText("Horarios: Esp. Neurologo.")
         elif self.cont == 3:
@@ -168,7 +170,10 @@ class ventanaHorarios(QMainWindow):
                 ventana = ventanaCRutinario.ventanaCRutinario(self.cliente, self.bloque)
                 ventana.show()
                 self.hide()
-            
+            if self.cont == 1:
+                ventana = ventanaQuirofano.ventanaQuirofano(self.cliente, self.bloque)
+                ventana.show()
+                self.hide()
             if self.cont == 7:
                 ventanaM = ventanaListaReserva.ventanaListaReserva(self.cliente, True)
                 ventanaM.getBloque(self.bloque, self.posBloque)

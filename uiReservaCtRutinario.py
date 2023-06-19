@@ -50,7 +50,7 @@ class Ui_MainWindow(object):
         self.FondoPerrito.setGeometry(QtCore.QRect(390, 120, 321, 311))
         self.FondoPerrito.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.FondoPerrito.setText("")
-        self.FondoPerrito.setPixmap(QtGui.QPixmap("../imagenes/Logo-removebg-preview.png"))
+        self.FondoPerrito.setPixmap(QtGui.QPixmap("imagenes/Logo-removebg-preview.png"))
         self.FondoPerrito.setScaledContents(True)
         self.FondoPerrito.setObjectName("FondoPerrito")
         self.labelMascota = QtWidgets.QLabel(self.frame)
