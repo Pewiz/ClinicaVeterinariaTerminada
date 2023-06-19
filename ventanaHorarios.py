@@ -7,6 +7,7 @@ import PyQt5.QtGui as qtg
 import PyQt5.QtCore as qc
 from uiHorarios import uiVent
 import ventanaCRutinario
+import ventanaListaReserva
 
 class ventanaHorarios(QMainWindow):
     def __init__(self, cont, cliente):
@@ -14,6 +15,7 @@ class ventanaHorarios(QMainWindow):
         self.cont = cont #Contador para reconocer que tipo de reserva es (quirofano, especialista, rutinario)
         self.cliente = cliente
         self.ventanaUi = uiVent()
+        self.guardarCont = 0
         self.ventanaUi.setupUi(self)
         if self.cont == 0:
             self.ventanaUi.label_9.setText("Horarios: Ct Rutinario.")
@@ -37,6 +39,12 @@ class ventanaHorarios(QMainWindow):
         self.ventanaUi.btnElegir.clicked.connect(self.elegirHora)
         self.bloque = []
         
+    def actualizarLabel(self):
+        if self.guardarCont == 7:
+            self.actualizarHorario()
+            self.ventanaUi.label_9.setText("Horarios: Modificacion.")
+            self.posBloque = 0
+    
     
     def seleccFila(self):
         self.fila = self.ventanaUi.listaHorario.selectedIndexes()
@@ -89,7 +97,7 @@ class ventanaHorarios(QMainWindow):
             self.horarios = []
             fecha = self.ventanaUi.FechaHoy.date()
             fechaH = fecha.toString("dd/MM/yyyy")
-            if self.cont == 0:
+            if self.cont == 0 or self.cont == 7:
                 for l in read:
                     if l[4] == fechaH:
                         self.horarios.append(l)
@@ -137,6 +145,8 @@ class ventanaHorarios(QMainWindow):
             self.ventanaUi.listaHorario.setItem(i, 4, etiqueta)
     
     def elegirHora(self):
+        if self.guardarCont == 7:
+            self.cont = 7
         k = 0
         for l in self.horaEnLista:
             if k == self.horaSelecc and l[5] == "False":
@@ -151,6 +161,12 @@ class ventanaHorarios(QMainWindow):
                 ventana = ventanaCRutinario.ventanaCRutinario(self.cliente, self.bloque)
                 ventana.show()
                 self.hide()
+            
+            if self.cont == 7:
+                ventanaM = ventanaListaReserva.ventanaListaReserva(self.cliente, True)
+                ventanaM.getBloque(self.bloque, self.posBloque)
+                ventanaM.show()
+                self.close()
         else:
             qtw.QMessageBox.warning(self, "ERROR, Horario ya en uso", "Por favor elija un horario que no este en uso.\nTip: Para saber si estan en uso o no, revise el color del horario en la lista.")
             
