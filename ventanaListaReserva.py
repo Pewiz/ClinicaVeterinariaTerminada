@@ -63,8 +63,8 @@ class ventanaListaReserva(QMainWindow):
                     for l in read:
                         if l[0] == res[2] and l[1] == res[0] and l[2] == res[4] and l[3] == res[3]:
                             pos = i
-                        break
-                    i += 1
+                            break
+                        i += 1
                 GestionArchivo.modificarLinea("Control.csv", pos, 0, self.modBloque[0])
                 GestionArchivo.modificarLinea("Control.csv", pos, 2, self.modBloque[1])
                 GestionArchivo.modificarLinea("Control.csv", pos, 3, self.modBloque[2])
@@ -322,7 +322,7 @@ class ventanaListaReserva(QMainWindow):
             
             if fechaHoy < fechaRes:
                 est = "Por Cumplir"
-            elif fechaHoy == fechaRes and horaInicio <= horaAhora:
+            elif fechaHoy == fechaRes and horaAhora <= horaInicio:
                 est = "Por Cumplir"
             else:
                 est = "Cumplido"

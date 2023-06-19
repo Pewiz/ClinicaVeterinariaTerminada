@@ -34,7 +34,6 @@ class ventanaReserva(QMainWindow):
             qtw.QMessageBox.warning(self, "ERROR", "Por favor elija un cliente antes de avanzar.\n>:c")
         else:
             contador = self.ventanaUi.ComboBoxCliente.currentIndex()
-            print(contador) 
             #Llamar a la ventana menú en vez de llamar a las otras directamente
             self.ventanaCRutinario = ventanaCRutinario.ventanaCRutinario(contador, self.hora)
             #self.ventanaQuirofano = ventanaQuirofano.ventanaQuirofano(contador)
