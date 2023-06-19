@@ -78,20 +78,43 @@ class ventanaQuirofano(QMainWindow):
                         posFila = i
                         break
                     i += 1
-            #se cambian los valores del csv de sala, la posicion 1 y 5 (se cambia el rut de cliente de null a self.rutCliente y de False a True)
-            GestionArchivo.modificarLinea("salas.csv",posFila,1,self.rutCliente)
-            GestionArchivo.modificarLinea("salas.csv",posFila,5,"True")
-            
-            #Y se inserta al csv de control las variables del nombre de la mascota y la fecha hora y sala
-            reserva = [self.hora[0],nombreMascota,self.hora[1],self.hora[2]]
-            with open("Quirofano.csv","a",newline="") as archivo:
-                escritor = csv.writer(archivo,delimiter=",") 
-                escritor.writerow(reserva)
-            msg = qtw.QMessageBox()
-            msg.setWindowTitle("Reserva Quirofano realizada con exito.")
-            msg.setText("Felicidades señor " + self.nombreC + " su reserva ha sido realizada con exito.\nSi necesita saber mas detalles, dirigase hacia Lista de Reservas para cancelar, modificar o mostrar su reserva.")
-            msg.exec_()
-            self.volver(ventanaMenuReserva.ventanaMenuReserva(self.cont))
+            fl = False
+            with open('Control.csv') as file:
+                reader = csv.reader(file)
+                next(reader)
+                for l in reader:
+                    if l[0] == self.hora[0] and l[1] == nombreMascota and l[2] == self.hora[1]:
+                        fl = True
+                        break
+            with open('Quirofano.csv') as file:
+                reader = csv.reader(file)
+                next(reader)
+                for l in reader:
+                    if l[0] == self.hora[0] and l[1] == nombreMascota and l[2] == self.hora[1]:
+                        fl = True
+                        break
+            with open('Citas.csv') as file:
+                reader = csv.reader(file)
+                next(reader)
+                for l in reader:
+                    if l[0] == self.hora[0] and l[1] == nombreMascota and l[4] == self.hora[1]:
+                        fl = True
+                        break
+            if fl == True:
+                qtw.QMessageBox.warning(self, "ERROR, Fecha y hora hacen conflicto", "La hora y fecha de esta reserva hacen conflicto con otra reserva realizada para la misma mascota.\nPara solucionar esto, porfavor seleccione otro bloque horario, cambie de mascota o modifique la reserva realizada anteriormente.")
+            else:
+                GestionArchivo.modificarLinea("salas.csv",posFila,1,self.rutCliente)
+                GestionArchivo.modificarLinea("salas.csv",posFila,5,"True")
+
+                reserva = [self.hora[0],nombreMascota,self.hora[1],self.hora[2]]
+                with open("Quirofano.csv","a",newline="") as archivo:
+                    escritor = csv.writer(archivo,delimiter=",") 
+                    escritor.writerow(reserva)
+                msg = qtw.QMessageBox()
+                msg.setWindowTitle("Reserva Quirofano realizada con exito.")
+                msg.setText("Felicidades señor " + self.nombreC + " su reserva ha sido realizada con exito.\nSi necesita saber mas detalles, dirigase hacia Lista de Reservas para cancelar, modificar o mostrar su reserva.")
+                msg.exec_()
+                self.volver(ventanaMenuReserva.ventanaMenuReserva(self.cont))
             
             
     

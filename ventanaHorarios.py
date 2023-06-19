@@ -1,3 +1,4 @@
+import datetime
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtWidgets import QMainWindow, QApplication
 import sys
@@ -25,7 +26,6 @@ class ventanaHorarios(QMainWindow):
         elif self.cont == 1:
             self.ventanaUi.label_9.setText("Horarios: Quirofano.")
             self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaQuirofano.ventanaQuirofano(self.cliente, self.bloque)))
-            self.especSelecc = 0
         elif self.cont == 2:
             self.ventanaUi.label_9.setText("Horarios: Esp. Neurologo.")
             self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaCitaEsp.ventanaCitaEsp(self.cliente, self.bloque)))
@@ -118,15 +118,29 @@ class ventanaHorarios(QMainWindow):
             self.horarios = []
             fecha = self.ventanaUi.FechaHoy.date()
             fechaH = fecha.toString("dd/MM/yyyy")
+            fechaHoy = datetime.datetime.now().date()
+            horaAhora = datetime.datetime.now().time()
             if self.cont == 0 or self.cont == 7:
                 for l in read:
-                    if l[4] == fechaH:
-                        self.horarios.append(l)
+                    horaInicio, horaFin = l[3].split(" - ")
+                    horaInicio = datetime.datetime.strptime(horaInicio, "%H:%M").time()
+                    if fecha == fechaHoy:
+                        if l[4] == fechaH and horaAhora <= horaInicio:
+                            self.horarios.append(l)
+                    else:
+                        if l[4] == fechaH:
+                            self.horarios.append(l)
             elif self.cont != 0:
                 for l in read:
+                    horaInicio, horaFin = l[3].split(" - ")
+                    horaInicio = datetime.datetime.strptime(horaInicio, "%H:%M").time()
                     for k in self.veterinarios:
-                        if l[0] == k[0] and l[4] == fechaH:
-                            self.horarios.append(l)
+                        if fecha == fechaHoy:
+                            if l[0] == k[0] and l[4] == fechaH and horaAhora <= horaInicio:
+                                self.horarios.append(l)
+                        else:
+                            if l[0] == k[0] and l[4] == fechaH:
+                                self.horarios.append(l)
         
         self.horarios = sorted(self.horarios, key=lambda x: (int(x[3].split(':')[0]),int(x[2])))
         

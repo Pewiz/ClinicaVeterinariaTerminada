@@ -21,6 +21,7 @@ class ventanaListaReserva(QMainWindow):
         self.ui = Ui_mainWindow()
         self.ui.setupUi(self)
         self.actualizar()
+        self.flag = False
         self.ui.buscarNombre.textChanged.connect(self.buscador)
         self.ui.listaReservas.itemSelectionChanged.connect(self.seleccFila)
         self.ui.btnEliminar.clicked.connect(self.eliminarHora)
@@ -28,6 +29,9 @@ class ventanaListaReserva(QMainWindow):
         self.ventanaH = ventanaHorarios.ventanaHorarios(7, self.cont)
         self.ui.btnModificar.clicked.connect(lambda: self.modificarHora(self.ventanaH))
         self.ui.btnAtras.clicked.connect(lambda: self.volver(ventanaMenuReserva.ventanaMenuReserva(self.cont)))
+        self.ui.dateEdit.setEnabled(False)
+        self.actualizarFecha()
+        self.ui.btnBuscarF.clicked.connect(self.activarFiltrar)
         
     def volver(self, ventana):
         ventana.show()
@@ -39,7 +43,40 @@ class ventanaListaReserva(QMainWindow):
         self.filaSelecc = posi
         self.modificarHora(self.ventanaH)
         
-
+    def actualizarFecha(self):
+        fechaHoy = datetime.datetime.now()
+        fecha1anho = fechaHoy + datetime.timedelta(days=365)
+        fecha1anhomenos = fechaHoy - datetime.timedelta(days=365)
+        self.ui.dateEdit.setMinimumDate(fecha1anhomenos)
+        self.ui.dateEdit.setMaximumDate(fecha1anho)
+        self.ui.dateEdit.setDate(fechaHoy)
+        
+    def activarFiltrar(self):
+        if self.flag == False:
+            self.filtrar()
+            self.ui.dateEdit.dateChanged.connect(self.filtrar)
+            self.flag = True
+            self.ui.dateEdit.setEnabled(True)
+            self.ui.btnBuscarF.setText("Ver Todo")
+        else:
+            fechaHoy = datetime.datetime.now()
+            self.ui.dateEdit.setDate(fechaHoy)
+            self.ui.dateEdit.setEnabled(False)
+            self.flag = False
+            self.ui.btnBuscarF.setText("Buscar")
+            for row in range(self.ui.listaReservas.rowCount()):
+                self.ui.listaReservas.setRowHidden(row, False)
+    
+    def filtrar(self):
+        fechaSeleccionada = self.ui.dateEdit.date()
+        fecha1 = fechaSeleccionada.toString("dd/MM/yyyy")
+    
+        for row in range(self.ui.listaReservas.rowCount()):
+            fecha = self.ui.listaReservas.item(row, 2).text()
+            if fecha == fecha1:
+                self.ui.listaReservas.setRowHidden(row, False)
+            else:
+                self.ui.listaReservas.setRowHidden(row, True)
         
     def modificarHora(self, ventana):
         t = 0

@@ -65,11 +65,27 @@ class Ui_mainWindow(object):
         self.label_3.setPixmap(QtGui.QPixmap("imagenes/Atras.png"))
         self.label_3.setObjectName("label_3")
         self.btnAtras = QtWidgets.QPushButton(self.frame_2)
-        self.btnAtras.setGeometry(QtCore.QRect(50, 50, 31, 31))
-        self.btnAtras.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnAtras.setFocusPolicy(QtCore.Qt.StrongFocus)
-        self.btnAtras.setStyleSheet("background-color: rgba(0,0,0,0);")
+        self.btnAtras.setGeometry(QtCore.QRect(40, 40, 41, 41))
+        self.btnAtras.setStyleSheet("\n"
+"\n"
+"\n"
+"QPushButton {\n"
+"  \n"
+"    \n"
+"    border-radius: 20px;\n"
+"\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"    background: #74b6b6;\n"
+"}\n"
+"")
         self.btnAtras.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("imagenes/Atras.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnAtras.setIcon(icon)
+        self.btnAtras.setIconSize(QtCore.QSize(71, 61))
         self.btnAtras.setObjectName("btnAtras")
         self.labelNombre = QtWidgets.QLabel(self.frame_2)
         self.labelNombre.setGeometry(QtCore.QRect(440, 40, 265, 41))
@@ -180,6 +196,39 @@ class Ui_mainWindow(object):
         self.buscarNombre.setGeometry(QtCore.QRect(200, 400, 151, 31))
         self.buscarNombre.setMaxLength(324234322)
         self.buscarNombre.setObjectName("buscarNombre")
+        self.label_4 = QtWidgets.QLabel(self.frame)
+        self.label_4.setGeometry(QtCore.QRect(540, 160, 151, 31))
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("background-color: rgba(0,0,0,0);")
+        self.label_4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_4.setObjectName("label_4")
+        self.btnBuscarF = QtWidgets.QPushButton(self.frame)
+        self.btnBuscarF.setGeometry(QtCore.QRect(560, 220, 101, 31))
+        font = QtGui.QFont()
+        font.setFamily("Corbel")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.btnBuscarF.setFont(font)
+        self.btnBuscarF.setStyleSheet("QPushButton {\n"
+"    background: #4fa3a6;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"    background: #74b6b6;\n"
+"}\n"
+"")
+        self.btnBuscarF.setObjectName("btnBuscarF")
+        self.dateEdit = QtWidgets.QDateEdit(self.centralwidget)
+        self.dateEdit.setGeometry(QtCore.QRect(560, 190, 110, 22))
+        self.dateEdit.setCalendarPopup(True)
+        self.dateEdit.setObjectName("dateEdit")
         mainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(mainWindow)
@@ -206,6 +255,8 @@ class Ui_mainWindow(object):
         item = self.listaReservas.horizontalHeaderItem(5)
         item.setText(_translate("mainWindow", "Estado"))
         self.label_2.setText(_translate("mainWindow", "Buscar Nombre Mascota:"))
+        self.label_4.setText(_translate("mainWindow", "Buscar por Fecha:"))
+        self.btnBuscarF.setText(_translate("mainWindow", "Buscar"))
 
 
 if __name__ == "__main__":
