@@ -1,10 +1,5 @@
-from PyQt5 import QtGui, QtCore
-from PyQt5.QtWidgets import QMainWindow, QApplication
-import sys
+from PyQt5.QtWidgets import QMainWindow
 import csv
-import PyQt5.QtWidgets as qtw
-import PyQt5.QtGui as qtg
-import PyQt5.QtCore as qc
 from uiMenuClinica import Ui_MainWindow
 import ventanaReserva
 import ventanaCRutinario

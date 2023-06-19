@@ -1,6 +1,5 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow
 import PyQt5.QtWidgets as qtw
-import sys
 import csv
 from uiReservaCtRutinario import Ui_MainWindow
 from ManejoArchivo import GestionArchivo

@@ -1,12 +1,8 @@
-import typing
-import datetime
-from PyQt5 import QtGui, QtCore
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget
+from PyQt5 import QtCore
+from PyQt5.QtWidgets import QMainWindow
 import sys
 import csv
 import PyQt5.QtWidgets as qtw
-import PyQt5.QtGui as qtg
-import PyQt5.QtCore as qc
 from uiListaUrgencias import Ui_mainWindow
 import ventanaUrgencia
 

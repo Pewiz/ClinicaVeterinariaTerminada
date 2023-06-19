@@ -1,12 +1,7 @@
-import typing
 import datetime
-from PyQt5 import QtGui, QtCore
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget
-import sys
+from PyQt5.QtWidgets import QMainWindow
 import csv
 import PyQt5.QtWidgets as qtw
-import PyQt5.QtGui as qtg
-import PyQt5.QtCore as qc
 from uiListaReserva import Ui_mainWindow
 from ManejoArchivo import GestionArchivo
 import ventanaHorarios
