@@ -37,9 +37,10 @@ class ventanaReserva(QMainWindow):
             print(contador) 
             #Llamar a la ventana menú en vez de llamar a las otras directamente
             self.ventanaCRutinario = ventanaCRutinario.ventanaCRutinario(contador, self.hora)
+            self.ventanaQuirofano = ventanaQuirofano.ventanaQuirofano(contador, self.hora)
             #self.ventanaQuirofano = ventanaQuirofano.ventanaQuirofano(contador)
-            self.ventanaCRutinario.show()
-            #self.ventanaQuirofano.show()
+            #self.ventanaCRutinario.show()
+            self.ventanaQuirofano.show()
             self.hide()
 
 if __name__ == "__main__":
