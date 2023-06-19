@@ -245,7 +245,11 @@ class ventanaListaReserva(QMainWindow):
                         posi = i
                         break
                     i += 1
-            GestionArchivo.eliminar("Citas.csv", posi)            
+            GestionArchivo.eliminar("Citas.csv", posi)
+        msg = qtw.QMessageBox()
+        msg.setWindowTitle("Eliminacion de Reserva completado")
+        msg.setText("Su reserva ha sido cancelada, porfavor, si necesita otra reserva, vuelva al menu principal.")
+        msg.exec_()            
         self.actualizar()
         
                     
