@@ -325,19 +325,6 @@
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="btnBuscar">
-    <property name="geometry">
-     <rect>
-      <x>348</x>
-      <y>464</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Buscar</string>
-    </property>
-   </widget>
    <widget class="QDateEdit" name="fechaFiltro">
     <property name="geometry">
      <rect>

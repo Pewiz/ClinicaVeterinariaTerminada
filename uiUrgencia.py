@@ -74,6 +74,7 @@ class Ui_MainWindow(object):
         self.telefono_edit.setGeometry(QtCore.QRect(40, 270, 131, 21))
         self.telefono_edit.setStyleSheet("border: 2px solid #4fa3a6 ;")
         self.telefono_edit.setObjectName("telefono_edit")
+        self.telefono_edit.setMaxLength(9)
         self.domicilio_edit = QtWidgets.QLineEdit(self.widget)
         self.domicilio_edit.setGeometry(QtCore.QRect(190, 270, 113, 21))
         self.domicilio_edit.setStyleSheet("border: 2px solid #4fa3a6 ;")

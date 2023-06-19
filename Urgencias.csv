@@ -1,3 +1,4 @@
-nombre,dueno,gravedad,contacto,direccion
-Daisy,Benja,3,Email@ulagos.cl,Casa 1232
-Snow,Damaris,2,Email@ulagos.cl,Casa 012312
+nombremasc,dueno,telefono,domicilio,gravedad,fecha,ambulancia,hora
+BobbyDos,Victor Calbucura,935704202,Frolich 208 Carelmapu,3,19/06/2023,Si,17:30
+Baloo,Martin,942819321,Puerto Varas,5,19/06/2023,No,17:40
+Koda,Paula,983219321,Balmaceda,3,19/06/2023,Si,18:01

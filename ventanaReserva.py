@@ -7,6 +7,7 @@ import PyQt5.QtGui as qtg
 import PyQt5.QtCore as qc
 from uiReserva import Ui_MainWindow
 import ventanaMenuReserva
+import ventanaUrgencia
 
 class ventanaReserva(QMainWindow):
     def __init__(self):
@@ -14,6 +15,7 @@ class ventanaReserva(QMainWindow):
         self.ventanaUi = Ui_MainWindow()
         self.ventanaUi.setupUi(self)
         self.ventanaUi.ButtonIngresar.clicked.connect(self.elegirPersona)
+        self.ventanaUi.ButtonUrgencia.clicked.connect(self.urgencia)
         self.cargarClientes()
 
     def cargarClientes(self):
@@ -35,6 +37,11 @@ class ventanaReserva(QMainWindow):
             self.ventana = ventanaMenuReserva.ventanaMenuReserva(contador)
             self.ventana.show()
             self.hide()
+    
+    def urgencia(self):
+        self.ventanaUrgencia = ventanaUrgencia.ventanaUrgencia()
+        self.ventanaUrgencia.show()
+        self.hide()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

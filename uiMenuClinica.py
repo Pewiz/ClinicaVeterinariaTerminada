@@ -49,7 +49,6 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(6)
         self.label_3.setFont(font)
-        self.label_3.setStyleSheet("border-image: url(:/image/perro.png);")
         self.label_3.setText("")
         self.label_3.setPixmap(QtGui.QPixmap("imagenes/Logo-removebg-preview.png"))
         self.label_3.setObjectName("label_3")
