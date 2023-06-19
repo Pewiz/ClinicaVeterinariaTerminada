@@ -9,6 +9,7 @@ from uiMenuClinica import Ui_MainWindow
 import ventanaReserva
 import ventanaCRutinario
 import ventanaQuirofano
+import ventanaCitaEsp
 import ventanaListaReserva
 
 class ventanaMenuReserva(QMainWindow):
@@ -23,9 +24,11 @@ class ventanaMenuReserva(QMainWindow):
         self.ventanaUi.botonAtras.clicked.connect(lambda: self.cambio(self.v))
         self.venCt = ventanaCRutinario.ventanaCRutinario(self.cont, self.hora)
         self.venQ = ventanaQuirofano.ventanaQuirofano(self.cont, self.hora)
+        self.venCE = ventanaCitaEsp.ventanaCitaEsp(self.cont, self.hora)
         self.venL = ventanaListaReserva.ventanaListaReserva(self.cont, False)
         self.ventanaUi.control_rutinario.clicked.connect(lambda: self.cambio(self.venCt))
         self.ventanaUi.quirofano.clicked.connect(lambda: self.cambio(self.venQ))
+        self.ventanaUi.especialista.clicked.connect(lambda: self.cambio(self.venCE))
         self.ventanaUi.Lista_reservas.clicked.connect(lambda: self.cambio(self.venL))
 
     def cambio(self, ventana):

@@ -156,7 +156,7 @@ border-radius: 10;</string>
       </font>
      </property>
      <property name="text">
-      <string>Mascota</string>
+      <string>Mascota:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
@@ -176,7 +176,7 @@ border-radius: 10;</string>
       </font>
      </property>
      <property name="text">
-      <string>Especialidad</string>
+      <string>Especialidad:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_7">
@@ -196,7 +196,7 @@ border-radius: 10;</string>
       </font>
      </property>
      <property name="text">
-      <string>Especialista</string>
+      <string>Especialista:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_8">
@@ -216,26 +216,8 @@ border-radius: 10;</string>
       </font>
      </property>
      <property name="text">
-      <string>Horario</string>
+      <string>Horario:</string>
      </property>
-    </widget>
-    <widget class="QComboBox" name="especialista_box">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>280</y>
-       <width>121</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 2px solid #4fa3a6 ;</string>
-     </property>
-     <item>
-      <property name="text">
-       <string>Elegir</string>
-      </property>
-     </item>
     </widget>
     <widget class="QPushButton" name="botonAtras">
      <property name="geometry">
@@ -316,9 +298,9 @@ QPushButton::hover {
     <widget class="QPushButton" name="seleccionar_bloquebtn">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>185</x>
        <y>280</y>
-       <width>151</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
@@ -395,6 +377,26 @@ QPushButton::hover {
      </property>
      <property name="text">
       <string>Agendar Hora</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelEncargado">
+     <property name="geometry">
+      <rect>
+       <x>26</x>
+       <y>281</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid #4fa3a6 ;
+border-radius: 15px;</string>
+     </property>
+     <property name="text">
+      <string>Encargado aparece aqui...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>

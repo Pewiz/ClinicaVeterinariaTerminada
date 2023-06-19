@@ -9,6 +9,7 @@ from uiHorarios import uiVent
 import ventanaCRutinario
 import ventanaListaReserva
 import ventanaQuirofano
+import ventanaCitaEsp
 
 class ventanaHorarios(QMainWindow):
     def __init__(self, cont, cliente):
@@ -24,16 +25,27 @@ class ventanaHorarios(QMainWindow):
         elif self.cont == 1:
             self.ventanaUi.label_9.setText("Horarios: Quirofano.")
             self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaQuirofano.ventanaQuirofano(self.cliente, self.bloque)))
+            self.especSelecc = 0
         elif self.cont == 2:
             self.ventanaUi.label_9.setText("Horarios: Esp. Neurologo.")
+            self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaCitaEsp.ventanaCitaEsp(self.cliente, self.bloque)))
+            self.especSelecc = 0
         elif self.cont == 3:
             self.ventanaUi.label_9.setText("Horarios: Esp. Reproduccion.")
+            self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaCitaEsp.ventanaCitaEsp(self.cliente, self.bloque)))
+            self.especSelecc = 0
         elif self.cont == 4:
             self.ventanaUi.label_9.setText("Horarios: Esp. Odontologia.")
+            self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaCitaEsp.ventanaCitaEsp(self.cliente, self.bloque)))
+            self.especSelecc = 0
         elif self.cont == 5:
             self.ventanaUi.label_9.setText("Horarios: Esp. Oncologo.")
+            self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaCitaEsp.ventanaCitaEsp(self.cliente, self.bloque)))
+            self.especSelecc = 0
         elif self.cont == 6:
             self.ventanaUi.label_9.setText("Horarios: Esp. Cardiologia.")
+            self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaCitaEsp.ventanaCitaEsp(self.cliente, self.bloque)))
+            self.especSelecc = 0
         self.actualizarFecha()
         self.actualizarHorario()
         self.ventanaUi.FechaHoy.dateChanged.connect(self.actualizarHorario)
@@ -173,6 +185,17 @@ class ventanaHorarios(QMainWindow):
             if self.cont == 1:
                 ventana = ventanaQuirofano.ventanaQuirofano(self.cliente, self.bloque)
                 ventana.show()
+                self.hide()
+            if self.cont >= 2 and self.cont <= 6:
+                with open("veterinarios.csv") as r:
+                    read = csv.reader(r)
+                    next(read)
+                    for l in read:
+                        if l[0] == eleccion[0]:
+                            nombreVet = l[1]
+                ventanaE = ventanaCitaEsp.ventanaCitaEsp(self.cliente, self.bloque)
+                ventanaE.show()
+                ventanaE.actualizarComboBoxEspLabel(self.especSelecc, str(nombreVet))
                 self.hide()
             if self.cont == 7:
                 ventanaM = ventanaListaReserva.ventanaListaReserva(self.cliente, True)
