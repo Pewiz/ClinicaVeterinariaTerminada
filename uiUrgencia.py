@@ -187,6 +187,17 @@ class Ui_MainWindow(object):
         self.botonAtras.setIcon(icon)
         self.botonAtras.setIconSize(QtCore.QSize(71, 61))
         self.botonAtras.setObjectName("botonAtras")
+        self.AmbulanciacheckBox = QtWidgets.QCheckBox(self.widget)
+        self.AmbulanciacheckBox.setGeometry(QtCore.QRect(190, 320, 91, 41))
+        font = QtGui.QFont()
+        font.setFamily("Corbel")
+        font.setBold(True)
+        font.setWeight(75)
+        self.AmbulanciacheckBox.setFont(font)
+        self.AmbulanciacheckBox.setStyleSheet("\n"
+"")
+        self.AmbulanciacheckBox.setObjectName("checkBox")
+        self.AmbulanciacheckBox.setDisabled(True)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -209,6 +220,7 @@ class Ui_MainWindow(object):
         self.label_9.setText(_translate("MainWindow", "Gravedad"))
         self.Ver_registro.setText(_translate("MainWindow", "Ver Registro Urgencias"))
         self.Guardar_registro.setText(_translate("MainWindow", "Guardar Registro"))
+        self.AmbulanciacheckBox.setText(_translate("MainWindow", "Ambulancia"))
 
 
 
