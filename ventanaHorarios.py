@@ -19,6 +19,7 @@ class ventanaHorarios(QMainWindow):
         self.ventanaUi.setupUi(self)
         if self.cont == 0:
             self.ventanaUi.label_9.setText("Horarios: Ct Rutinario.")
+            self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaCRutinario.ventanaCRutinario(self.cliente, self.bloque)))
         elif self.cont == 1:
             self.ventanaUi.label_9.setText("Horarios: Quirofano.")
         elif self.cont == 2:
@@ -39,8 +40,14 @@ class ventanaHorarios(QMainWindow):
         self.ventanaUi.btnElegir.clicked.connect(self.elegirHora)
         self.bloque = []
         
+    def volver(self, ventana):
+        ventana.show()
+        self.hide()
+        
+        
     def actualizarLabel(self):
         if self.guardarCont == 7:
+            self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver(ventanaListaReserva.ventanaListaReserva(self.cliente, False)))
             self.actualizarHorario()
             self.ventanaUi.label_9.setText("Horarios: Modificacion.")
             self.posBloque = 0

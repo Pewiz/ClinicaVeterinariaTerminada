@@ -10,6 +10,7 @@ import PyQt5.QtCore as qc
 from uiListaReserva import Ui_mainWindow
 from ManejoArchivo import GestionArchivo
 import ventanaHorarios
+import ventanaMenuReserva
 
 class ventanaListaReserva(QMainWindow):
     def __init__(self, cont, mod):
@@ -26,7 +27,11 @@ class ventanaListaReserva(QMainWindow):
         self.ui.btnVer.clicked.connect(self.verHora)
         self.ventanaH = ventanaHorarios.ventanaHorarios(7, self.cont)
         self.ui.btnModificar.clicked.connect(lambda: self.modificarHora(self.ventanaH))
+        self.ui.btnAtras.clicked.connect(lambda: self.volver(ventanaMenuReserva.ventanaMenuReserva(self.cont)))
         
+    def volver(self, ventana):
+        ventana.show()
+        self.hide()    
         
     def getBloque(self, bloque, posi):
         self.mod = True
@@ -340,9 +345,3 @@ class ventanaListaReserva(QMainWindow):
                 self.ui.listaReservas.setRowHidden(row, False)
             else:
                 self.ui.listaReservas.setRowHidden(row, True)
-
-if __name__=="__main__":
-    app = QApplication(sys.argv)
-    ventanaP = ventanaListaReserva(1, False)
-    ventanaP.show()
-    app.exec_()

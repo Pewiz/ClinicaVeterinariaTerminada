@@ -4,7 +4,7 @@ import sys
 import csv
 from uiReservaCtRutinario import Ui_MainWindow
 from ManejoArchivo import GestionArchivo
-import ventanaReserva
+import ventanaMenuReserva
 import ventanaHorarios
 
 class ventanaCRutinario(QMainWindow):
@@ -17,9 +17,14 @@ class ventanaCRutinario(QMainWindow):
         self.horario = ventanaHorarios.ventanaHorarios(0, self.cont)
         self.ventanaUi.ButtonHorarios.clicked.connect(lambda : self.cambio(self.horario))
         self.ventanaUi.ButtonAgendarHora.clicked.connect(lambda: self.agendar())
+        self.ventanaUi.ButtonAtras.clicked.connect(lambda: self.volver(ventanaMenuReserva.ventanaMenuReserva(self.cont)))
         self.actualizarComboBoxMascota()
         self.actualizarLabel()
 
+    def volver(self, ventana):
+        ventana.show()
+        self.hide()
+    
     def actualizarComboBoxMascota(self):
         with open("clientes.csv") as r:
             reader = csv.reader(r)
@@ -28,6 +33,7 @@ class ventanaCRutinario(QMainWindow):
             for l in reader:
                 if i == self.cont:
                     self.rutCliente = l[0]
+                    self.nombreC = l[1]
                     break
                 i += 1
 
@@ -81,9 +87,11 @@ class ventanaCRutinario(QMainWindow):
             with open("Control.csv","a",newline="") as archivo:
                 escritor = csv.writer(archivo,delimiter=",") 
                 escritor.writerow(reserva)
-            
-            qtw.QMessageBox.warning(self, "Fiumba", "Fiumba")
-            self.close()
+            msg = qtw.QMessageBox()
+            msg.setWindowTitle("Reserva Control Rutinario realizada con exito.")
+            msg.setText("Felicidades señor " + self.nombreC + " su reserva ha sido realizada con exito.\nSi necesita saber mas detalles, dirigase hacia Lista de Reservas para cancelar, modificar o mostrar su reserva.")
+            msg.exec_()
+            self.volver(ventanaMenuReserva.ventanaMenuReserva(self.cont))
             
             
     
