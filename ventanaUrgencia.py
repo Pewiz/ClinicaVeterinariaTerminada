@@ -81,9 +81,9 @@ class ventanaUrgencia(QMainWindow):
     def atras(self):
         self.ventanaReserva = ventanaReserva.ventanaReserva()
         self.ventanaReserva.show()
-        self.hide()
+        self.close()
     
     def lista(self):
         self.ventanaLista = ventanaListaUrgencias.ventanaListaUrgencias()
         self.ventanaLista.show()
-        self.hide()
+        self.close()

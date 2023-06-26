@@ -22,7 +22,7 @@ class ventanaQuirofano(QMainWindow):
 
     def volver(self, ventana):
         ventana.show()
-        self.hide()
+        self.close()
     
     def actualizarComboBoxMascota(self):
         with open("clientes.csv") as r:
@@ -120,4 +120,4 @@ class ventanaQuirofano(QMainWindow):
     def cambio(self, ventana):
         ventana.actualizarHorario()
         ventana.show()
-        self.hide()
+        self.close()

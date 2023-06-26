@@ -28,7 +28,7 @@ class ventanaMenuReserva(QMainWindow):
 
     def cambio(self, ventana):
         ventana.show()
-        self.hide()
+        self.close()
 
     def actualizarNombre(self):
         with open("clientes.csv") as r:

@@ -44,12 +44,12 @@ class ventanaCitaEsp(QMainWindow):
     
     def atras(self, ventana):
         ventana.show()
-        self.hide()
+        self.close()
     
     def cambio(self):
         self.horario.show()
         self.horario.especSelecc = self.ventanaUi.especialidad_box.currentIndex()
-        self.hide()
+        self.close()
     
     def actualizarComboBoxMascota(self):
         with open("clientes.csv") as r:

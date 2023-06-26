@@ -30,7 +30,7 @@ class ventanaListaReserva(QMainWindow):
         
     def volver(self, ventana):
         ventana.show()
-        self.hide()    
+        self.close()    
         
     def getBloque(self, bloque, posi):
         self.mod = True
@@ -179,7 +179,7 @@ class ventanaListaReserva(QMainWindow):
             ventana.actualizarLabel()
             ventana.posBloque = self.filaSelecc
             ventana.show()
-            self.hide()
+            self.close()
         self.mod = False
         
     def verHora(self):

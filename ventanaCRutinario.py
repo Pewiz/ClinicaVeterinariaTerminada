@@ -22,7 +22,7 @@ class ventanaCRutinario(QMainWindow):
 
     def volver(self, ventana):
         ventana.show()
-        self.hide()
+        self.close()
     
     def actualizarComboBoxMascota(self):
         with open("clientes.csv") as r:
@@ -116,4 +116,4 @@ class ventanaCRutinario(QMainWindow):
     def cambio(self, ventana):
         ventana.actualizarHorario()
         ventana.show()
-        self.hide()
+        self.close()

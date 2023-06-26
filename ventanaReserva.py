@@ -33,12 +33,12 @@ class ventanaReserva(QMainWindow):
             contador = self.ventanaUi.ComboBoxCliente.currentIndex()
             self.ventana = ventanaMenuReserva.ventanaMenuReserva(contador)
             self.ventana.show()
-            self.hide()
+            self.close()
     
     def urgencia(self):
         self.ventanaUrgencia = ventanaUrgencia.ventanaUrgencia()
         self.ventanaUrgencia.show()
-        self.hide()
+        self.close()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

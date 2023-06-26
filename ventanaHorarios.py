@@ -55,7 +55,7 @@ class ventanaHorarios(QMainWindow):
         
     def volver(self, ventana):
         ventana.show()
-        self.hide()
+        self.close()
         
         
     def actualizarLabel(self):
@@ -194,11 +194,11 @@ class ventanaHorarios(QMainWindow):
             if self.cont == 0:
                 ventana = ventanaCRutinario.ventanaCRutinario(self.cliente, self.bloque)
                 ventana.show()
-                self.hide()
+                self.close()
             if self.cont == 1:
                 ventana = ventanaQuirofano.ventanaQuirofano(self.cliente, self.bloque)
                 ventana.show()
-                self.hide()
+                self.close()
             if self.cont >= 2 and self.cont <= 6:
                 with open("veterinarios.csv") as r:
                     read = csv.reader(r)
@@ -209,7 +209,7 @@ class ventanaHorarios(QMainWindow):
                 ventanaE = ventanaCitaEsp.ventanaCitaEsp(self.cliente, self.bloque)
                 ventanaE.show()
                 ventanaE.actualizarComboBoxEspLabel(self.especSelecc, str(nombreVet))
-                self.hide()
+                self.close()
             if self.cont == 7:
                 ventanaM = ventanaListaReserva.ventanaListaReserva(self.cliente, True)
                 ventanaM.getBloque(self.bloque, self.posBloque)

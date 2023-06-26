@@ -46,4 +46,4 @@ class ventanaModifMascota(QMainWindow):
         vent = ventListaMasc.ventListaMascota(self.rut, fla)
         vent.actualizar()
         vent.show()
-        self.hide()
+        self.close()

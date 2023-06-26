@@ -83,4 +83,4 @@ class ventanaListaUrgencias(QMainWindow):
     
     def atras(self):
         self.ventana.show()
-        self.hide()
+        self.close()
