@@ -206,8 +206,8 @@ class uiVentLista(object):
     def retranslateUi(self, mainWindow):
         _translate = QtCore.QCoreApplication.translate
         mainWindow.setWindowTitle(_translate("mainWindow", "Clinica CVI"))
-        self.label.setText(_translate("mainWindow", "Clientes Agregados"))
-        self.label_9.setText(_translate("mainWindow", "Lista Clientes"))
+        self.label.setText(_translate("mainWindow", "Usuarios Agregados"))
+        self.label_9.setText(_translate("mainWindow", "Lista Usuarios"))
         self.BtnVerDatos.setText(_translate("mainWindow", "Ver Datos"))
         self.btnAvanzar.setText(_translate("mainWindow", "Lista mascota"))
         self.BtnEditar.setText(_translate("mainWindow", "Editar"))

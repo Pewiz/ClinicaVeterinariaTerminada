@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 from ventanaAdministracion import ventanaAdmin
-from ventanaMenuClinica import Ui_MainWindow
+from ventanaReserva import ventanaReserva
 from VentAdminPrincipal import Ui_VentAdminisracionPrincipal
 
 
@@ -13,7 +13,7 @@ class uiMenu(QMainWindow):
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(120, 270, 301, 81))
-        self.pushButton.clicked.connect(lambda: self.abrirVentClinica())
+        self.pushButton.clicked.connect(lambda: self.abrirVentanaReserva())
         font = QtGui.QFont()
         font.setFamily("Arial Black")
         font.setPointSize(16)
@@ -61,6 +61,7 @@ class uiMenu(QMainWindow):
 "border: none;")
         self.pushButton_3.setText("")
         self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_3.clicked.connect(Menu.close)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(320, 150, 371, 361))
         self.label_2.setStyleSheet("image: url(imagenes/Logo-removebg-preview.png);")
@@ -86,11 +87,9 @@ class uiMenu(QMainWindow):
         ventana.show()
         self.hide()
     
-    def abrirVentClinica(self):
-        self.ventana = QtWidgets.QMainWindow()
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self.ventana)
-        self.ventana.show()
+    def abrirVentanaReserva(self):
+        self.ventanaReserva = ventanaReserva()
+        self.ventanaReserva.show()
 
     def abrirVentanaAdministracion(self):
         self.ventana = QtWidgets.QMainWindow()
@@ -104,7 +103,6 @@ class uiMenu(QMainWindow):
         self.pushButton.setText(_translate("Menu", "Clinica"))
         self.pushButton_2.setText(_translate("Menu", " Administracion"))
         self.label.setText(_translate("Menu", "CLINICA CVI"))
-
 
 if __name__ == "__main__":
     import sys

@@ -13,6 +13,7 @@ class ventanaReserva(QMainWindow):
         self.ventanaUi.setupUi(self)
         self.ventanaUi.ButtonIngresar.clicked.connect(self.elegirPersona)
         self.ventanaUi.ButtonUrgencia.clicked.connect(self.urgencia)
+        self.ventanaUi.ButtonAtras.clicked.connect(self.close)
         self.cargarClientes()
 
     def cargarClientes(self):

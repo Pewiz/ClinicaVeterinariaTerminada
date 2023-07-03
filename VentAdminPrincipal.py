@@ -11,7 +11,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from VentAdminUsuario import Ui_VentAdminUsuario
 from ventanaAdministracion import ventanaAdmin
+from ventanaAdministracionUsuario import ventanaAdminUsuario
 from uiAdministracion import uiAdmin
+import ventanaReserva
 
 class Ui_VentAdminisracionPrincipal(object):
     def setupUi(self, VentAdminisracionPrincipal):
@@ -37,7 +39,17 @@ class Ui_VentAdminisracionPrincipal(object):
 "border-color: rgb(0, 51, 102);\n"
 "border-radius: 5px;")
         self.btnAdminUsuario.setObjectName("btnAdminUsuario")
-        self.btnAdminUsuario.clicked.connect(lambda: self.cambiarVent(Ui_VentAdminUsuario))
+        self.btnAdminUsuario.clicked.connect(lambda: self.cambioV2())
+        self.btnReservas = QtWidgets.QPushButton(VentAdminisracionPrincipal)
+        self.btnReservas.setGeometry(QtCore.QRect(290, 330, 191, 61))
+        self.btnReservas.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
+        self.btnReservas.setStyleSheet("background-color: rgb(79, 163, 166);\n"
+"border-style: solid;\n"
+"border-width: 1px;\n"
+"border-color: rgb(0, 51, 102);\n"
+"border-radius: 5px;")
+        self.btnReservas.setObjectName("btnReservas")
+        self.btnReservas.clicked.connect(lambda: self.cambioV3())
         self.label = QtWidgets.QLabel(VentAdminisracionPrincipal)
         self.label.setGeometry(QtCore.QRect(0, 0, 797, 130))
         self.label.setStyleSheet("background-color: transparent;")
@@ -72,6 +84,15 @@ class Ui_VentAdminisracionPrincipal(object):
         self.label_4.setText("")
         self.label_4.setPixmap(QtGui.QPixmap("imagenes/logoLabel4.png"))
         self.label_4.setObjectName("label_4")
+        self.label_5 = QtWidgets.QLabel(VentAdminisracionPrincipal)
+        self.label_5.setEnabled(False)
+        self.label_5.setGeometry(QtCore.QRect(300, 330, 50, 61))
+        self.label_5.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.label_5.setMouseTracking(False)
+        self.label_5.setStyleSheet("background-color: transparent;")
+        self.label_5.setText("")
+        self.label_5.setPixmap(QtGui.QPixmap("imagenes/logo_reserva.png").scaled(50, 50))
+        self.label_5.setObjectName("label_4")
         self.label_2.raise_()
         self.btnAdminUsuario.raise_()
         self.label.raise_()
@@ -79,6 +100,8 @@ class Ui_VentAdminisracionPrincipal(object):
         self.label_4.raise_()
         self.btnAdminCliente.raise_()
         self.label_3.raise_()
+        self.btnReservas.raise_()
+        self.label_5.raise_()
 
         self.retranslateUi(VentAdminisracionPrincipal)
         QtCore.QMetaObject.connectSlotsByName(VentAdminisracionPrincipal)
@@ -88,6 +111,7 @@ class Ui_VentAdminisracionPrincipal(object):
         VentAdminisracionPrincipal.setWindowTitle(_translate("VentAdminisracionPrincipal", "Dialog"))
         self.btnAdminCliente.setText(_translate("VentAdminisracionPrincipal", "      Admin Cliente"))
         self.btnAdminUsuario.setText(_translate("VentAdminisracionPrincipal", "     Admin Usuario"))
+        self.btnReservas.setText(_translate("VentAdminisracionPrincipal", "     Reservas"))
 
     def cambiarVent(self, nombre_Vent):
         self.nombre_Vent = QtWidgets.QMainWindow()
@@ -98,6 +122,14 @@ class Ui_VentAdminisracionPrincipal(object):
     def cambioV(self):
         ventanaP = ventanaAdmin()
         ventanaP.show()
+        
+    def cambioV2(self):
+        ventanaP = ventanaAdminUsuario()
+        ventanaP.show()
+        
+    def cambioV3(self):
+        self.ventana_reserva = ventanaReserva.ventanaReserva()
+        self.ventana_reserva.show()
         
 
 if __name__ == "__main__":

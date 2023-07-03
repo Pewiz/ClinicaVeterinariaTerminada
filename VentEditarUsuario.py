@@ -249,8 +249,8 @@ class Ui_VentVerDatosUser(object):
             self.cargoLnE.setEnabled(False)
             self.experienciaLnE.setEnabled(False)
             self.emailLnE.setEnabled(False)
-            self.alertBox("Cambios guardados correctamente","Guardado de Cambios")
-            self.cambiarVentNormal(self.nombreVent)
+        self.alertBox("Cambios guardados correctamente","Guardado de Cambios")
+        self.cambiarVentNormal(self.nombreVent)
         
 
 
