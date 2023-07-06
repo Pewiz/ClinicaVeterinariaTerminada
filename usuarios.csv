@@ -1,4 +1,4 @@
-rut,nombres,apellido_paterno,apellido_materno,genero,fecha_nacimiento,email,telefono,domicilio,cargo,3 meses,contraseña
+rut,nombres,apellido_paterno,apellido_materno,genero,fecha_nacimiento,email,telefono,domicilio,cargo,experiencia,contraseña
 21354784-4,Alvaro Gonzalo,Ramos,Andler,Masculino,30/07/2003,alvaro@gmail.com,912341234,Calle 123,Neurologia,36 meses,perrolol
 12345678-9,Nombres,Paterno,Paterno,Masculino,01/01/2000,peru@gmail.com,123456789,Per�,Neurologia,12 meses,vivaperu
 15.939.571-5,Cristiano Ronaldo,Dos Santos,Aveiro,Masculino,05/02/1985,cr7@alumnos.ulagos.com,123457892,Carelmapu,Cirujano,11 meses,1234

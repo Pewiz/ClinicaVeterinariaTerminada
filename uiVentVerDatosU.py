@@ -82,7 +82,7 @@ class uiVerD(object):
             "imagenes\Atras.png"))
         self.label_3.setObjectName("label_3")
         self.label_logo = QtWidgets.QLabel(self.frame)
-        self.label_logo.setGeometry(QtCore.QRect(210, 110, 291, 301))
+        self.label_logo.setGeometry(QtCore.QRect(390, 110, 291, 301))
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(16)
@@ -93,7 +93,7 @@ class uiVerD(object):
         self.label_logo.setObjectName("label_logo")
         self.btnAtras = QtWidgets.QPushButton(self.frame)
         self.btnAtras.setEnabled(True)
-        self.btnAtras.setGeometry(QtCore.QRect(860, 440, 191, 41))
+        self.btnAtras.setGeometry(QtCore.QRect(260, 440, 211, 41))
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
@@ -116,6 +116,20 @@ class uiVerD(object):
                                             "border-radius: 5px;")
         self.btnMenuPrincipal.setCheckable(False)
         self.btnMenuPrincipal.setObjectName("btnMenuPrincipal")
+        
+        self.btnAsignarHorario = QtWidgets.QPushButton(self.frame)
+        self.btnAsignarHorario.setEnabled(True)
+        self.btnAsignarHorario.setGeometry(QtCore.QRect(850, 440, 211, 41))
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(14)
+        self.btnAsignarHorario.setFont(font)
+        self.btnAsignarHorario.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btnAsignarHorario.setStyleSheet("background-color: rgb(79, 163, 166);\n"
+                                            "border-radius: 5px;")
+        self.btnAsignarHorario.setCheckable(False)
+        self.btnAsignarHorario.setObjectName("btnAsignarHorario")
         self.labelNombreC = QtWidgets.QLabel(self.frame)
         self.labelNombreC.setGeometry(QtCore.QRect(30, 170, 271, 41))
         font = QtGui.QFont()
@@ -316,6 +330,7 @@ class uiVerD(object):
         self.btnAtras.raise_()
         self.btnMenuPrincipal.raise_()
         self.labelNombreC.raise_()
+        self.btnAsignarHorario.raise_()
         self.labelRut.raise_()
         self.label_5.raise_()
         self.label_6.raise_()
@@ -345,6 +360,8 @@ class uiVerD(object):
         self.label_9.setText(_translate("mainWindow", "Usuario"))
         self.btnAtras.setText(_translate(
             "mainWindow", "Volver a Lista Usuario"))
+        self.btnAsignarHorario.setText(_translate(
+            "mainWindow", "Registrar Hora"))
         self.btnMenuPrincipal.setText(_translate(
             "mainWindow", "Volver a Administración"))
         self.labelNombreC.setText(_translate("mainWindow", "Nombre Completo"))

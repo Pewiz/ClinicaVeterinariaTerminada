@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton
-from PyQt5 import QtCore, QtGui
+from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 from uiAdministracionUsuario import uiAdmin
 import ventanaUsuario
@@ -16,15 +16,7 @@ class ventanaAdminUsuario(QMainWindow):
         self.ventanaLis = ventanaListaUsuario.ventanaLista()
         self.ventanaUi.AGREGARUSUARIO.clicked.connect(lambda: self.cambioV(self.ventanaCl))
         self.ventanaUi.BUSCARUSUARIO.clicked.connect(lambda: self.cambioV(self.ventanaLis))
-        
-        self.ButtonAtras = QPushButton(self.ventanaUi.centralwidget)
-        self.ButtonAtras.setGeometry(QtCore.QRect(20, 25, 34, 34))
-        self.ButtonAtras.setIcon(QtGui.QIcon('imagenes\Atras.png'))
-        self.ButtonAtras.setText("")
-        self.ButtonAtras.setIconSize(QtCore.QSize(150, 150))
-        self.ButtonAtras.setStyleSheet("background-color: transparent;\n""border: none;\n""")
-        self.ButtonAtras.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.ButtonAtras.clicked.connect(self.close)
+        self.ventanaUi.btnRegresar.clicked.connect(self.close)
         
     def cambioV(self, ventana):
         ventana.show()

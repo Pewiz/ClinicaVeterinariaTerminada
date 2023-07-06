@@ -15,8 +15,9 @@ class ventanaAdmin(QMainWindow):
 
         self.ventanaCl = ventanaCliente.ventanaCliente()
         self.ventanaLis = ventanaLista.ventanaLista()
-        self.ventanaUi.AGREGARPACIENTE.clicked.connect(lambda: self.cambioV(self.ventanaCl))
-        self.ventanaUi.BUSCARPACIENTE.clicked.connect(lambda: self.cambioV(self.ventanaLis))
+        self.ventanaUi.AGREGARCLIENTE.clicked.connect(lambda: self.cambioV(self.ventanaCl))
+        self.ventanaUi.BUSCARCLIENTE.clicked.connect(lambda: self.cambioV(self.ventanaLis))
+        self.ventanaUi.btnRegresar.clicked.connect(self.close)
 
         self.ButtonAtras = QPushButton(self.ventanaUi.centralwidget)
         self.ButtonAtras.setGeometry(QtCore.QRect(20, 25, 34, 34))

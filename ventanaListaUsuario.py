@@ -2,13 +2,11 @@ import csv
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import QMainWindow, QApplication
 import PyQt5.QtWidgets as qtw
-from uiVentLista import uiVentLista
+from uiVentListaUsuarios import uiVentLista
 from ManejoArchivo import GestionArchivo
 import ventanaAdministracionUsuario
 import ventanaModificarUsuario
 import ventanaCargaUsuario
-import ventListaMasc
-import ventanaMascota
 import ventVerDatosU
 import csv
 
@@ -28,10 +26,7 @@ class ventanaLista(QMainWindow):
         self.ui.BtnEditar.clicked.connect(lambda: self.ventanaMod(self.vent))
         self.ui.BtnVerDatos.clicked.connect(
             lambda: self.ventanaVer(self.ventV))
-        self.ui.BtnEliminar.clicked.connect(lambda: self.eliminar())
         self.rt = ""
-        self.ventan = ventListaMasc.ventListaMascota(self.rt, 1)
-        self.ventAgMascota = ventanaMascota.ventanaMascota(self.rt, 1)
         self.tabla = self.ui.tableWidget
 
         with open('usuarios.csv') as f:

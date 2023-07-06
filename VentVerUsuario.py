@@ -165,7 +165,7 @@ class Ui_VentVerUsuario(object):
 
     def actualizar(self):
         # Abre el archivo CSV
-        with open('veterinarios.csv', 'w', newline='') as csvfile:
+        with open('usuarios.csv', 'w', newline='') as csvfile:
             writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             
             encabezados = [self.tableWidget.horizontalHeaderItem(i).text() for i in range(self.tableWidget.columnCount())]
@@ -183,7 +183,7 @@ class Ui_VentVerUsuario(object):
 
     def cargarUsuarioCSV(self):
         # Abre el archivo CSV
-        with open('veterinarios.csv', newline='') as csvfile:
+        with open('usuarios.csv', newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter=',', quotechar='"')
             #  Lee la primera fila como los encabezados de las columnas y los posiciona en el tableWidget
             encabezados = next(reader)

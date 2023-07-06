@@ -1,8 +1,11 @@
 import csv
 from PyQt5.QtWidgets import QMainWindow
+from PyQt5 import QtWidgets
 from uiVentVerDatosU import uiVerD
 import ventanaListaUsuario
 import ventanaAdministracionUsuario
+from VentAsignarHoraVet import Ui_VentAsignarHorario
+
 
 
 class ventanaVerDatos(QMainWindow):
@@ -13,27 +16,26 @@ class ventanaVerDatos(QMainWindow):
         self.ventanaUi.setupUi(self)
         self.ventanaUi.btnAtras.clicked.connect(lambda: self.volver())
         self.ventanaUi.btnMenuPrincipal.clicked.connect(lambda: self.menuP())
+        self.ventanaUi.btnAsignarHorario.clicked.connect(lambda: self.cambiarVent(Ui_VentAsignarHorario, self._usuario))
+
 
     def actualizar(self):
         with open('usuarios.csv', 'r', encoding="ISO 8859-1") as r:
-            lector = csv.reader(r, delimiter=",")
-            next(lector)
-            i = 0
-            for l in lector:
-                i = (i+1)
-                if i == (self.cont+1):
-                    usuario = l
+            lector = csv.DictReader(r, delimiter=",")
+            usuarios = list(lector)
 
-        self.ventanaUi.labelNombreC.setText(
-            str(usuario[1]) + " " + str(usuario[2]) + " " + str(usuario[3]))
-        self.ventanaUi.labelRut.setText(str(usuario[0]))
-        self.ventanaUi.labelGenero.setText(str(usuario[4]))
-        self.ventanaUi.labelFecha.setText(str(usuario[5]))
-        self.ventanaUi.labelCorreo.setText(str(usuario[6]))
-        self.ventanaUi.labelTelefono.setText(str(usuario[7]))
-        self.ventanaUi.labelDireccion.setText(str(usuario[8]))
-        self.ventanaUi.labelCargo.setText(str(usuario[9]))
-        self.ventanaUi.labelExperiencia.setText(str(usuario[10]))
+        if self.cont < len(usuarios):
+            self._usuario = usuarios[self.cont]
+            self.ventanaUi.labelNombreC.setText(
+                str(self._usuario['nombres']) + " " + str(self._usuario['apellido_paterno']) + " " + str(self._usuario['apellido_materno']))
+            self.ventanaUi.labelRut.setText(str(self._usuario['rut']))
+            self.ventanaUi.labelGenero.setText(str(self._usuario['genero']))
+            self.ventanaUi.labelFecha.setText(str(self._usuario['fecha_nacimiento']))
+            self.ventanaUi.labelCorreo.setText(str(self._usuario['email']))
+            self.ventanaUi.labelTelefono.setText(str(self._usuario['telefono']))
+            self.ventanaUi.labelDireccion.setText(str(self._usuario['domicilio']))
+            self.ventanaUi.labelCargo.setText(str(self._usuario['cargo']))
+            self.ventanaUi.labelExperiencia.setText(str(self._usuario['experiencia']))
 
     def volver(self):
         ventanaListaUsuario.ventanaLista().show()
@@ -42,3 +44,9 @@ class ventanaVerDatos(QMainWindow):
     def menuP(self):
         ventanaAdministracionUsuario.ventanaAdminUsuario().show()
         self.close()
+
+    def cambiarVent(self,nombre_Vent,usuario):
+        self.nombre_Vent = QtWidgets.QMainWindow()
+        self.ui = nombre_Vent(usuario)
+        self.ui.setupUi(self.nombre_Vent)
+        self.nombre_Vent.show()
