@@ -216,7 +216,7 @@ class Ui_ventIngresarUsuario(object):
             if cargo == "Veterinario":
                 cargo = especialidad
             trabajador = Usuario(rut=rut_con_digito_verificador,nombres=nombres, apellido_paterno=apellidoPa, apellido_materno=apellidoMa, genero=genero, fecha_nacimiento=fecha_nacimiento, cargo=cargo, experiencia=experiencia,email=email,contrasea=contrasea,horario=None)
-            GestionArchivo.insertar("veterinarios.csv",trabajador)
+            GestionArchivo.insertar("ArchivosCSV/veterinarios.csv",trabajador)
             self.alertBox("El usuario: "+nombres+" "+apellidoPa+" "+apellidoMa+" ha sido ingresado", "Se ha ingresado el cliente")
             
             # Limpiar LineEdit

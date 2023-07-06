@@ -29,7 +29,7 @@ class ventanaLista(QMainWindow):
         self.rt = ""
         self.tabla = self.ui.tableWidget
 
-        with open('usuarios.csv') as f:
+        with open('ArchivosCSV/usuarios.csv') as f:
             lector = csv.reader(f)
             next(lector)
             self.usuarios = [row for row in lector]
@@ -73,8 +73,7 @@ class ventanaLista(QMainWindow):
         self.hide()
 
     def volver(self):
-        ventanaAdministracionUsuario.ventanaAdminUsuario().show()
-        self.hide()
+        self.close()
 
     def buscador(self, texto):
         for row in range(self.tabla.rowCount()):
@@ -98,7 +97,7 @@ class ventanaLista(QMainWindow):
             self.ui.BtnEliminar.setEnabled(False)
 
     def buscarRut(self):
-        with open('usuarios.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('ArchivosCSV/usuarios.csv', 'r', encoding="ISO 8859-1") as r:
             l = csv.reader(r, delimiter=",")
             next(l)
             i = 0
@@ -111,7 +110,7 @@ class ventanaLista(QMainWindow):
         for i, usuario in enumerate(self.usuarios):
             if i == self.usuarioSelecc:
                 self.rut = usuario[0]
-        with open('mascotas.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('ArchivosCSV/mascotas.csv', 'r', encoding="ISO 8859-1") as r:
             lector = csv.reader(r, delimiter=",")
             next(lector)
             i = 0
@@ -121,11 +120,11 @@ class ventanaLista(QMainWindow):
         for h in range(i):
             k = 0
             j = self.buscar(k)
-            GestionArchivo.eliminar("mascotas.csv", j)
+            GestionArchivo.eliminar("ArchivosCSV/mascotas.csv", j)
 
         GestionArchivo.eliminar(
-            "usuarios.csv", self.usuarioSelecc + 1)
-        with open('usuarios.csv') as f:
+            "ArchivosCSV/usuarios.csv", self.usuarioSelecc + 1)
+        with open('ArchivosCSV/usuarios.csv') as f:
             lector = csv.reader(f)
             usuarios = [row for row in lector]
         contFilas = len(usuarios)

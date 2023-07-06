@@ -17,7 +17,7 @@ class ventanaReserva(QMainWindow):
         self.cargarClientes()
 
     def cargarClientes(self):
-        with open('clientes.csv') as file:
+        with open('ArchivosCSV/clientes.csv') as file:
             reader = csv.reader(file)
             next(reader)
 

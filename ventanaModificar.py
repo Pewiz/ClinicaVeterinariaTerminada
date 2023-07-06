@@ -1,6 +1,7 @@
 import csv
 from PyQt5 import QtGui, QtCore
 import PyQt5.QtWidgets as qtw
+from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QMainWindow
 from uiVentModificar import uiVentModificar
 from ManejoArchivo import GestionArchivo
@@ -27,7 +28,10 @@ class ventanaModificar(QMainWindow):
         
         self.ventanaUi.BtnAtras.clicked.connect(lambda: self.cancelar())
         self.ventanaUi.btnElegir.clicked.connect(lambda: self.modificar())
-        
+        self.ventanaUi.btnInsertar.clicked.connect(self.rellenarDatos)
+        self.ventanaUi.lineEdit_3.setDisabled(True)
+        self.ventanaUi.lineEdit_6.setDisabled(True)
+        self.ventanaUi.dateEdit.setDisabled(True)
         
     
     def cancelar(self):
@@ -38,7 +42,7 @@ class ventanaModificar(QMainWindow):
         if self.ventanaUi.lineEdit.text() == "" or self.ventanaUi.lineEdit_2.text() == "" or self.ventanaUi.lineEdit_3.text() == "" or self.ventanaUi.lineEdit_4.text() == "" or self.ventanaUi.lineEdit_5.text() == "" or self.ventanaUi.lineEdit_6.text() == "" or self.ventanaUi.lineEdit_7.text() == "" or self.ventanaUi.lineEdit_8.text() == "" or self.ventanaUi.comboBox.currentIndex() < 1:
             qtw.QMessageBox.warning(self, "Hay campos sin rellenar", "Por favor, rellene sus datos correctamente.")
         else:
-            with open('clientes.csv', 'r', encoding="utf-8") as r:
+            with open('ArchivosCSV/clientes.csv', 'r', encoding="utf-8") as r:
                 l = csv.reader(r, delimiter=",")
                 next(l)
                 i = 0
@@ -59,6 +63,25 @@ class ventanaModificar(QMainWindow):
             telefono = self.ventanaUi.lineEdit_7.text()
             domicilio = self.ventanaUi.lineEdit_8.text()
             self.cliente = Cliente(str(rut), str(nombres), str(apellidoPaterno), str(apellidoMaterno), str(genero), str(fechaNacimiento), str(email), str(telefono), str(domicilio))
-            GestionArchivo.modificar("clientes.csv",self.cont + 1, self.cliente)
+            GestionArchivo.modificar("ArchivosCSV/clientes.csv",self.cont + 1, self.cliente)
             ventanaLista.ventanaLista().show()
             self.close()
+            
+    def rellenarDatos(self):
+        with open('ArchivosCSV/clientes.csv', 'r', encoding="latin-1") as r:
+                l = csv.reader(r, delimiter=",")
+                next(l)
+                i = 0
+                for lis in l:
+                    i = (i + 1)
+                    if i == (self.cont+1):
+                        self.ventanaUi.lineEdit.setText(lis[1])
+                        self.ventanaUi.lineEdit_3.setText(lis[0])
+                        self.ventanaUi.lineEdit_7.setText(lis[7])
+                        self.ventanaUi.lineEdit_2.setText(lis[2])
+                        self.ventanaUi.lineEdit_4.setText(lis[6])
+                        self.ventanaUi.lineEdit_8.setText(lis[8])
+                        self.ventanaUi.lineEdit_5.setText(lis[3])
+                        self.ventanaUi.lineEdit_6.setText(lis[0][-1])
+                        self.ventanaUi.comboBox.setCurrentText(str(lis[4]))
+                        self.ventanaUi.dateEdit.setDate(QDate.fromString(lis[5], "dd/MM/yyyy"))

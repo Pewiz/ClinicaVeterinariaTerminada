@@ -25,7 +25,7 @@ class ventanaQuirofano(QMainWindow):
         self.close()
     
     def actualizarComboBoxMascota(self):
-        with open("clientes.csv") as r:
+        with open("ArchivosCSV/clientes.csv") as r:
             reader = csv.reader(r)
             next(reader)
             i = 1
@@ -36,7 +36,7 @@ class ventanaQuirofano(QMainWindow):
                     break
                 i += 1
 
-        with open('mascotas.csv') as file:
+        with open('ArchivosCSV/mascotas.csv') as file:
             reader = csv.reader(file)
             next(reader)
             self.mascota = []
@@ -68,7 +68,7 @@ class ventanaQuirofano(QMainWindow):
                     break
                 i += 1
             
-            with open('salas.csv') as file:
+            with open('ArchivosCSV/salas.csv') as file:
                 reader = csv.reader(file)
                 next(reader)
                 i = 0
@@ -78,21 +78,21 @@ class ventanaQuirofano(QMainWindow):
                         break
                     i += 1
             fl = False
-            with open('Control.csv') as file:
+            with open('ArchivosCSV/Control.csv') as file:
                 reader = csv.reader(file)
                 next(reader)
                 for l in reader:
                     if l[0] == self.hora[0] and l[1] == nombreMascota and l[2] == self.hora[1]:
                         fl = True
                         break
-            with open('Quirofano.csv') as file:
+            with open('ArchivosCSV/Quirofano.csv') as file:
                 reader = csv.reader(file)
                 next(reader)
                 for l in reader:
                     if l[0] == self.hora[0] and l[1] == nombreMascota and l[2] == self.hora[1]:
                         fl = True
                         break
-            with open('Citas.csv') as file:
+            with open('ArchivosCSV/Citas.csv') as file:
                 reader = csv.reader(file)
                 next(reader)
                 for l in reader:
@@ -102,11 +102,11 @@ class ventanaQuirofano(QMainWindow):
             if fl == True:
                 qtw.QMessageBox.warning(self, "ERROR, Fecha y hora hacen conflicto", "La hora y fecha de esta reserva hacen conflicto con otra reserva realizada para la misma mascota.\nPara solucionar esto, porfavor seleccione otro bloque horario, cambie de mascota o modifique la reserva realizada anteriormente.")
             else:
-                GestionArchivo.modificarLinea("salas.csv",posFila,1,self.rutCliente)
-                GestionArchivo.modificarLinea("salas.csv",posFila,5,"True")
+                GestionArchivo.modificarLinea("ArchivosCSV/salas.csv",posFila,1,self.rutCliente)
+                GestionArchivo.modificarLinea("ArchivosCSV/salas.csv",posFila,5,"True")
 
                 reserva = [self.hora[0],nombreMascota,self.hora[1],self.hora[2]]
-                with open("Quirofano.csv","a",newline="") as archivo:
+                with open("ArchivosCSV/Quirofano.csv","a",newline="") as archivo:
                     escritor = csv.writer(archivo,delimiter=",") 
                     escritor.writerow(reserva)
                 msg = qtw.QMessageBox()

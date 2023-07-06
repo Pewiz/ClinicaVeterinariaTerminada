@@ -31,7 +31,7 @@ class ventanaMenuReserva(QMainWindow):
         self.close()
 
     def actualizarNombre(self):
-        with open("clientes.csv") as r:
+        with open("ArchivosCSV/clientes.csv") as r:
             reader = csv.reader(r)
             next(reader)
             i = 1

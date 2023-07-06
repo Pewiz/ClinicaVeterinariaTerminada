@@ -81,7 +81,7 @@ class ventanaListaReserva(QMainWindow):
                 break
             t += 1
         if self.mod == True:
-            with open('salas.csv') as file:
+            with open('ArchivosCSV/salas.csv') as file:
                 reader = csv.reader(file)
                 next(reader)
                 i = 0
@@ -90,10 +90,10 @@ class ventanaListaReserva(QMainWindow):
                         posFila = i
                         break
                     i += 1
-            GestionArchivo.modificarLinea("salas.csv", posFila, 1, "None")
-            GestionArchivo.modificarLinea("salas.csv", posFila, 5, "False")
+            GestionArchivo.modificarLinea("ArchivosCSV/salas.csv", posFila, 1, "None")
+            GestionArchivo.modificarLinea("ArchivosCSV/salas.csv", posFila, 5, "False")
             if res[1] == "Control Rutinario":
-                with open("Control.csv") as r:
+                with open("ArchivosCSV/Control.csv") as r:
                     read = csv.reader(r)
                     next(read)
                     i = 0
@@ -102,11 +102,11 @@ class ventanaListaReserva(QMainWindow):
                             pos = i
                             break
                         i += 1
-                GestionArchivo.modificarLinea("Control.csv", pos, 0, self.modBloque[0])
-                GestionArchivo.modificarLinea("Control.csv", pos, 2, self.modBloque[1])
-                GestionArchivo.modificarLinea("Control.csv", pos, 3, self.modBloque[2])
+                GestionArchivo.modificarLinea("ArchivosCSV/Control.csv", pos, 0, self.modBloque[0])
+                GestionArchivo.modificarLinea("ArchivosCSV/Control.csv", pos, 2, self.modBloque[1])
+                GestionArchivo.modificarLinea("ArchivosCSV/Control.csv", pos, 3, self.modBloque[2])
             elif res[1] == "Quirofano":
-                with open("Quirofano.csv") as r:
+                with open("ArchivosCSV/Quirofano.csv") as r:
                     read = csv.reader(r)
                     next(read)
                     i = 0
@@ -115,11 +115,11 @@ class ventanaListaReserva(QMainWindow):
                             posi = i
                             break
                         i += 1
-                GestionArchivo.modificarLinea("Quirofano.csv", posi, 0, self.modBloque[0])
-                GestionArchivo.modificarLinea("Quirofano.csv", posi, 2, self.modBloque[1])
-                GestionArchivo.modificarLinea("Quirofano.csv", posi, 3, self.modBloque[2])
+                GestionArchivo.modificarLinea("ArchivosCSV/Quirofano.csv", posi, 0, self.modBloque[0])
+                GestionArchivo.modificarLinea("ArchivosCSV/Quirofano.csv", posi, 2, self.modBloque[1])
+                GestionArchivo.modificarLinea("ArchivosCSV/Quirofano.csv", posi, 3, self.modBloque[2])
             else:
-                with open("Citas.csv") as r:
+                with open("ArchivosCSV/Citas.csv") as r:
                     read = csv.reader(r)
                     next(read)
                     i = 0
@@ -128,23 +128,23 @@ class ventanaListaReserva(QMainWindow):
                             posi = i
                             break
                         i += 1
-                with open("salas.csv") as r:
+                with open("ArchivosCSV/salas.csv") as r:
                     read = csv.reader(r)
                     next(read)
                     for l in read:
                         if l[4] == self.modBloque[0] and l[3] == self.modBloque[1] and l[2] == self.modBloque[2]:
                             rutEsp = l[0]
-                with open("veterinarios.csv") as r:
+                with open("ArchivosCSV/usuarios.csv") as r:
                     read = csv.reader(r)
                     next(read)
                     for l in read:
                         if l[0] == rutEsp:
                             nombre = l[1]
-                GestionArchivo.modificarLinea("Citas.csv", posi, 0, self.modBloque[0])
-                GestionArchivo.modificarLinea("Citas.csv", posi, 2, nombre)
-                GestionArchivo.modificarLinea("Citas.csv", posi, 4, self.modBloque[1])
-                GestionArchivo.modificarLinea("Citas.csv", posi, 5, self.modBloque[2])
-            with open('salas.csv') as file:
+                GestionArchivo.modificarLinea("ArchivosCSV/Citas.csv", posi, 0, self.modBloque[0])
+                GestionArchivo.modificarLinea("ArchivosCSV/Citas.csv", posi, 2, nombre)
+                GestionArchivo.modificarLinea("ArchivosCSV/Citas.csv", posi, 4, self.modBloque[1])
+                GestionArchivo.modificarLinea("ArchivosCSV/Citas.csv", posi, 5, self.modBloque[2])
+            with open('ArchivosCSV/salas.csv') as file:
                 reader = csv.reader(file)
                 next(reader)
                 i = 0
@@ -153,8 +153,8 @@ class ventanaListaReserva(QMainWindow):
                         posFila = i
                         break
                     i += 1
-            GestionArchivo.modificarLinea("salas.csv", posFila, 1, self.persona[0])
-            GestionArchivo.modificarLinea("salas.csv", posFila, 5, "True")
+            GestionArchivo.modificarLinea("ArchivosCSV/salas.csv", posFila, 1, self.persona[0])
+            GestionArchivo.modificarLinea("ArchivosCSV/salas.csv", posFila, 5, "True")
             self.actualizar()
         else:
             if res[1] == "Control Rutinario":
@@ -233,7 +233,7 @@ class ventanaListaReserva(QMainWindow):
                 res = r
                 break
             t += 1
-        with open('salas.csv') as file:
+        with open('ArchivosCSV/salas.csv') as file:
                 reader = csv.reader(file)
                 next(reader)
                 i = 0
@@ -242,11 +242,11 @@ class ventanaListaReserva(QMainWindow):
                         posFila = i
                         break
                     i += 1
-        GestionArchivo.modificarLinea("salas.csv", posFila, 1, "None")
-        GestionArchivo.modificarLinea("salas.csv", posFila, 5, "False")
+        GestionArchivo.modificarLinea("ArchivosCSV/salas.csv", posFila, 1, "None")
+        GestionArchivo.modificarLinea("ArchivosCSV/salas.csv", posFila, 5, "False")
 
         if res[1] == "Control Rutinario":
-            with open("Control.csv") as r:
+            with open("ArchivosCSV/Control.csv") as r:
                 read = csv.reader(r)
                 next(read)
                 i = 1
@@ -255,9 +255,9 @@ class ventanaListaReserva(QMainWindow):
                         pos = i
                         break
                     i += 1
-            GestionArchivo.eliminar("Control.csv", pos)    
+            GestionArchivo.eliminar("ArchivosCSV/Control.csv", pos)    
         elif res[1] == "Quirofano":
-            with open("Quirofano.csv") as r:
+            with open("ArchivosCSV/Quirofano.csv") as r:
                 read = csv.reader(r)
                 next(read)
                 i = 1
@@ -266,9 +266,9 @@ class ventanaListaReserva(QMainWindow):
                         posi = i
                         break
                     i += 1
-            GestionArchivo.eliminar("Quirofano.csv", posi)
+            GestionArchivo.eliminar("ArchivosCSV/Quirofano.csv", posi)
         else:
-            with open("Citas.csv") as r:
+            with open("ArchivosCSV/Citas.csv") as r:
                 read = csv.reader(r)
                 next(read)
                 i = 1
@@ -277,7 +277,7 @@ class ventanaListaReserva(QMainWindow):
                         posi = i
                         break
                     i += 1
-            GestionArchivo.eliminar("Citas.csv", posi)
+            GestionArchivo.eliminar("ArchivosCSV/Citas.csv", posi)
         msg = qtw.QMessageBox()
         msg.setWindowTitle("Eliminacion de Reserva completado")
         msg.setText("Su reserva ha sido cancelada, porfavor, si necesita otra reserva, vuelva al menu principal.")
@@ -290,7 +290,7 @@ class ventanaListaReserva(QMainWindow):
     def actualizar(self):
         self.resEnLista = []
         self.especialista = []
-        with open('clientes.csv') as r:
+        with open('ArchivosCSV/clientes.csv') as r:
             read = csv.reader(r)
             next(read)
             i = 1
@@ -301,7 +301,7 @@ class ventanaListaReserva(QMainWindow):
                 i += 1
         self.ui.labelNombre.setText(str(self.persona[1]))
         
-        with open("salas.csv") as r:
+        with open("ArchivosCSV/salas.csv") as r:
             read = csv.reader(r)
             next(read)
             self.reservas = []
@@ -313,7 +313,7 @@ class ventanaListaReserva(QMainWindow):
         self.ui.listaReservas.setRowCount(contFilas)
         
         for i, reserva in enumerate(self.reservas):
-            with open("Control.csv") as r:
+            with open("ArchivosCSV/Control.csv") as r:
                 read = csv.reader(r)
                 next(read)
                 for l in read:
@@ -321,7 +321,7 @@ class ventanaListaReserva(QMainWindow):
                         nombre = l[1]
                         tipo = "Control Rutinario"
                         
-            with open("Quirofano.csv") as r:
+            with open("ArchivosCSV/Quirofano.csv") as r:
                 read = csv.reader(r)
                 next(read)
                 for l in read:
@@ -329,7 +329,7 @@ class ventanaListaReserva(QMainWindow):
                         nombre = l[1]
                         tipo = "Quirofano"
                         
-            with open("Citas.csv") as r:
+            with open("ArchivosCSV/Citas.csv") as r:
                 read = csv.reader(r)
                 next(read)
                 for l in read:

@@ -45,12 +45,12 @@ class ventanaUrgencia(QMainWindow):
             domicilio = self.ventanaAux.domicilio_edit.text()
             Gravedad = self.ventanaAux.Gravedad_box.currentText()
 
-            archivo_existe = os.path.exists("Urgencias.csv")
+            archivo_existe = os.path.exists("ArchivosCSV/Urgencias.csv")
 
             fecha_actual = datetime.now().strftime("%d/%m/%Y")
             hora = datetime.now().strftime("%H:%M")
 
-            with open("Urgencias.csv", 'a', newline='') as file:
+            with open("ArchivosCSV/Urgencias.csv", 'a', newline='') as file:
                 writer = csv.writer(file)
 
                 if not archivo_existe:

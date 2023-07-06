@@ -25,7 +25,7 @@ class ventanaCRutinario(QMainWindow):
         self.close()
     
     def actualizarComboBoxMascota(self):
-        with open("clientes.csv") as r:
+        with open("ArchivosCSV/clientes.csv") as r:
             reader = csv.reader(r)
             next(reader)
             i = 1
@@ -36,7 +36,7 @@ class ventanaCRutinario(QMainWindow):
                     break
                 i += 1
 
-        with open('mascotas.csv') as file:
+        with open('ArchivosCSV/mascotas.csv') as file:
             reader = csv.reader(file)
             next(reader)
             self.mascota = []

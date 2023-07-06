@@ -39,7 +39,7 @@ class ventanaModifMascota(QMainWindow):
             tamaño = self.ventanaUi.inputComboBoxTamano.currentText()
             volumen = self.ventanaUi.inputVolumen.value()
             self.mascota = Mascota(str(self.rut), str(nombre), str(especie), str(raza), str(fechaNacimiento), str(sexo), peso, str(tamaño), volumen)
-            GestionArchivo.modificar("mascotas.csv", self.posicion, self.mascota)
+            GestionArchivo.modificar("ArchivosCSV/mascotas.csv", self.posicion, self.mascota)
             self.atras(flagg)      
         
     def atras(self, fla):

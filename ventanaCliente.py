@@ -6,7 +6,7 @@ from uiVentCliente import uiVentCliente
 from ClaseCliente import Cliente
 from ManejoArchivo import GestionArchivo
 import ventElecMasc
-import ventanaAdministracion
+import VentAdminPrincipal
 
 
 class ventanaCliente(QMainWindow):
@@ -37,7 +37,7 @@ class ventanaCliente(QMainWindow):
         if self.ventanaUi.lineEdit.text() == "" or self.ventanaUi.lineEdit_2.text() == "" or self.ventanaUi.lineEdit_3.text() == "" or self.ventanaUi.lineEdit_4.text() == "" or self.ventanaUi.lineEdit_5.text() == "" or self.ventanaUi.lineEdit_6.text() == "" or self.ventanaUi.lineEdit_7.text() == "" or self.ventanaUi.lineEdit_8.text() == "" or self.ventanaUi.comboBox.currentIndex() < 1:
             qtw.QMessageBox.warning(self, "Hay campos sin rellenar", "Por favor, rellene sus datos correctamente.")
         else:
-            with open('clientes.csv', 'r', encoding="utf-8") as r:
+            with open('ArchivosCSV/clientes.csv', 'r', encoding="utf-8") as r:
                 l = csv.reader(r, delimiter=",")
                 next(l)
                 for lis in l:
@@ -56,10 +56,9 @@ class ventanaCliente(QMainWindow):
             telefono = self.ventanaUi.lineEdit_7.text()
             domicilio = self.ventanaUi.lineEdit_8.text()
             self.cliente = Cliente(str(rut), str(nombres), str(apellidoPaterno), str(apellidoMaterno), str(genero), str(fechaNacimiento), str(email), str(telefono), str(domicilio))
-            GestionArchivo.insertar("clientes.csv",self.cliente)
+            GestionArchivo.insertar("ArchivosCSV/clientes.csv",self.cliente)
             vent.show()
             self.close()        
         
     def volver(self):
-        ventanaAdministracion.ventanaAdmin().show()
-        self.hide()
+        self.close()

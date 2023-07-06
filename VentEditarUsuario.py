@@ -241,7 +241,7 @@ class Ui_VentVerDatosUser(object):
         elif self._usuario.experiencia.strip() == "":
             self.alertBox("Falta ingresar la experiencia", "Falta un dato")        
         else:
-            GestionArchivo.modificar("veterinarios.csv",self._fila,self._usuario)
+            GestionArchivo.modificar("ArchivosCSV/usuarios.csv",self._fila,self._usuario)
             self.nombresLnEdit.setEnabled(False)
             self.apellidoPaLnE.setEnabled(False)
             self.apellidoMaLnE.setEnabled(False)

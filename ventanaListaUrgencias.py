@@ -47,7 +47,7 @@ class ventanaListaUrgencias(QMainWindow):
         fecha = self.ui.fechaFiltro.date()
         fechaH = fecha.toString("dd/MM/yyyy")
         self.ui.buscarNombre.clear()
-        with open("Urgencias.csv") as r:
+        with open("ArchivosCSV/Urgencias.csv") as r:
             read = csv.reader(r)
             next(read)
             self.urgencias = []

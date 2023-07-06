@@ -15,7 +15,7 @@ class ventanaVerDatos(QMainWindow):
         self.ventanaUi.btnMenuPrincipal.clicked.connect(lambda: self.menuP())
 
     def actualizar(self):
-        with open('clientes.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('ArchivosCSV/clientes.csv', 'r', encoding="ISO 8859-1") as r:
             lector = csv.reader(r, delimiter=",")
             next(lector)
             i = 0
@@ -38,5 +38,4 @@ class ventanaVerDatos(QMainWindow):
         self.close()
 
     def menuP(self):
-        ventanaAdministracion.ventanaAdmin().show()
         self.close()

@@ -35,18 +35,18 @@ class Urgencia(AgendarHora):
             mascotas = []
             if opcion2 == 1:
                 cliente_seleccionado = Cliente.ingresoCliente()
-                GestionArchivo.insertar("clientes.csv",cliente_seleccionado)
+                GestionArchivo.insertar("ArchivosCSV/clientes.csv",cliente_seleccionado)
                 rutCliente = cliente_seleccionado
                 
             elif opcion2 == 2:
                 buscar_rut = input("Ingrese rut(21454138-6): ")
                 rutCliente = Cliente(rut=buscar_rut)
-                listas = GestionArchivo.seleccionar("clientes.csv",rutCliente)
+                listas = GestionArchivo.seleccionar("ArchivosCSV/clientes.csv",rutCliente)
                 for lista in listas:
                     cliente_seleccionado = Cliente(lista[0],lista[1],lista[2],lista[3],lista[4],lista[5],lista[6],lista[7],lista[8])
                     
             ingresados.append(cliente_seleccionado)
-            listasMascotas = GestionArchivo.seleccionar("mascotas.csv",rutCliente)
+            listasMascotas = GestionArchivo.seleccionar("ArchivosCSV/mascotas.csv",rutCliente)
             os.system("cls")
             print("Mascotas Encontradas".center(50,"-"))
             i=0
@@ -74,7 +74,7 @@ class Urgencia(AgendarHora):
             boleta = Boleta(cliente_seleccionado.get_rut(),formato,descuento,25000)
             print(boleta)
             os.system("pause")
-            GestionArchivo.insertar("facturas.csv",boleta)
+            GestionArchivo.insertar("ArchivosCSV/facturas.csv",boleta)
             return ingresados
         elif opcion == 2:
             os.system("cls")

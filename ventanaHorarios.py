@@ -83,7 +83,7 @@ class ventanaHorarios(QMainWindow):
     def actualizarHorario(self):
         self.horaEnLista = []
         if self.cont != 0:
-            with open("usuarios.csv") as r:
+            with open("ArchivosCSV/usuarios.csv") as r:
                 read = csv.reader(r)
                 next(read)
                 self.usuarios = []
@@ -111,7 +111,7 @@ class ventanaHorarios(QMainWindow):
                     for l in read:
                         if l[6] == "Cardiologia":
                             self.usuarios.append(l)
-        with open('salas.csv') as r:
+        with open('ArchivosCSV/salas.csv') as r:
             read = csv.reader(r)
             next(read)
             self.horarios = []
@@ -158,7 +158,7 @@ class ventanaHorarios(QMainWindow):
             sala = qtw.QTableWidgetItem(horario[2])
             self.ventanaUi.listaHorario.setItem(i, 2, sala)
             
-            with open('usuarios.csv') as r:
+            with open('ArchivosCSV/usuarios.csv') as r:
                 read = csv.reader(r)
                 next(read)
                 for l in read:
@@ -200,7 +200,7 @@ class ventanaHorarios(QMainWindow):
                 ventana.show()
                 self.close()
             if self.cont >= 2 and self.cont <= 6:
-                with open("usuarios.csv") as r:
+                with open("ArchivosCSV/usuarios.csv") as r:
                     read = csv.reader(r)
                     next(read)
                     for l in read:

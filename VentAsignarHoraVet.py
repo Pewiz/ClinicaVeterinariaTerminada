@@ -165,14 +165,14 @@ class Ui_VentAsignarHorario(object):
             fecha = self.tablaHorarioVet.item(fila, 2).text()
             horaVet = SalasHorario(id=rut,rut=None,sala=numSala,horario=horario,fecha=fecha,disp="False")
             
-            GestionArchivo.insertar("salas.csv",horaVet)
+            GestionArchivo.insertar("ArchivosCSV/salas.csv",horaVet)
             self.alertBox("Horario Guardado correctamente","Horario Veterinario")
             self.cargarHorarios()
         else:
             self.alertBox("Debe seleccionar una hora","Alerta")
 
     def horariosVet(self,objeto):
-        salasOcupadas = GestionArchivo.seleccionarTodo("salas.csv")
+        salasOcupadas = GestionArchivo.seleccionarTodo("ArchivosCSV/salas.csv")
 
         for sala in salasOcupadas:
             salaOcupada = SalasHorario(sala[0],sala[1],sala[2],sala[3],sala[4])
@@ -187,7 +187,7 @@ class Ui_VentAsignarHorario(object):
 
 
     def horarioSalas(self):
-        salas = GestionArchivo.seleccionarTodo("horarioSalas.csv")
+        salas = GestionArchivo.seleccionarTodo("ArchivosCSV/horarioSalas.csv")
         fechaE = self.fechaABuscar.date().toString("dd/MM/yyyy")
         salasDisp = []
         for sala in salas:

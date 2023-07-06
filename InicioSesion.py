@@ -110,7 +110,7 @@ class MyApp(QtWidgets.QMainWindow):
         
 
         fileHandle = GestionArchivo()
-        vets = fileHandle.seleccionarTodo('usuarios.csv')
+        vets = fileHandle.seleccionarTodo('ArchivosCSV/usuarios.csv')
         
         for vet in vets:
             if vet[6] == email and password == vet[-1]:

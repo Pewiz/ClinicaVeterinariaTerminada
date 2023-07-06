@@ -20,7 +20,7 @@ class ventanaVerDatos(QMainWindow):
 
 
     def actualizar(self):
-        with open('usuarios.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('ArchivosCSV/usuarios.csv', 'r', encoding="ISO 8859-1") as r:
             lector = csv.DictReader(r, delimiter=",")
             usuarios = list(lector)
 
@@ -42,7 +42,6 @@ class ventanaVerDatos(QMainWindow):
         self.close()
 
     def menuP(self):
-        ventanaAdministracionUsuario.ventanaAdminUsuario().show()
         self.close()
 
     def cambiarVent(self,nombre_Vent,usuario):

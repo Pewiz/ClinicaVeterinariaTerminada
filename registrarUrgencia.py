@@ -107,9 +107,9 @@ class Ui_agendarUrgencias(object):
         nombre = self.lineNombre.text()
         dueno = self.lineDueno.text()
         
-        archivo_existe = os.path.exists("Quirofano.csv")
+        archivo_existe = os.path.exists("ArchivosCSV/Quirofano.csv")
         
-        with open("Urgencias.csv", 'a', newline='') as file:
+        with open("ArchivosCSV/Urgencias.csv", 'a', newline='') as file:
             writer = csv.writer(file)
             if not archivo_existe:
                 writer.writerow(["nombre","dueno","gravedad", "contacto", "direccion"])

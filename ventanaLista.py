@@ -38,7 +38,7 @@ class ventanaLista(QMainWindow):
             lambda: self.agregar(self.ventAgMascota))
         self.tabla = self.ui.tableWidget
 
-        with open('clientes.csv') as f:
+        with open('ArchivosCSV/clientes.csv') as f:
             lector = csv.reader(f)
             next(lector)
             self.clientes = [row for row in lector]
@@ -79,8 +79,7 @@ class ventanaLista(QMainWindow):
         self.hide()
 
     def volver(self):
-        ventanaAdministracion.ventanaAdmin().show()
-        self.hide()
+        self.close()
 
     def buscador(self, texto):
         for row in range(self.tabla.rowCount()):
@@ -108,7 +107,7 @@ class ventanaLista(QMainWindow):
             self.ui.btnAgregarM.setEnabled(False)
 
     def buscarRut(self):
-        with open('clientes.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('ArchivosCSV/clientes.csv', 'r', encoding="ISO 8859-1") as r:
             l = csv.reader(r, delimiter=",")
             next(l)
             i = 0
@@ -121,7 +120,7 @@ class ventanaLista(QMainWindow):
         for i, cliente in enumerate(self.clientes):
             if i == self.clienteSelecc:
                 self.rut = cliente[0]
-        with open('mascotas.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('ArchivosCSV/mascotas.csv', 'r', encoding="ISO 8859-1") as r:
             lector = csv.reader(r, delimiter=",")
             next(lector)
             i = 0
@@ -131,11 +130,11 @@ class ventanaLista(QMainWindow):
         for h in range(i):
             k = 0
             j = self.buscar(k)
-            GestionArchivo.eliminar("mascotas.csv", j)
+            GestionArchivo.eliminar("ArchivosCSV/mascotas.csv", j)
 
         GestionArchivo.eliminar(
-            "clientes.csv", self.clienteSelecc + 1)
-        with open('clientes.csv') as f:
+            "ArchivosCSV/clientes.csv", self.clienteSelecc + 1)
+        with open('ArchivosCSV/clientes.csv') as f:
             lector = csv.reader(f)
             clientes = [row for row in lector]
         contFilas = len(clientes)
@@ -147,7 +146,7 @@ class ventanaLista(QMainWindow):
             self.close()
 
     def buscar(self, pos):
-        with open('mascotas.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('ArchivosCSV/mascotas.csv', 'r', encoding="ISO 8859-1") as r:
             lector = csv.reader(r, delimiter=",")
             next(lector)
             for l in lector:

@@ -37,7 +37,7 @@ class ventanaUsuario(QMainWindow):
         if self.ventanaUi.lineEdit.text() == "" or self.ventanaUi.lineEdit_2.text() == "" or self.ventanaUi.lineEdit_3.text() == "" or self.ventanaUi.lineEdit_4.text() == "" or self.ventanaUi.lineEdit_5.text() == "" or self.ventanaUi.lineEdit_password.text() == "" or self.ventanaUi.lineEdit_6.text() == "" or self.ventanaUi.lineEdit_7.text() == "" or self.ventanaUi.lineEdit_8.text() == "" or self.ventanaUi.comboBox.currentIndex() < 1 or self.ventanaUi.comboBoxCargo.currentIndex()  < 1:
             qtw.QMessageBox.warning(self, "Hay campos sin rellenar", "Por favor, rellene sus datos correctamente.")
         else:
-            with open('usuarios.csv', 'r', encoding="latin-1") as r:
+            with open('ArchivosCSV/usuarios.csv', 'r', encoding="latin-1") as r:
                 l = csv.reader(r, delimiter=",")
                 next(l)
                 for lis in l:
@@ -59,9 +59,8 @@ class ventanaUsuario(QMainWindow):
             telefono = self.ventanaUi.lineEdit_7.text()
             domicilio = self.ventanaUi.lineEdit_8.text()
             self.usuario = Usuario(str(rut), str(nombres), str(apellidoPaterno), str(apellidoMaterno), str(genero), str(fechaNacimiento), str(email), str(telefono), str(domicilio), str(cargo), str(experiencia), str(password))
-            GestionArchivo.insertar("usuarios.csv",self.usuario)
+            GestionArchivo.insertar("ArchivosCSV/usuarios.csv",self.usuario)
             self.volver()  
         
     def volver(self):
-        ventanaAdministracionUsuario.ventanaAdminUsuario().show()
-        self.hide()
+        self.close()

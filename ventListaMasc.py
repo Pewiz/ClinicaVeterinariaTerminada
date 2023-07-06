@@ -42,7 +42,7 @@ class ventListaMascota(QMainWindow):
 
     def actualizar(self):
         masc = []
-        with open('mascotas.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('ArchivosCSV/mascotas.csv', 'r', encoding="ISO 8859-1") as r:
             lector = csv.reader(r, delimiter=",")
             for l in lector:
                 if l[0] == self.rut:
@@ -57,7 +57,7 @@ class ventListaMascota(QMainWindow):
             especie = qtw.QTableWidgetItem(mascota[2])
             self.tablaMasc.setItem(i, 1, especie)
         nombre = ""
-        with open('clientes.csv', 'r', encoding="latin1") as r:
+        with open('ArchivosCSV/clientes.csv', 'r', encoding="latin1") as r:
             l = csv.reader(r, delimiter=",")
             next(l)
             for lis in l:
@@ -83,11 +83,11 @@ class ventListaMascota(QMainWindow):
         print(self.mascotaSelecc + 1)
         k = 0
         j = self.buscar(k)
-        GestionArchivo.eliminar("mascotas.csv", j)
+        GestionArchivo.eliminar("ArchivosCSV/mascotas.csv", j)
         self.actualizar()
 
     def buscar(self, pos):
-        with open('mascotas.csv', 'r', encoding="ISO 8859-1") as r:
+        with open('ArchivosCSV/mascotas.csv', 'r', encoding="ISO 8859-1") as r:
             lector = csv.reader(r, delimiter=",")
             next(lector)
             i = 0

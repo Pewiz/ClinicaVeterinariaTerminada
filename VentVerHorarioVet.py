@@ -120,7 +120,7 @@ class Ui_VentVerHorario(object):
         self.tablaHorasVet.clearContents()
         self.tablaHorasVet.setRowCount(0)
 
-        with open('salas.csv', newline='') as csvfile:
+        with open('ArchivosCSV/salas.csv', newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter=',', quotechar='"')
             
             encabezados = next(reader)

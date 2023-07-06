@@ -1,6 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
-from ventanaAdministracion import ventanaAdmin
 from ventanaReserva import ventanaReserva
 from VentAdminPrincipal import Ui_VentAdminisracionPrincipal
 

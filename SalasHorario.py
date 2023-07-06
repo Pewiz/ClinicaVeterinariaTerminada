@@ -41,7 +41,7 @@ class SalasHorario:
     
     @classmethod
     def verificarFecha(cls,objeto,fechaEnc):
-        salasAgendadas = GestionArchivo.seleccionarTodo("salasAgendadas.csv")
+        salasAgendadas = GestionArchivo.seleccionarTodo("ArchivosCSV/salasAgendadas.csv")
         for salaAgendada in salasAgendadas:
             try:
                 objetoEnc = SalasHorario(id=salaAgendada[0],rut=None,sala=salaAgendada[2],horario=salaAgendada[3],fecha=salaAgendada[4])
