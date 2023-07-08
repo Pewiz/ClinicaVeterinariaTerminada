@@ -23,7 +23,7 @@ class ventanaLista(QMainWindow):
         self.ui.btnAtras.clicked.connect(lambda: self.volver())
         self.vent = ventanaModificarUsuario.ventanaModificarUsuario(self.usuarioSelecc)
         self.ventV = ventVerDatosU.ventanaVerDatos(self.usuarioSelecc)
-        self.ui.BtnEditar.clicked.connect(lambda: self.ventanaMod(self.vent))
+        self.ui.BtnEditar.clicked.connect(lambda: self.cambioV(ventanaModificarUsuario.ventanaModificarUsuario(self.usuarioSelecc)))
         self.ui.BtnVerDatos.clicked.connect(
             lambda: self.ventanaVer(self.ventV))
         self.rt = ""
@@ -145,3 +145,8 @@ class ventanaLista(QMainWindow):
         vent.actualizar()
         vent.show()
         self.hide()
+
+    def cambioV(self, ventana):
+        self.hide()
+        ventana.show()
+                

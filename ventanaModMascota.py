@@ -1,6 +1,8 @@
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtWidgets import QMainWindow
 import PyQt5.QtWidgets as qtw
+from PyQt5.QtCore import QDate
+
 from uiVentModMasc import uiMod
 from Mascota import Mascota
 from ManejoArchivo import GestionArchivo
@@ -11,6 +13,7 @@ import csv
 class ventanaModifMascota(QMainWindow):
     def __init__(self, posicion, flag, rut):
         super().__init__()
+        print("A")
         self.cont = 0
         self.posicion = posicion
         self.flag = flag
@@ -25,7 +28,8 @@ class ventanaModifMascota(QMainWindow):
         
         self.ventanaUi.btnModificar.clicked.connect(lambda: self.agregar(self.flag))
         self.ventanaUi.btnCancelar.clicked.connect(lambda: self.atras(self.flag))
-        #self.ventanaUi.btnInsertar.clicked.connect(self.rellenarDatos)
+        self.ventanaUi.inputFechaNacimiento.setDisabled(True)
+        self.actualizar()
         
         
     def agregar(self, flagg):
@@ -51,6 +55,20 @@ class ventanaModifMascota(QMainWindow):
         vent.show()
         self.close()
         
-    #def rellenarDatos(self):
-    #    self.ventanaUi.inputNombre.setText(self.mascota)
-                        
+    def actualizar(self):
+        with open('ArchivosCSV/mascotas.csv', 'r', encoding="ISO 8859-1") as r:
+            lector = csv.reader(r, delimiter=",")
+            next(lector)
+            i = 0
+            for l in lector:
+                i = (i+1)
+                if i == (self.posicion):
+                    mascota = l
+        self.ventanaUi.inputNombre.setText(str(mascota[1]))
+        self.ventanaUi.inputEspecie.setText(str(mascota[2]))
+        self.ventanaUi.inputRaza.setText(str(mascota[3]))
+        self.ventanaUi.inputFechaNacimiento.setDate(QDate.fromString(mascota[4], "dd/MM/yyyy"))
+        self.ventanaUi.inputComboBoxSexo.setCurrentText(str(mascota[5]))
+        self.ventanaUi.inputPeso.setValue(int(mascota[6]))
+        self.ventanaUi.inputComboBoxTamano.setCurrentText(str(mascota[7]))
+        self.ventanaUi.inputVolumen.setValue(int(mascota[8]))

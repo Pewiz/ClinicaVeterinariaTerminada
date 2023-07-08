@@ -14,8 +14,7 @@ class ventanaModificarUsuario(QMainWindow):
         super().__init__()
         self.cont = cont
         self.ventanaUi = uiVentModificarUsuario()
-        self.ventanaUi.setupUi(self)
-        
+        self.ventanaUi.setupUi(self)        
         self.soloInt = QtGui.QIntValidator()
         self.ventanaUi.lineEdit_3.setValidator(self.soloInt)
         self.ventanaUi.lineEdit_7.setValidator(self.soloInt)
@@ -28,11 +27,10 @@ class ventanaModificarUsuario(QMainWindow):
         self.ventanaUi.lineEdit_3.setDisabled(True)
         self.ventanaUi.lineEdit_6.setDisabled(True)
         self.ventanaUi.dateEdit.setDisabled(True)
-        
+        self.rellenarDatos()
         
         self.ventanaUi.BtnAtras.clicked.connect(lambda: self.cancelar())
         self.ventanaUi.btnAgMas.clicked.connect(lambda: self.modificar())
-        self.ventanaUi.btnInsertar.clicked.connect(self.rellenarDatos)
     
     def cancelar(self):
         ventanaListaUsuario.ventanaLista().show()

@@ -165,9 +165,9 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.Guardar_registro.setObjectName("Guardar_registro")
-        self.botonAtras = QtWidgets.QPushButton(self.widget)
-        self.botonAtras.setGeometry(QtCore.QRect(20, 20, 41, 41))
-        self.botonAtras.setStyleSheet("\n"
+        self.ButtonAtras = QtWidgets.QPushButton(self.widget)
+        self.ButtonAtras.setGeometry(QtCore.QRect(20, 10, 50, 50))
+        self.ButtonAtras.setStyleSheet("\n"
 "\n"
 "\n"
 "QPushButton {\n"
@@ -182,12 +182,12 @@ class Ui_MainWindow(object):
 "    background: #74b6b6;\n"
 "}\n"
 "")
-        self.botonAtras.setText("")
+        self.ButtonAtras.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/image/Atras.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.botonAtras.setIcon(icon)
-        self.botonAtras.setIconSize(QtCore.QSize(71, 61))
-        self.botonAtras.setObjectName("botonAtras")
+        icon.addPixmap(QtGui.QPixmap("imagenes/boton_regresar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.ButtonAtras.setIcon(icon)
+        self.ButtonAtras.setIconSize(QtCore.QSize(50, 50))
+        self.ButtonAtras.setObjectName("ButtonAtras")
         self.AmbulanciacheckBox = QtWidgets.QCheckBox(self.widget)
         self.AmbulanciacheckBox.setGeometry(QtCore.QRect(190, 320, 91, 41))
         font = QtGui.QFont()

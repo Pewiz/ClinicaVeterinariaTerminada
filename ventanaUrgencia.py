@@ -16,7 +16,7 @@ class ventanaUrgencia(QMainWindow):
         self.ventanaAux.setupUi(self)
         self.ventanaAux.Guardar_registro.clicked.connect(self.cargarDatos)
         self.ventanaAux.Ver_registro.clicked.connect(self.lista)
-        self.ventanaAux.botonAtras.clicked.connect(self.atras)
+        self.ventanaAux.ButtonAtras.clicked.connect(self.atras)
         self.soloLetras = QtGui.QRegExpValidator(QtCore.QRegExp("[a-zA-ZáéíóúÁÉÍÓÚüÜ ]+"))
         self.soloInt = QtGui.QRegExpValidator(QtCore.QRegExp("[0-9]+"))
         self.restricDirec = QtGui.QRegExpValidator(QtCore.QRegExp("[^,]+"))

@@ -22,10 +22,7 @@ class ventListaMascota(QMainWindow):
         self.vent.btnAtras.clicked.connect(lambda: self.atras(self.flag))
         self.tablaMasc = self.vent.tableWidget
         self.vent.eliminar.clicked.connect(lambda: self.eliminar())
-        self.ventModificar = ventanaModMascota.ventanaModifMascota(
-            self.poss, self.flag, self.rut)
-        self.vent.editar.clicked.connect(
-            lambda: self.editar(self.ventModificar))
+        self.vent.editar.clicked.connect(self.editar)
         self.ventVer = ventVerDatosM.ventanaVerDatos(
             self.poss, self.flag, self.rut)
         self.vent.verDatos.clicked.connect(lambda: self.verD(self.ventVer))
@@ -56,6 +53,12 @@ class ventListaMascota(QMainWindow):
 
             especie = qtw.QTableWidgetItem(mascota[2])
             self.tablaMasc.setItem(i, 1, especie)
+            
+            sexo = qtw.QTableWidgetItem(mascota[5])
+            self.tablaMasc.setItem(i, 2, sexo)
+            
+            peso = qtw.QTableWidgetItem(mascota[6]+" Kg")
+            self.tablaMasc.setItem(i, 3, peso)
         nombre = ""
         with open('ArchivosCSV/clientes.csv', 'r', encoding="latin1") as r:
             l = csv.reader(r, delimiter=",")
@@ -98,13 +101,13 @@ class ventListaMascota(QMainWindow):
                     if (i == self.mascotaSelecc+1):
                         return pos
 
-    def editar(self, vent):
+    def editar(self):
         k = 0
         self.poss = self.buscar(k)
-        self.ventModificar.posicion = self.poss
-        self.ventModificar.flag = self.flag
-        self.ventModificar.rut = self.rut
-        vent.show()
+        self.vent.posicion = self.poss
+        self.vent.flag = self.flag
+        self.vent.rut = self.rut
+        ventanaModMascota.ventanaModifMascota(self.poss, self.flag, self.rut).show()
         self.hide()
 
     def verD(self, vent):

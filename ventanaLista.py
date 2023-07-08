@@ -26,14 +26,13 @@ class ventanaLista(QMainWindow):
         self.ui.btnAtras.clicked.connect(lambda: self.volver())
         self.vent = ventanaModificar.ventanaModificar(self.clienteSelecc)
         self.ventV = ventVerDatosC.ventanaVerDatos(self.clienteSelecc)
-        self.ui.BtnEditar.clicked.connect(lambda: self.ventanaMod(self.vent))
+        self.ui.BtnEditar.clicked.connect(lambda: self.cambioV(ventanaModificar.ventanaModificar(self.clienteSelecc)))
         self.ui.BtnVerDatos.clicked.connect(
             lambda: self.ventanaVer(self.ventV))
         self.ui.BtnEliminar.clicked.connect(lambda: self.eliminar())
         self.rt = ""
-        self.ventan = ventListaMasc.ventListaMascota(self.rt, 1)
         self.ventAgMascota = ventanaMascota.ventanaMascota(self.rt, 1)
-        self.ui.btnAvanzar.clicked.connect(lambda: self.avanzar(self.ventan))
+        self.ui.btnAvanzar.clicked.connect(lambda: self.avanzar(ventListaMasc.ventListaMascota(self.rt, 1)))
         self.ui.btnAgregarM.clicked.connect(
             lambda: self.agregar(self.ventAgMascota))
         self.tabla = self.ui.tableWidget
@@ -68,7 +67,7 @@ class ventanaLista(QMainWindow):
         self.tabla.itemSelectionChanged.connect(self.seleccFila)
 
     def avanzar(self, vent):
-        self.ventan.rut = self.rt
+        self.vent.rut = self.rt
         vent.actualizar()
         vent.show()
         self.hide()
@@ -164,3 +163,8 @@ class ventanaLista(QMainWindow):
         vent.actualizar()
         vent.show()
         self.hide()
+
+    def cambioV(self, ventana):
+        self.hide()
+        ventana.show()
+                

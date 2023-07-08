@@ -95,10 +95,27 @@ class Ui_MainWindow(object):
         self.FotoPerrito.setText("")
         self.FotoPerrito.setObjectName("FotoPerrito")
         self.ButtonAtras = QtWidgets.QPushButton(self.frame)
-        self.ButtonAtras.setGeometry(QtCore.QRect(0, 0, 71, 61))
-        self.ButtonAtras.setStyleSheet("border-image:url(:/Images/Atras.png);")
+        self.ButtonAtras.setGeometry(QtCore.QRect(20, 20, 50, 50))
+        self.ButtonAtras.setStyleSheet("\n"
+"\n"
+"\n"
+"QPushButton {\n"
+"  \n"
+"    \n"
+"    border-radius: 20px;\n"
+"\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"    background: #74b6b6;\n"
+"}\n"
+"")
         self.ButtonAtras.setText("")
-        self.ButtonAtras.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("imagenes/boton_regresar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.ButtonAtras.setIcon(icon)
+        self.ButtonAtras.setIconSize(QtCore.QSize(50, 50))
         self.ButtonAtras.setObjectName("ButtonAtras")
         self.Fondo.raise_()
         self.FondoBlanco.raise_()

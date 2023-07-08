@@ -43,5 +43,4 @@ class ventanaVerDatos(QMainWindow):
         self.hide()
     
     def menuP(self):
-        ventanaAdministracion.ventanaAdmin().show()
         self.close()

@@ -28,10 +28,10 @@ class ventanaModificar(QMainWindow):
         
         self.ventanaUi.BtnAtras.clicked.connect(lambda: self.cancelar())
         self.ventanaUi.btnElegir.clicked.connect(lambda: self.modificar())
-        self.ventanaUi.btnInsertar.clicked.connect(self.rellenarDatos)
         self.ventanaUi.lineEdit_3.setDisabled(True)
         self.ventanaUi.lineEdit_6.setDisabled(True)
         self.ventanaUi.dateEdit.setDisabled(True)
+        self.rellenarDatos()
         
     
     def cancelar(self):

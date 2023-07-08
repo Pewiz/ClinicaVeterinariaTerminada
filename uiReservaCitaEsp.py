@@ -51,7 +51,7 @@ class Ui_MainWindow(object):
         self.label_3.setPixmap(QtGui.QPixmap("imagenes/Logo-removebg-preview.png"))
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.widget)
-        self.label_4.setGeometry(QtCore.QRect(20, 120, 351, 31))
+        self.label_4.setGeometry(QtCore.QRect(15, 120, 351, 31))
         font = QtGui.QFont()
         font.setFamily("Corbel")
         font.setPointSize(11)
@@ -96,7 +96,7 @@ class Ui_MainWindow(object):
         self.label_8.setFont(font)
         self.label_8.setObjectName("label_8")
         self.botonAtras = QtWidgets.QPushButton(self.widget)
-        self.botonAtras.setGeometry(QtCore.QRect(20, 20, 41, 41))
+        self.botonAtras.setGeometry(QtCore.QRect(30, 15, 50, 50))
         self.botonAtras.setStyleSheet("\n"
 "\n"
 "\n"
@@ -114,9 +114,9 @@ class Ui_MainWindow(object):
 "")
         self.botonAtras.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("imagenes/Atras.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("imagenes/boton_regresar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.botonAtras.setIcon(icon)
-        self.botonAtras.setIconSize(QtCore.QSize(71, 61))
+        self.botonAtras.setIconSize(QtCore.QSize(50, 50))
         self.botonAtras.setObjectName("botonAtras")
         self.mascota_box = QtWidgets.QComboBox(self.widget)
         self.mascota_box.setGeometry(QtCore.QRect(40, 210, 121, 22))

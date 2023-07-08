@@ -23,7 +23,7 @@ class ventanaListaReserva(QMainWindow):
         self.ui.btnVer.clicked.connect(self.verHora)
         self.ventanaH = ventanaHorarios.ventanaHorarios(7, self.cont)
         self.ui.btnModificar.clicked.connect(lambda: self.modificarHora(self.ventanaH))
-        self.ui.btnAtras.clicked.connect(lambda: self.volver(ventanaMenuReserva.ventanaMenuReserva(self.cont)))
+        self.ui.botonAtras.clicked.connect(lambda: self.volver(ventanaMenuReserva.ventanaMenuReserva(self.cont)))
         self.ui.dateEdit.setEnabled(False)
         self.actualizarFecha()
         self.ui.btnBuscarF.clicked.connect(self.activarFiltrar)

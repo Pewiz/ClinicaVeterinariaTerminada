@@ -52,10 +52,10 @@ class uiVent(object):
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
         self.label_9 = QtWidgets.QLabel(self.frame_2)
-        self.label_9.setGeometry(QtCore.QRect(100, 40, 591, 41))
+        self.label_9.setGeometry(QtCore.QRect(90, 40, 591, 41))
         font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(28)
+        font.setFamily("Chewy")
+        font.setPointSize(30)
         self.label_9.setFont(font)
         self.label_9.setCursor(QtGui.QCursor(QtCore.Qt.ForbiddenCursor))
         self.label_9.setAlignment(QtCore.Qt.AlignCenter)
@@ -66,16 +66,32 @@ class uiVent(object):
         self.label_3.setPixmap(QtGui.QPixmap("imagenes/Atras.png"))
         self.label_3.setObjectName("label_3")
         self.btnAtras = QtWidgets.QPushButton(self.frame_2)
-        self.btnAtras.setGeometry(QtCore.QRect(50, 50, 31, 31))
-        self.btnAtras.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnAtras.setFocusPolicy(QtCore.Qt.StrongFocus)
-        self.btnAtras.setStyleSheet("background-color: rgba(0,0,0,0);")
+        self.btnAtras.setGeometry(QtCore.QRect(30, 35, 50, 50))
+        self.btnAtras.setStyleSheet("\n"
+"\n"
+"\n"
+"QPushButton {\n"
+"  \n"
+"    \n"
+"    border-radius: 20px;\n"
+"\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"    background: #74b6b6;\n"
+"}\n"
+"")
         self.btnAtras.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("imagenes/boton_regresar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnAtras.setIcon(icon)
+        self.btnAtras.setIconSize(QtCore.QSize(50, 50))
         self.btnAtras.setObjectName("btnAtras")
         self.label_logo = QtWidgets.QLabel(self.frame)
         self.label_logo.setGeometry(QtCore.QRect(410, 120, 291, 301))
         font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
+        font.setFamily("Chewy")
         font.setPointSize(16)
         self.label_logo.setFont(font)
         self.label_logo.setText("")
@@ -85,7 +101,7 @@ class uiVent(object):
         self.btnElegir.setEnabled(True)
         self.btnElegir.setGeometry(QtCore.QRect(530, 460, 151, 31))
         font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
+        font.setFamily("Chewy")
         font.setPointSize(16)
         self.btnElegir.setFont(font)
         self.btnElegir.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -116,7 +132,7 @@ class uiVent(object):
         self.fechaL = QtWidgets.QLabel(self.frame)
         self.fechaL.setGeometry(QtCore.QRect(570, 110, 61, 41))
         font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
+        font.setFamily("Chewy")
         font.setPointSize(13)
         self.fechaL.setFont(font)
         self.fechaL.setCursor(QtGui.QCursor(QtCore.Qt.ForbiddenCursor))

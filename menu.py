@@ -45,22 +45,40 @@ class uiMenu(QMainWindow):
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.label = QtWidgets.QLabel(self.frame)
-        self.label.setGeometry(QtCore.QRect(390, 30, 261, 71))
+        self.label.setGeometry(QtCore.QRect(360, 30, 300, 71))
         font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(24)
+        font.setFamily("Chewy")
+        font.setPointSize(32)
         font.setBold(True)
         font.setWeight(75)
+        font.setItalic(True)
         self.label.setFont(font)
         self.label.setStyleSheet("color: white")
         self.label.setObjectName("label")
-        self.pushButton_3 = QtWidgets.QPushButton(self.frame)
-        self.pushButton_3.setGeometry(QtCore.QRect(20, 30, 71, 71))
-        self.pushButton_3.setStyleSheet("background-image: url(imagenes/Atras.png);\n"
-"border: none;")
-        self.pushButton_3.setText("")
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.pushButton_3.clicked.connect(Menu.close)
+        self.ButtonAtras = QtWidgets.QPushButton(self.frame)
+        self.ButtonAtras.setGeometry(QtCore.QRect(30, 30, 50, 50))
+        self.ButtonAtras.setStyleSheet("\n"
+"\n"
+"\n"
+"QPushButton {\n"
+"  \n"
+"    \n"
+"    border-radius: 20px;\n"
+"\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"    background: #74b6b6;\n"
+"}\n"
+"")
+        self.ButtonAtras.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("imagenes/boton_regresar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.ButtonAtras.setIcon(icon)
+        self.ButtonAtras.setIconSize(QtCore.QSize(50, 50))
+        self.ButtonAtras.setObjectName("ButtonAtras")
+        self.ButtonAtras.clicked.connect(Menu.close)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(320, 150, 371, 361))
         self.label_2.setStyleSheet("image: url(imagenes/Logo-removebg-preview.png);")
