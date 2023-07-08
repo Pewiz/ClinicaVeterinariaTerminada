@@ -64,7 +64,7 @@ class ventanaCRutinario(QMainWindow):
                     break
                 i += 1
             
-            with open('salas.csv') as file:
+            with open('ArchivosCSV/salas.csv') as file:
                 reader = csv.reader(file)
                 next(reader)
                 i = 0
@@ -74,21 +74,21 @@ class ventanaCRutinario(QMainWindow):
                         break
                     i += 1
             fl = False
-            with open('Control.csv') as file:
+            with open('ArchivosCSV/Control.csv') as file:
                 reader = csv.reader(file)
                 next(reader)
                 for l in reader:
                     if l[0] == self.hora[0] and l[1] == nombreMascota and l[2] == self.hora[1]:
                         fl = True
                         break
-            with open('Quirofano.csv') as file:
+            with open('ArchivosCSV/Quirofano.csv') as file:
                 reader = csv.reader(file)
                 next(reader)
                 for l in reader:
                     if l[0] == self.hora[0] and l[1] == nombreMascota and l[2] == self.hora[1]:
                         fl = True
                         break
-            with open('Citas.csv') as file:
+            with open('ArchivosCSV/Citas.csv') as file:
                 reader = csv.reader(file)
                 next(reader)
                 for l in reader:
@@ -98,11 +98,11 @@ class ventanaCRutinario(QMainWindow):
             if fl == True:
                 qtw.QMessageBox.warning(self, "ERROR, Fecha y hora hacen conflicto", "La hora y fecha de esta reserva hacen conflicto con otra reserva realizada para la misma mascota.\nPara solucionar esto, porfavor seleccione otro bloque horario, cambie de mascota o modifique la reserva realizada anteriormente.")
             else:
-                GestionArchivo.modificarLinea("salas.csv",posFila,1,self.rutCliente)
-                GestionArchivo.modificarLinea("salas.csv",posFila,5,"True")
+                GestionArchivo.modificarLinea("ArchivosCSV/salas.csv",posFila,1,self.rutCliente)
+                GestionArchivo.modificarLinea("ArchivosCSV/salas.csv",posFila,5,"True")
             
                 reserva = [self.hora[0],nombreMascota,self.hora[1],self.hora[2]]
-                with open("Control.csv","a",newline="") as archivo:
+                with open("ArchivosCSV/Control.csv","a",newline="") as archivo:
                     escritor = csv.writer(archivo,delimiter=",") 
                     escritor.writerow(reserva)
                 msg = qtw.QMessageBox()

@@ -5,11 +5,13 @@ from uiVentModMasc import uiMod
 from Mascota import Mascota
 from ManejoArchivo import GestionArchivo
 import ventListaMasc
+import csv
 
 
 class ventanaModifMascota(QMainWindow):
     def __init__(self, posicion, flag, rut):
         super().__init__()
+        self.cont = 0
         self.posicion = posicion
         self.flag = flag
         self.rut = rut
@@ -23,6 +25,7 @@ class ventanaModifMascota(QMainWindow):
         
         self.ventanaUi.btnModificar.clicked.connect(lambda: self.agregar(self.flag))
         self.ventanaUi.btnCancelar.clicked.connect(lambda: self.atras(self.flag))
+        #self.ventanaUi.btnInsertar.clicked.connect(self.rellenarDatos)
         
         
     def agregar(self, flagg):
@@ -47,3 +50,7 @@ class ventanaModifMascota(QMainWindow):
         vent.actualizar()
         vent.show()
         self.close()
+        
+    #def rellenarDatos(self):
+    #    self.ventanaUi.inputNombre.setText(self.mascota)
+                        
