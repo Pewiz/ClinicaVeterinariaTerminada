@@ -6,8 +6,11 @@ from VentAdminPrincipal import Ui_VentAdminisracionPrincipal
 
 class uiMenu(QMainWindow):
     def setupUi(self, Menu):
+        Menu.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         Menu.setObjectName("Menu")
         Menu.resize(989, 595)
+        Menu.setMinimumSize(QtCore.QSize(989, 595))
+        Menu.setMaximumSize(QtCore.QSize(989, 595))
         self.centralwidget = QtWidgets.QWidget(Menu)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
@@ -44,17 +47,14 @@ class uiMenu(QMainWindow):
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
-        self.label = QtWidgets.QLabel(self.frame)
-        self.label.setGeometry(QtCore.QRect(360, 30, 300, 71))
+        self.label_titulo = QtWidgets.QLabel(self.frame)
+        self.label_titulo.setGeometry(QtCore.QRect(300, 30, 500, 75))
         font = QtGui.QFont()
         font.setFamily("Chewy")
-        font.setPointSize(32)
-        font.setBold(True)
-        font.setWeight(75)
-        font.setItalic(True)
-        self.label.setFont(font)
-        self.label.setStyleSheet("color: white")
-        self.label.setObjectName("label")
+        font.setPointSize(60)
+        self.label_titulo.setFont(font)
+        self.label_titulo.setCursor(QtGui.QCursor(QtCore.Qt.ForbiddenCursor))
+        self.label_titulo.setObjectName("label_titulo")
         self.ButtonAtras = QtWidgets.QPushButton(self.frame)
         self.ButtonAtras.setGeometry(QtCore.QRect(30, 30, 50, 50))
         self.ButtonAtras.setStyleSheet("\n"
@@ -116,10 +116,10 @@ class uiMenu(QMainWindow):
 
     def retranslateUi(self, Menu):
         _translate = QtCore.QCoreApplication.translate
-        Menu.setWindowTitle(_translate("Menu", "Menu"))
+        Menu.setWindowTitle(_translate("Menu", "Clinica CVI"))
         self.pushButton.setText(_translate("Menu", "Clinica"))
         self.pushButton_2.setText(_translate("Menu", " Administracion"))
-        self.label.setText(_translate("Menu", "CLINICA CVI"))
+        self.label_titulo.setText("Clinica CVI")
 
 if __name__ == "__main__":
     import sys

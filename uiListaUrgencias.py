@@ -52,10 +52,10 @@ class Ui_mainWindow(object):
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
         self.titulo = QtWidgets.QLabel(self.frame_2)
-        self.titulo.setGeometry(QtCore.QRect(215, 40, 400, 50))
+        self.titulo.setGeometry(QtCore.QRect(186, 30, 400, 60))
         font = QtGui.QFont()
         font.setFamily("Chewy")
-        font.setPointSize(30)
+        font.setPointSize(36)
         self.titulo.setFont(font)
         self.titulo.setCursor(QtGui.QCursor(QtCore.Qt.ForbiddenCursor))
         self.titulo.setObjectName("titulo")
@@ -65,11 +65,27 @@ class Ui_mainWindow(object):
         self.label_3.setPixmap(QtGui.QPixmap("imagenes/Atras.png"))
         self.label_3.setObjectName("label_3")
         self.btnAtras = QtWidgets.QPushButton(self.frame_2)
-        self.btnAtras.setGeometry(QtCore.QRect(50, 50, 31, 31))
-        self.btnAtras.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnAtras.setFocusPolicy(QtCore.Qt.StrongFocus)
-        self.btnAtras.setStyleSheet("background-color: rgba(0,0,0,0);")
+        self.btnAtras.setGeometry(QtCore.QRect(40, 36, 50, 50))
+        self.btnAtras.setStyleSheet("\n"
+"\n"
+"\n"
+"QPushButton {\n"
+"  \n"
+"    \n"
+"    border-radius: 20px;\n"
+"\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"    background: #74b6b6;\n"
+"}\n"
+"")
         self.btnAtras.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("imagenes/boton_regresar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnAtras.setIcon(icon)
+        self.btnAtras.setIconSize(QtCore.QSize(50, 50))
         self.btnAtras.setObjectName("btnAtras")
         self.label_logo = QtWidgets.QLabel(self.frame)
         self.label_logo.setGeometry(QtCore.QRect(420, 120, 291, 301))

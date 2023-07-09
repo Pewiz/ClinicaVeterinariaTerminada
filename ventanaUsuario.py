@@ -6,7 +6,6 @@ from uiVentUsuario import uiVentUsuario
 from ClaseUsuario import Usuario
 from ManejoArchivo import GestionArchivo
 import ventElecMasc
-import ventanaAdministracionUsuario
 
 
 class ventanaUsuario(QMainWindow):
@@ -34,7 +33,7 @@ class ventanaUsuario(QMainWindow):
         
         
     def agregar(self):
-        if self.ventanaUi.lineEdit.text() == "" or self.ventanaUi.lineEdit_2.text() == "" or self.ventanaUi.lineEdit_3.text() == "" or self.ventanaUi.lineEdit_4.text() == "" or self.ventanaUi.lineEdit_5.text() == "" or self.ventanaUi.lineEdit_password.text() == "" or self.ventanaUi.lineEdit_6.text() == "" or self.ventanaUi.lineEdit_7.text() == "" or self.ventanaUi.lineEdit_8.text() == "" or self.ventanaUi.comboBox.currentIndex() < 1 or self.ventanaUi.comboBoxCargo.currentIndex()  < 1:
+        if self.ventanaUi.lineEdit.text() == "" or self.ventanaUi.lineEdit_2.text() == "" or len(self.ventanaUi.lineEdit_3.text()) < 7 or '@' not in self.ventanaUi.lineEdit_4.text() or '.' not in self.ventanaUi.lineEdit_4.text() or self.ventanaUi.lineEdit_5.text() == "" or self.ventanaUi.lineEdit_password.text() == "" or self.ventanaUi.lineEdit_6.text() == "" or len(self.ventanaUi.lineEdit_7.text()) != 9 or self.ventanaUi.lineEdit_8.text() == "" or self.ventanaUi.comboBox.currentIndex() < 1 or self.ventanaUi.comboBoxCargo.currentIndex()  < 1:
             qtw.QMessageBox.warning(self, "Hay campos sin rellenar", "Por favor, rellene sus datos correctamente.")
         else:
             with open('ArchivosCSV/usuarios.csv', 'r', encoding="latin-1") as r:

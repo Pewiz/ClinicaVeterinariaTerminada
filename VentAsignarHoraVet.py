@@ -1,6 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-import csv
 from SalasHorario import SalasHorario
 from ManejoArchivo import GestionArchivo
 from datetime import datetime
@@ -12,7 +11,10 @@ class Ui_VentAsignarHorario(object):
         
     def setupUi(self, VentAsignarHorario):
         VentAsignarHorario.setObjectName("VentAsignarHorario")
+        VentAsignarHorario.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         VentAsignarHorario.resize(830, 487)
+        VentAsignarHorario.setMinimumSize(QtCore.QSize(830, 487))
+        VentAsignarHorario.setMaximumSize(QtCore.QSize(830, 487))
         VentAsignarHorario.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.bannerSup = QtWidgets.QLabel(VentAsignarHorario)
         self.bannerSup.setGeometry(QtCore.QRect(0, 0, 830, 130))
@@ -53,7 +55,7 @@ class Ui_VentAsignarHorario(object):
         self.fechaABuscar.setGeometry(QtCore.QRect(630, 274, 171, 45))
         fecha = datetime.now()
         self.fechaABuscar.setDateTime(QtCore.QDateTime(QtCore.QDate(fecha.year, fecha.month, fecha.day), QtCore.QTime(0, 0, 0)))
-        self.fechaABuscar.setMinimumDate(QtCore.QDate(fecha.year, fecha.month, fecha.day))
+        self.fechaABuscar.setMinimumDate(QtCore.QDate(fecha.year, fecha.month, fecha.day+1))
         self.fechaABuscar.dateChanged.connect(self.cargarHorarios)
         
         self.tablaHorarioVet = QtWidgets.QTableWidget(VentAsignarHorario)
@@ -101,7 +103,7 @@ class Ui_VentAsignarHorario(object):
     def retranslateUi(self, VentAsignarHorario):
         _translate = QtCore.QCoreApplication.translate
         nombre = self._usuario['nombres'] + " " + self._usuario['apellido_paterno'] + ""
-        VentAsignarHorario.setWindowTitle(_translate("VentAsignarHorario", "Dialog"))
+        VentAsignarHorario.setWindowTitle(_translate("VentAsignarHorario", "Clinica CVI"))
         self.nombreLabel.setText("Nombres:")
         self.cargoLabel.setText("Cargo:")
         self.experienciaLabel.setText("Experiencia:")

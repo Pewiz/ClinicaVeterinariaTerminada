@@ -13,6 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class uiVerDatos(object):
     def setupUi(self, mainWindow):
+        mainWindow.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(700, 509)
         sizePolicy = QtWidgets.QSizePolicy(
@@ -55,7 +56,7 @@ class uiVerDatos(object):
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
         self.label_9 = QtWidgets.QLabel(self.frame_2)
-        self.label_9.setGeometry(QtCore.QRect(250, 40, 201, 41))
+        self.label_9.setGeometry(QtCore.QRect(250, 40, 230, 41))
         font = QtGui.QFont()
         font.setFamily("Chewy")
         font.setPointSize(36)
@@ -64,11 +65,6 @@ class uiVerDatos(object):
         self.label_9.setCursor(QtGui.QCursor(QtCore.Qt.ForbiddenCursor))
         self.label_9.setAlignment(QtCore.Qt.AlignCenter)
         self.label_9.setObjectName("label_9")
-        self.label_3 = QtWidgets.QLabel(self.frame_2)
-        self.label_3.setGeometry(QtCore.QRect(30, 40, 61, 51))
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("imagenes\Atras.png"))
-        self.label_3.setObjectName("label_3")
         self.label_logo = QtWidgets.QLabel(self.frame)
         self.label_logo.setGeometry(QtCore.QRect(210, 110, 291, 301))
         font = QtGui.QFont()
@@ -340,7 +336,7 @@ class uiVerDatos(object):
     def retranslateUi(self, mainWindow):
         _translate = QtCore.QCoreApplication.translate
         mainWindow.setWindowTitle(_translate("mainWindow", "Clinica CVI"))
-        self.label_9.setText(_translate("mainWindow", "  Mascota"))
+        self.label_9.setText(_translate("mainWindow", " Mascota"))
         self.btnLista.setText(_translate(
             "mainWindow", "Volver a Lista Mascotas"))
         self.btnAdmin.setText(_translate(

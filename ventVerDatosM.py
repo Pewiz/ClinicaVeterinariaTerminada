@@ -2,7 +2,6 @@ import csv
 from PyQt5.QtWidgets import QMainWindow
 from uiVentVerDatosM import uiVerDatos
 import ventListaMasc
-import ventanaAdministracion
 
 
 class ventanaVerDatos(QMainWindow):

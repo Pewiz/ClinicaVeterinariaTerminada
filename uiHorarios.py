@@ -13,6 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class uiVent(object):
     def setupUi(self, mainWindow):
+        mainWindow.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(697, 509)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -157,6 +158,7 @@ class uiVent(object):
         item = self.listaHorario.horizontalHeaderItem(0)
         item.setText(_translate("mainWindow", "Hora"))
         item = self.listaHorario.horizontalHeaderItem(1)
+        item.setText(_translate("mainWindow", "Fecha"))
         item = self.listaHorario.horizontalHeaderItem(2)
         item.setText(_translate("mainWindow", "Sala"))
         item = self.listaHorario.horizontalHeaderItem(3)

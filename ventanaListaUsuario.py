@@ -1,10 +1,9 @@
 import csv
 from PyQt5 import QtGui
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow
 import PyQt5.QtWidgets as qtw
 from uiVentListaUsuarios import uiVentLista
 from ManejoArchivo import GestionArchivo
-import ventanaAdministracionUsuario
 import ventanaModificarUsuario
 import ventanaCargaUsuario
 import ventVerDatosU
@@ -26,6 +25,7 @@ class ventanaLista(QMainWindow):
         self.ui.BtnEditar.clicked.connect(lambda: self.cambioV(ventanaModificarUsuario.ventanaModificarUsuario(self.usuarioSelecc)))
         self.ui.BtnVerDatos.clicked.connect(
             lambda: self.ventanaVer(self.ventV))
+        self.ui.BtnEliminar.clicked.connect(lambda: self.eliminar())
         self.rt = ""
         self.tabla = self.ui.tableWidget
 
@@ -129,7 +129,6 @@ class ventanaLista(QMainWindow):
             usuarios = [row for row in lector]
         contFilas = len(usuarios)
         if contFilas == 1:
-            ventanaAdministracionUsuario.ventanaAdmin().show()
             self.close()
         else:
             ventanaCargaUsuario.window().show()

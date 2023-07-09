@@ -14,6 +14,7 @@ class ventElec(QMainWindow):
         self.vent.btnLista.clicked.connect(lambda: self.irALista(self.ventan))
         self.ventanaDatos = ventanaMascota.ventanaMascota(self.rut, 0)
         self.vent.btnAgMasc.clicked.connect(lambda: self.irADatos(self.ventanaDatos))
+        self.vent.ButtonAtras.clicked.connect(self.close)
 
     def irALista(self, v):
         self.ventan.rut = self.rut

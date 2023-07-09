@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5 import QtGui
 import sys
 import csv
 import PyQt5.QtWidgets as qtw

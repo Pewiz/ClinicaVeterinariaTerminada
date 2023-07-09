@@ -76,7 +76,7 @@ class ventanaHorarios(QMainWindow):
         
         
     def actualizarFecha(self):
-        fechaHoy = QtCore.QDate.currentDate()
+        fechaHoy = QtCore.QDate.currentDate().addDays(1)
         self.ventanaUi.FechaHoy.setMinimumDate(fechaHoy)
         self.ventanaUi.FechaHoy.setDate(fechaHoy)
 
@@ -89,27 +89,27 @@ class ventanaHorarios(QMainWindow):
                 self.usuarios = []
                 if self.cont == 1:
                     for l in read:
-                        if l[6] == "Cirujano":
+                        if l[9] == "Cirujano":
                             self.usuarios.append(l)
                 elif self.cont == 2:
                     for l in read:
-                        if l[6] == "Neurologia":
+                        if l[9] == "Neurologia":
                             self.usuarios.append(l)
                 elif self.cont == 3:
                     for l in read:
-                        if l[6] == "Reproduccion":
+                        if l[9] == "Reproduccion":
                             self.usuarios.append(l)
                 elif self.cont == 4:
                     for l in read:
-                        if l[6] == "Odontologia":
+                        if l[9] == "Odontologia":
                             self.usuarios.append(l)
                 elif self.cont == 5:
                     for l in read:
-                        if l[6] == "Oncologia":
+                        if l[9] == "Oncologia":
                             self.usuarios.append(l)
                 elif self.cont == 6:
                     for l in read:
-                        if l[6] == "Cardiologia":
+                        if l[9] == "Cardiologia":
                             self.usuarios.append(l)
         with open('ArchivosCSV/salas.csv') as r:
             read = csv.reader(r)

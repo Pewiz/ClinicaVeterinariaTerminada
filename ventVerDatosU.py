@@ -3,7 +3,6 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtWidgets
 from uiVentVerDatosU import uiVerD
 import ventanaListaUsuario
-import ventanaAdministracionUsuario
 from VentAsignarHoraVet import Ui_VentAsignarHorario
 
 

@@ -98,7 +98,7 @@ class Mascota:
         tamanho = input("Tamanho (aprox): ")
         volumen = input("Volumen de la mascota: ")
         mascota = Mascota(rut,nombre,especie,raza,fecha_nacimiento,sexo,peso,tamanho,volumen)
-        GestionArchivo.insertar("ArchivosCSV/mascotas.csv",mascota)
+        GestionArchivo.insertar("mascotas.csv",mascota)
         return mascota
 
 
@@ -113,8 +113,3 @@ class Mascota:
         Peso: {self._peso}kg
         Tamanho: {self._tamanho}
         Volumen: {self._volumen}m3"""
-    
-if __name__ == "__main__":
-    PerroJuan = Mascota(1,"Juan","Perro","Pudul","10/11/2006","Macho","5kg",1.33,33,1)
-
-    print(PerroJuan)

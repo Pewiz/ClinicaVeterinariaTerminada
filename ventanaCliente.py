@@ -6,7 +6,6 @@ from uiVentCliente import uiVentCliente
 from ClaseCliente import Cliente
 from ManejoArchivo import GestionArchivo
 import ventElecMasc
-import VentAdminPrincipal
 
 
 class ventanaCliente(QMainWindow):
@@ -34,7 +33,7 @@ class ventanaCliente(QMainWindow):
         
         
     def agregar(self, vent):
-        if self.ventanaUi.lineEdit.text() == "" or self.ventanaUi.lineEdit_2.text() == "" or self.ventanaUi.lineEdit_3.text() == "" or self.ventanaUi.lineEdit_4.text() == "" or self.ventanaUi.lineEdit_5.text() == "" or self.ventanaUi.lineEdit_6.text() == "" or self.ventanaUi.lineEdit_7.text() == "" or self.ventanaUi.lineEdit_8.text() == "" or self.ventanaUi.comboBox.currentIndex() < 1:
+        if self.ventanaUi.lineEdit.text() == "" or self.ventanaUi.lineEdit_2.text() == "" or len(self.ventanaUi.lineEdit_3.text()) < 7 or '@' not in self.ventanaUi.lineEdit_4.text() or '.' not in self.ventanaUi.lineEdit_4.text() or self.ventanaUi.lineEdit_5.text() == "" or self.ventanaUi.lineEdit_6.text() == "" or len(self.ventanaUi.lineEdit_7.text()) != 9 or self.ventanaUi.lineEdit_8.text() == "" or self.ventanaUi.comboBox.currentIndex() < 1:
             qtw.QMessageBox.warning(self, "Hay campos sin rellenar", "Por favor, rellene sus datos correctamente.")
         else:
             with open('ArchivosCSV/clientes.csv', 'r', encoding="utf-8") as r:

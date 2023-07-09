@@ -2,7 +2,6 @@ from PyQt5 import QtGui, QtCore
 from PyQt5.QtWidgets import QMainWindow
 import PyQt5.QtWidgets as qtw
 from PyQt5.QtCore import QDate
-
 from uiVentModMasc import uiMod
 from Mascota import Mascota
 from ManejoArchivo import GestionArchivo
@@ -13,7 +12,6 @@ import csv
 class ventanaModifMascota(QMainWindow):
     def __init__(self, posicion, flag, rut):
         super().__init__()
-        print("A")
         self.cont = 0
         self.posicion = posicion
         self.flag = flag

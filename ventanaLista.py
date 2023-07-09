@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 import PyQt5.QtWidgets as qtw
 from uiVentLista import uiVentLista
 from ManejoArchivo import GestionArchivo
-import ventanaAdministracion
 import ventanaModificar
 import ventanaCarga
 import ventListaMasc
@@ -138,7 +137,6 @@ class ventanaLista(QMainWindow):
             clientes = [row for row in lector]
         contFilas = len(clientes)
         if contFilas == 1:
-            ventanaAdministracion.ventanaAdmin().show()
             self.close()
         else:
             ventanaCarga.window().show()

@@ -13,10 +13,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class uiDatos(object):
     def setupUi(self, MainWindow):
+        MainWindow.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(709, 540)
-        MainWindow.setMinimumSize(QtCore.QSize(709, 540))
-        MainWindow.setMaximumSize(QtCore.QSize(709, 540))
+        MainWindow.resize(709, 515)
+        MainWindow.setMinimumSize(QtCore.QSize(709, 515))
+        MainWindow.setMaximumSize(QtCore.QSize(709, 515))
         MainWindow.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -154,8 +155,8 @@ class uiDatos(object):
         font.setWeight(75)
         self.btnAtras.setFont(font)
         self.btnAtras.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnAtras.setStyleSheet("border-radius: 13px;\n"
-                                    "background-color: rgb(79, 163, 166);")
+        self.btnAtras.setStyleSheet("background-color: rgb(79, 163, 166);\n"
+                                      "border-radius: 5px;")
         self.btnAtras.setObjectName("btnAtras")
         self.btnAgregarMascota = QtWidgets.QPushButton(self.frame)
         self.btnAgregarMascota.setGeometry(QtCore.QRect(520, 450, 181, 41))
@@ -167,8 +168,8 @@ class uiDatos(object):
         self.btnAgregarMascota.setFont(font)
         self.btnAgregarMascota.setCursor(
             QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnAgregarMascota.setStyleSheet("border-radius: 13px;\n"
-                                             "background-color: rgb(79, 163, 166);")
+        self.btnAgregarMascota.setStyleSheet("background-color: rgb(79, 163, 166);\n"
+                                      "border-radius: 5px;")
         self.btnAgregarMascota.setObjectName("btnAgregarMascota")
         self.inputNombre = QtWidgets.QLineEdit(self.frame)
         self.inputNombre.setGeometry(QtCore.QRect(20, 177, 171, 31))
@@ -245,12 +246,20 @@ class uiDatos(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
+        MainWindow.setTabOrder(self.inputNombre, self.inputEspecie)
+        MainWindow.setTabOrder(self.inputEspecie, self.inputRaza)
+        MainWindow.setTabOrder(self.inputRaza, self.inputComboBoxSexo)
+        MainWindow.setTabOrder(self.inputComboBoxSexo, self.inputFechaNacimiento)
+        MainWindow.setTabOrder(self.inputFechaNacimiento, self.inputPeso)
+        MainWindow.setTabOrder(self.inputPeso, self.inputComboBoxTamano)
+        
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Clinica CVI"))
         self.subMenu.setText(_translate("MainWindow", "                     Datos de la mascota"))
         self.Titulo.setText(_translate("MainWindow", "Datos mascotas"))
         self.labelNombre.setText(_translate("MainWindow", "Nombre"))

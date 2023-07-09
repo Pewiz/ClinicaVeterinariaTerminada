@@ -223,7 +223,6 @@ class ventanaListaReserva(QMainWindow):
                 i += 1
         else:
             self.ui.btnVer.setEnabled(False)
-            self.ui.btnAtras.setEnabled(False)
             self.ui.btnEliminar.setEnabled(False)
         
     def eliminarHora(self):
@@ -244,6 +243,8 @@ class ventanaListaReserva(QMainWindow):
                     i += 1
         GestionArchivo.modificarLinea("ArchivosCSV/salas.csv", posFila, 1, "None")
         GestionArchivo.modificarLinea("ArchivosCSV/salas.csv", posFila, 5, "False")
+        self.ui.btnModificar.setDisabled(True)
+        self.ui.btnEliminar.setDisabled(True)
 
         if res[1] == "Control Rutinario":
             with open("ArchivosCSV/Control.csv") as r:
@@ -376,7 +377,7 @@ class ventanaListaReserva(QMainWindow):
             
     def buscador(self, texto):
         for row in range(self.ui.listaReservas.rowCount()):
-            nombre = self.ui.listaReservas.item(row, 0).text()
+            nombre = self.ui.listaReservas.item(row, 0).text().lower()
             if texto in nombre:
                 self.ui.listaReservas.setRowHidden(row, False)
             else:

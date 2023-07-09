@@ -13,8 +13,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class uiVentLista(object):
     def setupUi(self, mainWindow):
+        mainWindow.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         mainWindow.setObjectName("mainWindow")
-        mainWindow.resize(700, 509)
+        mainWindow.resize(700, 485)
+        mainWindow.setMinimumSize(QtCore.QSize(700, 485))
+        mainWindow.setMaximumSize(QtCore.QSize(700, 485))
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -72,17 +75,28 @@ class uiVentLista(object):
         self.label_9.setFont(font)
         self.label_9.setCursor(QtGui.QCursor(QtCore.Qt.ForbiddenCursor))
         self.label_9.setObjectName("label_9")
-        self.label_3 = QtWidgets.QLabel(self.frame_2)
-        self.label_3.setGeometry(QtCore.QRect(30, 40, 61, 51))
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("imagenes\Atras.png"))
-        self.label_3.setObjectName("label_3")
         self.btnAtras = QtWidgets.QPushButton(self.frame_2)
-        self.btnAtras.setGeometry(QtCore.QRect(50, 50, 31, 31))
-        self.btnAtras.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnAtras.setFocusPolicy(QtCore.Qt.StrongFocus)
-        self.btnAtras.setStyleSheet("background-color: rgba(0,0,0,0);")
+        self.btnAtras.setGeometry(QtCore.QRect(30, 35, 50, 50))
+        self.btnAtras.setStyleSheet("\n"
+"\n"
+"\n"
+"QPushButton {\n"
+"  \n"
+"    \n"
+"    border-radius: 20px;\n"
+"\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"    background: #74b6b6;\n"
+"}\n"
+"")
         self.btnAtras.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("imagenes/boton_regresar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnAtras.setIcon(icon)
+        self.btnAtras.setIconSize(QtCore.QSize(50, 50))
         self.btnAtras.setObjectName("btnAtras")
         self.BtnVerDatos = QtWidgets.QPushButton(self.frame)
         self.BtnVerDatos.setEnabled(False)

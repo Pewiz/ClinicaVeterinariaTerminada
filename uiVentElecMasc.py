@@ -13,6 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class uiVentana(object):
     def setupUi(self, mainWindow):
+        mainWindow.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(578, 418)
         sizePolicy = QtWidgets.QSizePolicy(
@@ -77,12 +78,29 @@ class uiVentana(object):
         self.label_5.setCursor(QtGui.QCursor(QtCore.Qt.ForbiddenCursor))
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
-        self.label_3 = QtWidgets.QLabel(self.frame_2)
-        self.label_3.setGeometry(QtCore.QRect(30, 40, 61, 51))
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap(
-            "imagenes\Atras.png"))
-        self.label_3.setObjectName("label_3")
+        self.ButtonAtras = QtWidgets.QPushButton(self.frame_2)
+        self.ButtonAtras.setGeometry(QtCore.QRect(30, 40, 50, 50))
+        self.ButtonAtras.setStyleSheet("\n"
+"\n"
+"\n"
+"QPushButton {\n"
+"  \n"
+"    \n"
+"    border-radius: 20px;\n"
+"\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"    background: #74b6b6;\n"
+"}\n"
+"")
+        self.ButtonAtras.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("imagenes/boton_regresar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.ButtonAtras.setIcon(icon)
+        self.ButtonAtras.setIconSize(QtCore.QSize(50, 50))
+        self.ButtonAtras.setObjectName("ButtonAtras")
         self.label_logo = QtWidgets.QLabel(self.frame)
         self.label_logo.setGeometry(QtCore.QRect(130, 150, 281, 271))
         font = QtGui.QFont()

@@ -13,6 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class uiVerD(object):
     def setupUi(self, mainWindow):
+        mainWindow.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(1070, 509)
         sizePolicy = QtWidgets.QSizePolicy(
@@ -75,12 +76,6 @@ class uiVerD(object):
         self.label_9.setCursor(QtGui.QCursor(QtCore.Qt.ForbiddenCursor))
         self.label_9.setAlignment(QtCore.Qt.AlignCenter)
         self.label_9.setObjectName("label_9")
-        self.label_3 = QtWidgets.QLabel(self.frame_2)
-        self.label_3.setGeometry(QtCore.QRect(30, 40, 61, 51))
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap(
-            "imagenes\Atras.png"))
-        self.label_3.setObjectName("label_3")
         self.label_logo = QtWidgets.QLabel(self.frame)
         self.label_logo.setGeometry(QtCore.QRect(390, 110, 291, 301))
         font = QtGui.QFont()
@@ -361,7 +356,7 @@ class uiVerD(object):
         self.btnAtras.setText(_translate(
             "mainWindow", "Volver a Lista Usuario"))
         self.btnAsignarHorario.setText(_translate(
-            "mainWindow", "Registrar Hora"))
+            "mainWindow", "Registrar Horario"))
         self.btnMenuPrincipal.setText(_translate(
             "mainWindow", "Volver a Administración"))
         self.labelNombreC.setText(_translate("mainWindow", "Nombre Completo"))

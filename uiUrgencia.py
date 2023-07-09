@@ -14,6 +14,7 @@ import recurso_elias
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        MainWindow.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(709, 540)
         self.centralwidget = QtWidgets.QWidget(MainWindow)

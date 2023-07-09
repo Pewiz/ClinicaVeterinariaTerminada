@@ -18,7 +18,6 @@ class ventListaMascota(QMainWindow):
         self.mascotaSelecc = -1
         self.vent = uiVent()
         self.vent.setupUi(self)
-        self.vent.btnAvanzar.setEnabled(False)
         self.vent.btnAtras.clicked.connect(lambda: self.atras(self.flag))
         self.tablaMasc = self.vent.tableWidget
         self.vent.eliminar.clicked.connect(lambda: self.eliminar())
@@ -74,16 +73,13 @@ class ventListaMascota(QMainWindow):
             self.vent.verDatos.setEnabled(True)
             self.vent.editar.setEnabled(True)
             self.vent.eliminar.setEnabled(True)
-            self.vent.btnAvanzar.setEnabled(True)
             self.mascotaSelecc = self.tablaMasc.currentRow()
         else:
             self.vent.verDatos.setEnabled(False)
             self.vent.editar.setEnabled(False)
             self.vent.eliminar.setEnabled(False)
-            self.vent.btnAvanzar.setEnabled(False)
 
     def eliminar(self):
-        print(self.mascotaSelecc + 1)
         k = 0
         j = self.buscar(k)
         GestionArchivo.eliminar("ArchivosCSV/mascotas.csv", j)

@@ -13,6 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class uiVentModificarUsuario(object):
     def setupUi(self, mainWindow):
+        mainWindow.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(700, 600)
         sizePolicy = QtWidgets.QSizePolicy(
@@ -284,11 +285,16 @@ class uiVentModificarUsuario(object):
         self.retranslateUi(mainWindow)
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
         mainWindow.setTabOrder(self.lineEdit, self.lineEdit_2)
-        mainWindow.setTabOrder(self.lineEdit_2, self.BtnAtras)
-        mainWindow.setTabOrder(self.BtnAtras, self.lineEdit_3)
-        mainWindow.setTabOrder(self.lineEdit_3, self.dateEdit)
-        mainWindow.setTabOrder(self.dateEdit, self.lineEdit_7)
-        mainWindow.setTabOrder(self.lineEdit_7, self.lineEdit_8)
+        mainWindow.setTabOrder(self.lineEdit_2, self.lineEdit_5)
+        mainWindow.setTabOrder(self.lineEdit_5, self.comboBox)
+        mainWindow.setTabOrder(self.lineEdit_3, self.lineEdit_6)
+        mainWindow.setTabOrder(self.lineEdit_6, self.lineEdit_7)
+        mainWindow.setTabOrder(self.lineEdit_7, self.dateEdit)
+        mainWindow.setTabOrder(self.dateEdit, self.lineEdit_8)
+        mainWindow.setTabOrder(self.lineEdit_8, self.lineEdit_4)
+        mainWindow.setTabOrder(self.lineEdit_4, self.lineEdit_password)
+        mainWindow.setTabOrder(self.lineEdit_password, self.comboBoxCargo)
+        mainWindow.setTabOrder(self.comboBoxCargo, self.spinBox)
 
     def retranslateUi(self, mainWindow):
         _translate = QtCore.QCoreApplication.translate

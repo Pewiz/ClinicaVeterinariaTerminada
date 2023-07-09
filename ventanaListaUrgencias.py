@@ -1,14 +1,15 @@
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QMainWindow
-import sys
 import csv
 import PyQt5.QtWidgets as qtw
+from PyQt5 import QtGui
 from uiListaUrgencias import Ui_mainWindow
 import ventanaUrgencia
 
 class ventanaListaUrgencias(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         self.ui = Ui_mainWindow()
         self.ui.setupUi(self)
         self.ventana = ventanaUrgencia.ventanaUrgencia()
@@ -75,7 +76,7 @@ class ventanaListaUrgencias(QMainWindow):
     
     def buscador(self, texto):
         for row in range(self.ui.listaUrgencias.rowCount()):
-            nombre = self.ui.listaUrgencias.item(row, 0).text()
+            nombre = self.ui.listaUrgencias.item(row, 0).text().lower()
             if texto in nombre:
                 self.ui.listaUrgencias.setRowHidden(row, False)
             else:

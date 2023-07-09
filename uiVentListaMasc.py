@@ -13,8 +13,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class uiVent(object):
     def setupUi(self, mainWindow):
+        mainWindow.setWindowIcon(QtGui.QIcon('Imagenes/logo.png'))
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(700, 509)
+        mainWindow.setMinimumSize(QtCore.QSize(700, 509))
+        mainWindow.setMaximumSize(QtCore.QSize(700, 509))
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -72,17 +75,28 @@ class uiVent(object):
         self.label_9.setFont(font)
         self.label_9.setCursor(QtGui.QCursor(QtCore.Qt.ForbiddenCursor))
         self.label_9.setObjectName("label_9")
-        self.label_3 = QtWidgets.QLabel(self.frame_2)
-        self.label_3.setGeometry(QtCore.QRect(30, 40, 61, 51))
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("imagenes\Atras.png"))
-        self.label_3.setObjectName("label_3")
         self.btnAtras = QtWidgets.QPushButton(self.frame_2)
-        self.btnAtras.setGeometry(QtCore.QRect(50, 50, 31, 31))
-        self.btnAtras.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnAtras.setFocusPolicy(QtCore.Qt.StrongFocus)
-        self.btnAtras.setStyleSheet("background-color: rgba(0,0,0,0);")
+        self.btnAtras.setGeometry(QtCore.QRect(30, 35, 50, 50))
+        self.btnAtras.setStyleSheet("\n"
+"\n"
+"\n"
+"QPushButton {\n"
+"  \n"
+"    \n"
+"    border-radius: 20px;\n"
+"\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"    background: #74b6b6;\n"
+"}\n"
+"")
         self.btnAtras.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("imagenes/boton_regresar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnAtras.setIcon(icon)
+        self.btnAtras.setIconSize(QtCore.QSize(50, 50))
         self.btnAtras.setObjectName("btnAtras")
         self.verDatos = QtWidgets.QPushButton(self.frame)
         self.verDatos.setEnabled(False)
@@ -108,18 +122,6 @@ class uiVent(object):
         self.label_logo.setPixmap(QtGui.QPixmap(
             "imagenes\Logo-removebg-preview.png"))
         self.label_logo.setObjectName("label_logo")
-        self.btnAvanzar = QtWidgets.QPushButton(self.frame)
-        self.btnAvanzar.setEnabled(True)
-        self.btnAvanzar.setGeometry(QtCore.QRect(520, 460, 171, 31))
-        font = QtGui.QFont()
-        font.setFamily("Corbel")
-        font.setPointSize(14)
-        self.btnAvanzar.setFont(font)
-        self.btnAvanzar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnAvanzar.setStyleSheet("background-color: rgb(79, 163, 166);\n"
-                                      "border-radius: 5px;")
-        self.btnAvanzar.setCheckable(False)
-        self.btnAvanzar.setObjectName("btnAvanzar")
         self.editar = QtWidgets.QPushButton(self.frame)
         self.editar.setEnabled(False)
         self.editar.setGeometry(QtCore.QRect(160, 460, 131, 31))
@@ -175,7 +177,6 @@ class uiVent(object):
         self.label.raise_()
         self.verDatos.raise_()
         self.label_logo.raise_()
-        self.btnAvanzar.raise_()
         self.editar.raise_()
         self.eliminar.raise_()
         self.tableWidget.raise_()
@@ -191,7 +192,6 @@ class uiVent(object):
         self.label.setText(_translate("mainWindow", "Mascotas de:"))
         self.label_9.setText(_translate("mainWindow", " Lista Mascotas"))
         self.verDatos.setText(_translate("mainWindow", "Ver Datos"))
-        self.btnAvanzar.setText(_translate("mainWindow", "Elegir Mascota"))
         self.editar.setText(_translate("mainWindow", "Editar"))
         self.eliminar.setText(_translate("mainWindow", "Eliminar"))
         item = self.tableWidget.horizontalHeaderItem(0)
